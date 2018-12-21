@@ -5,4 +5,39 @@ import { Component } from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {}
+export class Tab1Page {
+  trainers: any[] = [];
+  constructor() {
+    this.trainers = [
+      {
+        name: 'cardio',
+        experience: '4 years',
+        offers: 'muscles, legs, pushes'
+      },
+      {
+        name: 'cardio',
+        experience: '4 years',
+        offers: 'muscles, legs, pushes'
+      },
+      {
+        name: 'cardio',
+        experience: '4 years',
+        offers: 'muscles, legs, pushes'
+      },
+      {
+        name: 'cardio',
+        experience: '4 years',
+        offers: 'muscles, legs, pushes'
+      },
+      {
+        name: 'cardio',
+        experience: '4 years',
+        offers: 'muscles, legs, pushes'
+      }
+    ];
+  }
+
+  loadTrainer() {
+    alert('hello');
+  }
+}
