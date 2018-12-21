@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   trainers: any[] = [];
+  
   constructor() {
     this.trainers = [
       {
@@ -42,7 +43,7 @@ export class Tab1Page {
     ];
   }
 
-  loadTrainer() {
+  loadTrainer( ) {
     alert('hello');
   }
 }

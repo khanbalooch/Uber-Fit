@@ -8,7 +8,7 @@
 
 <ion-content>
     <ion-list>
-        <div ion-item (click)="loadTrainer()" *ngFor="let trainer of trainers;">
+        <div ion-item (click)="loadTrainer(trainer)" *ngFor="let trainer of trainers;">
           <ion-grid>
             <ion-row>
               <ion-col size="3">
