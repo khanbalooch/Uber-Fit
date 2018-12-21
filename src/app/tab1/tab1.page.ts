@@ -12,27 +12,32 @@ export class Tab1Page {
       {
         name: 'cardio',
         experience: '4 years',
-        offers: 'muscles, legs, pushes'
+        offers: 'walk, running',
+        path: './../../assets/images/cardio.jpg'
       },
       {
-        name: 'cardio',
-        experience: '4 years',
-        offers: 'muscles, legs, pushes'
+        name: 'yogga',
+        experience: '12 years',
+        offers: 'muscles, legs, pushes',
+        path: './../../assets/images/yoga.jpg'
       },
       {
-        name: 'cardio',
-        experience: '4 years',
-        offers: 'muscles, legs, pushes'
+        name: 'Cross Fit',
+        experience: '2 years',
+        offers: 'ups, downs, sliming',
+        path: './../../assets/images/cf.jpg'
       },
       {
-        name: 'cardio',
-        experience: '4 years',
-        offers: 'muscles, legs, pushes'
+        name: 'Weight Trainer',
+        experience: '6 years',
+        offers: 'muscles, legs, pushes',
+        path: './../../assets/images/wt.jpg'
       },
       {
-        name: 'cardio',
+        name: 'Swim Trainer',
         experience: '4 years',
-        offers: 'muscles, legs, pushes'
+        offers: 'diving, swimming, exe',
+        path: './../../assets/images/swt.png'
       }
     ];
   }
