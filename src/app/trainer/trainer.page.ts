@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
+import { NavController  } from '@ionic/angular';
+import { Trainer } from '../shared/trainer.model';
+import { trainerService } from '../shared/trainer.service';
 
 @Component({
   selector: 'app-trainer',
@@ -6,19 +10,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trainer.page.scss'],
 })
 export class TrainerPage implements OnInit {
-
-
-  constructor() { }
-  trainer = {
-    src: 'https://via.placeholder.com/150',
-    name: 'Mr. A',
-    disc: 'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist and a master Rehab traine. With his background.',
-    rate: '40',
-    time: '1hr',
-    focus: 'Crossfit'
-  };
-  ngOnInit() {
-
+  trainderId: any;
+  mytrainer: Trainer;
+  constructor(private trainerService: trainerService, private router: Router,private navCtr : NavController) {
+    router.events.subscribe((url: any) => {
+      var getUrl = url.url;
+      if (typeof getUrl == 'string') {
+        var id = getUrl.split('/');
+        this.trainderId = id[id.length - 1];
+      }
+    });
   }
 
+  ngOnInit() {
+    this.mytrainer = this.trainerService.getTrainer(this.trainderId);
+
+  }
+  goBack(){
+    return this.navCtr.goBack();
+  }
 }

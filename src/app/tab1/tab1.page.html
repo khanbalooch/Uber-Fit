@@ -8,12 +8,12 @@
 
 <ion-content>
     <ion-list>
-        <div ion-item (click)="loadTrainer(trainer)" *ngFor="let trainer of trainers;">
-          <ion-grid>
+        <div ion-item   *ngFor="let trainer of trainers;">
+          <ion-grid (click)="loadTrainer(trainer)" >
             <ion-row>
               <ion-col size="3">
                   <ion-avatar>
-                      <img src={{trainer.path}}>
+                      <img src={{trainer.imgPath}}>
                   </ion-avatar>
               </ion-col>
               <ion-col size="9">
