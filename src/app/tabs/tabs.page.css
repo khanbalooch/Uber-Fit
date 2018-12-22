@@ -5,3 +5,12 @@ ion-button {
 ion-footer ion-icon {
     color: #fff !important;
 }
+
+ion-tab-button.tab-selected {
+    background: #3880ff;
+    color: #fff;
+}
+ion-tab-button {
+    height:80%;
+    border: 1px solid #ccc;
+}
