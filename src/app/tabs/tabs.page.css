@@ -1,0 +1,7 @@
+ion-button {
+    display: block;
+    left: 50%;
+}
+ion-footer ion-icon {
+    color: #fff !important;
+}
