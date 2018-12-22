@@ -11,6 +11,7 @@ import { Trainer } from './trainer.model';
 
 export class trainerService {
     selectedTrainer:Trainer;
+    selectedTrainerId: any;
 
     private trainers : Trainer[] = [
         new Trainer(
@@ -19,7 +20,7 @@ export class trainerService {
             '../../assets/images/cardio.jpg',
             '5 Years',
             'Chrismis Offer',
-            'disApart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist and a master Rehab traine. With his background.cription',
+            'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist and a master Rehab traine. With his background.cription',
             '$40',
             '1 hr',
             'Yoga'
@@ -63,6 +64,13 @@ export class trainerService {
         )
     ]
 
+    setTrainerID(id: any){
+        this.selectedTrainerId = id;
+    }
+    getTrainerID(){
+        return this.selectedTrainerId;
+    }
+
     getAllTrainers(){
         return this.trainers.slice();
     }
@@ -83,7 +91,6 @@ export class trainerService {
             return trainer.id == id;
         });*/
     }
-
 
 }
 
