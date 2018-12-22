@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
-import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 import { Trainer } from '../shared/trainer.model';
 import { trainerService } from '../shared/trainer.service';
@@ -15,27 +14,16 @@ export class Tab1Page implements OnInit {
 
 
   trainers: Trainer[];
-  constructor(private trainerService: trainerService, private navCtrl: NavController, public loadingController: LoadingController) { }
-  async presentLoading() {
-    const loading = await this.loadingController.create({
-      message: 'Finding Trainers in your area',
-      duration: 2000,
-      animated: true,
-      cssClass: 'custom-loading'
-    });
-    return await loading.present();
-  }
+  constructor(private trainerService: trainerService, private router: Router) { }
+  
 
   ngOnInit() {
     this.trainers = this.trainerService.getAllTrainers();
   }
 
   loadTrainer(trainer: any) {
-    this.presentLoading();
-    setTimeout(() => {
-      this.navCtrl.navigateRoot('/trainer/' + trainer.id);
-    }, 2100);
-
+    this.trainerService.setTrainerID(trainer.id);
+    this.router.navigateByUrl('/loader');
   }
 
 
