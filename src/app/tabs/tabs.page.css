@@ -14,3 +14,7 @@ ion-tab-button {
     height:50%;
     border: 1px solid #ccc;
 }
+
+ion-badge {
+    font-size: 10px;
+}
