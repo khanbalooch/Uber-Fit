@@ -1,9 +1,38 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+    <ion-toolbar>
+      <ion-title text-center>
+        Gym Locations | Either
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <div ion-item *ngFor="let trainer of trainers;">
+        <ion-grid (click)="loadTrainer(trainer)">
+          <ion-row>
+            <ion-col size="10">
+              <ion-row>
+                <ion-col size="3">
+                  <ion-avatar>
+                    <img src={{trainer.imgPath}}>
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size="9">
+                  <ion-label>
+                    <h2>{{trainer.name}}</h2>
+                    <h3>{{trainer.experience}}</h3>
+                    <p>{{trainer.offers}}</p>
+                  </ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="2">
+                <span class="time">5:47 am</span>
+                <ion-icon name="arrow-dropright"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-list>
+  </ion-content>
