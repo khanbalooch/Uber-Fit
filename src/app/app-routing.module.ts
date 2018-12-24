@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'trainer', loadChildren: './trainer/trainer.module#TrainerPageModule' },
-  { path: 'loader', loadChildren: './loader/loader.module#LoaderPageModule' },  { path: 'book-client', loadChildren: './book-client/book-client.module#BookClientPageModule' }
+  { path: 'book-client', loadChildren: './book-client/book-client.module#BookClientPageModule' }
 
 
 
