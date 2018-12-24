@@ -10,10 +10,11 @@ import { Trainer } from './trainer.model';
 // focus
 
 export class trainerService {
-    selectedTrainer:Trainer;
+    selectedTrainer: Trainer;
     selectedTrainerId: any;
+  
 
-    private trainers : Trainer[] = [
+    private trainers: Trainer[] = [
         new Trainer(
             '1',
             'Cardio Master',
@@ -64,33 +65,34 @@ export class trainerService {
         )
     ]
 
-    setTrainerID(id: any){
+    setTrainerID(id: any) {
         this.selectedTrainerId = id;
     }
-    getTrainerID(){
+    getTrainerID() {
         return this.selectedTrainerId;
     }
 
-    getAllTrainers(){
+    getAllTrainers() {
         return this.trainers.slice();
     }
 
-    getTrainer(id: string){
+    getTrainer(id: string) {
         var trainers = this.getAllTrainers();
         //console.log(trainers);
-        for(var i =0; i< trainers.length; i++){
-            
-            if(trainers[i].id == id) {
+        for (var i = 0; i < trainers.length; i++) {
+
+            if (trainers[i].id == id) {
                 //console.log(trainers[i]);
                 this.selectedTrainer = trainers[i];
                 return this.selectedTrainer;
             }
         }
-       /* let trainers = this.getAllTrainers();
-        return trainers.filter(function(trainer){
-            return trainer.id == id;
-        });*/
+        /* let trainers = this.getAllTrainers();
+         return trainers.filter(function(trainer){
+             return trainer.id == id;
+         });*/
     }
+  
 
 }
 

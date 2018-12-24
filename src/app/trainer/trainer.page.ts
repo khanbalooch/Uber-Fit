@@ -1,4 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { Trainer } from '../shared/trainer.model';
 import { trainerService } from '../shared/trainer.service';
