@@ -21,7 +21,7 @@ export class TrainerPage implements OnInit {
 
   }
   goBack(){
-    this.router.navigateByUrl('/tabs/tab1');
+    this.router.navigateByUrl('tabs/tab1');
   }
   onBookClient(){
     this.router.navigateByUrl('book-client');

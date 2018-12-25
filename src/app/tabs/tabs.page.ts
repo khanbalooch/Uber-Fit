@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from '../shared/services/authentication.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,10 +8,13 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
+  constructor(private authService: AuthenticationService){}
   isClicked(tab){
     //return true;
   }
-
+  logout(){
+    this.authService.logout();
+  }
   // tabSwitched(tab) {
   //   console.log(tab);
   // }
