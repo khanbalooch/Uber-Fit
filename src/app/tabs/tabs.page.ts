@@ -10,14 +10,9 @@ export class TabsPage {
 
   constructor(private authService: AuthenticationService){}
   isClicked(tab){
-    //return true;
   }
-  logout(){
-    this.authService.logout();
-  }
-  // tabSwitched(tab) {
-  //   console.log(tab);
-  // }
+  
+
 
 
 }

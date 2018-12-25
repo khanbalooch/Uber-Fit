@@ -2,6 +2,10 @@
 .tLoader ion-backdrop {
     background: #fff !important;
     opacity: 1 !important;
+    /*verticaly center*/
+    height: 88%;
+    transform: translateY(-50%);
+    top: 50%;
 }
 .tLoader .loading-wrapper {
     border-radius: none;
@@ -12,7 +16,7 @@
     -moz-box-shadow: none;
     background: #fff;
     width: 100%;
-    height: 100vh;
+    height: 88%;
 
 }
 .tLoader loading-content{

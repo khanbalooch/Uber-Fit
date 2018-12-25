@@ -31,7 +31,7 @@ export class Tab1Page implements OnInit {
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'Finding Trainers in your Area',
-      duration: 1500,
+      duration: 15000000,
       spinner: 'bubbles',
       cssClass: 'tLoader'
     });
