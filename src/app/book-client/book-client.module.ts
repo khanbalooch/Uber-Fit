@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BookClientPage } from './book-client.page';
+import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    SharedComponentsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [BookClientPage]
