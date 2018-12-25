@@ -22,3 +22,7 @@
 .tLoader loading-content{
     font-size: 16px;
 }
+.sc-ion-card-ios-h,.sc-ion-card-md-h,ion-card {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+}
