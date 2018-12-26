@@ -9,6 +9,14 @@
 </ion-header>
 
 <ion-content padding>
-  {{helloService}}
+  <!-- {{helloService}} -->
+  <ion-list>
+    <ion-item>
+      <ion-label>Logout </ion-label>
+      <ion-label>
+        <ion-button shape="round" color="danger" fill="outline" (click)="onLogout()">Log Out</ion-button>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
 <app-footer></app-footer>

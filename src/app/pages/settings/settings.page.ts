@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../shared/services/settings.service';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 
 @Component({
   selector: 'app-settings',
@@ -10,11 +11,13 @@ export class SettingsPage implements OnInit {
   helloService: any;
 
 
-  constructor(private settingsService: SettingsService) { }
+  constructor(private settingsService: SettingsService,private authServ: AuthenticationService) { }
 
   ngOnInit() {
-    this.helloService = this.settingsService.helloService();
 
+  }
+  onLogout(){
+    this.authServ.logout();
   }
 
 }

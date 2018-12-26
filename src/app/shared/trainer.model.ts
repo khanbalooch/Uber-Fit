@@ -1,4 +1,32 @@
 export class Trainer {
+
+    /* production model */
+    /*
+    private Bio: string;
+    private FirstName: string;
+    private Gender: string;
+    private ID: string;
+    private IsActive: boolean;
+    private LastName: string;
+    private PictureUrl: string;
+    private Rating: string;
+    private Type: string;
+    private Zip: string;
+    private bio: string;
+    private firstName: string;
+    private gender: string;
+    private id: string;
+    private isActive: boolean;
+    private lastName: string;
+    private pictureUrl: string;
+    private rating: string;
+    private type: string;
+    private zip: string;
+    constructor(){
+
+    }
+    */
+/* Development Model */
     public id: string;
     public name: string;
     public imgPath: string;

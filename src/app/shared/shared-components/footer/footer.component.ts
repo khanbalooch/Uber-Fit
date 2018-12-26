@@ -13,9 +13,6 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
   }
-  logout() {
-    this.authService.logout();
-  }
   onProfilePage() {
     this.router.navigateByUrl('/profile');
   }
