@@ -2,8 +2,8 @@
   <ion-grid fill="primary" style="background: #3171e0;" no-padding no-margin>
     <ion-row>
       <ion-col>
-        <ion-button class="clear" size="small" fill="clear">
-          <ion-icon name="contact"></ion-icon>
+        <ion-button (click)="onProfilePage()" class="clear" size="small" fill="clear">
+          <ion-icon  name="contact"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
@@ -17,7 +17,7 @@
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button (click)='logout()' class="clear" size="small" fill="clear">
+        <ion-button  (click)="onSettingsPage()" class="clear" size="small" fill="clear">
           <ion-icon name="settings"></ion-icon>
         </ion-button>
       </ion-col>

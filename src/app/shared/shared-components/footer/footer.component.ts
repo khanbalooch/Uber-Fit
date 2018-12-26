@@ -1,19 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss','./footer.component.css']
+  styleUrls: ['./footer.component.scss', './footer.component.css']
 })
 export class FooterComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService){}
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
-  logout(){
+  logout() {
     this.authService.logout();
+  }
+  onProfilePage() {
+    this.router.navigateByUrl('/profile');
+  }
+
+  onSettingsPage(){
+    this.router.navigateByUrl('/settings');
   }
 
 }
