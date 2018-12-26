@@ -3,21 +3,21 @@
     <ion-row>
       <ion-col>
         <ion-button (click)="onProfilePage()" class="clear" size="small" fill="clear">
-          <ion-icon  name="contact"></ion-icon>
+          <ion-icon name="contact"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="clear" size="small" fill="clear">
+        <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
           <ion-icon name="compass"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="clear" size="small" fill="clear">
+        <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
           <ion-icon src="../../assets/icon/cir-sine-icon.svg"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button  (click)="onSettingsPage()" class="clear" size="small" fill="clear">
+        <ion-button (click)="onSettingsPage()" class="clear" size="small" fill="clear">
           <ion-icon name="settings"></ion-icon>
         </ion-button>
       </ion-col>

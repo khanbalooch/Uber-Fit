@@ -3,19 +3,19 @@
   <ion-grid no-padding>
     <ion-row>
       <ion-col>
-        <ion-button class="clear" size="small" fill="clear" align-center>
+        <ion-button class="clear" size="small" fill="clear" (click)="onDialPage()" align-center>
           <ion-icon name="call"></ion-icon>
           <ion-badge color="danger">11</ion-badge>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="noticon" size="small" fill="clear" align-center>
+        <ion-button class="noticon" size="small" fill="clear" (click)="onChatPage()" align-center>
           <ion-icon name="chatbubbles"></ion-icon>
           <ion-badge color="danger">66</ion-badge>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button class="noticon" size="small" fill="clear" align-center>
+        <ion-button class="noticon" size="small" fill="clear" (click)="onMusicalPage()" align-center>
           <ion-icon name="musical-notes"></ion-icon>
           <ion-badge color="danger">55</ion-badge>
         </ion-button>

@@ -17,8 +17,17 @@ export class FooterComponent implements OnInit {
     this.router.navigateByUrl('/profile');
   }
 
-  onSettingsPage(){
+  onSettingsPage() {
     this.router.navigateByUrl('/settings');
   }
+
+  onDirectionPage() {
+    this.router.navigateByUrl('/direction');
+  }
+
+  onGlobalPage() {
+    this.router.navigateByUrl('/global');
+  }
+
 
 }
