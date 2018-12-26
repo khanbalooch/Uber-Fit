@@ -7,3 +7,7 @@
     display: block;
     padding: 8px 0;
 }
+ion-label {
+    display: block;
+    padding: 0 12%;
+}
