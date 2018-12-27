@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfileService } from '../../shared/services/profile.service';
 
 @Component({
@@ -9,11 +10,15 @@ import { ProfileService } from '../../shared/services/profile.service';
 export class ProfilePage implements OnInit {
   helloService: any;
 
-  constructor(private profService: ProfileService) { }
+  constructor(private profService: ProfileService,private router: Router) { }
 
   ngOnInit() {
    this.helloService = this.profService.helloService();
 
+  }
+
+  onEditPage(){
+    this.router.navigateByUrl('/edit-profile');
   }
   
 

@@ -1,0 +1,32 @@
+.profilePic {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 80px;
+    height: 80px;
+    border: 6px solid #ccc;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    /* position: absolute;
+    top: 0;
+    left: 5px; 
+    transform: translateY(-50%);
+    */
+    z-index: 9999999;
+}
+
+.img-container {
+    position: relative;
+}
+
+.edit-pic {
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    background: #ccc;
+    padding: 4px;
+    border-radius: 50%;
+}

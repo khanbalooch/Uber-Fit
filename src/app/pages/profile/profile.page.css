@@ -13,23 +13,41 @@
     border: 6px solid #fff;
     border-radius: 50%;
     -webkit-border-radius: 50%;
-
     position: absolute;
     top: 0;
     left: 5px;
     transform: translateY(-50%);
     z-index: 9999999;
 }
+
 .container {
     padding: 0;
 }
+
 .lt {
     position: relative;
 }
-.rt,.lt {
+
+.rt, .lt {
     background: #eee;
 }
-.rt strong,.rating {
+
+.rt strong, .rating {
     text-align: center;
     display: block;
+}
+
+.edit-container {
+    display: block;
+    overflow: hidden;
+}
+
+.edit-icon {
+    text-align: right;
+    display: block;
+    padding: 4px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    float: right;
 }

@@ -1,0 +1,28 @@
+<app-header></app-header>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>edit-profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4" class="lt">
+        <div class="img-container">
+          <div class="profilePic" style="background-image:url('../../../../assets/images/wt.jpg')"></div>
+          <ion-icon name="create" class="edit-pic" color="warning"></ion-icon>
+        </div>
+
+      </ion-col>
+      <ion-col size="8">
+        <ion-input [(ngModel)]='userProfile.firstName' type="text" placeholder="First name" value="{{userProfile.firstName}}"></ion-input>
+        <ion-input [(ngModel)]='userProfile.lastName' type="text" placeholder="Last name" value="{{userProfile.lastName}}"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<app-footer></app-footer>
