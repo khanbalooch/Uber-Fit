@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { TabsPageRoutingModule } from './tabs.router.module';
+
 import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
 
 
