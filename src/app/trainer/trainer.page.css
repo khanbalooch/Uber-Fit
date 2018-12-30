@@ -1,0 +1,29 @@
+.gender {
+    font-size: 22px;
+}
+.profilePic{
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 14px; text-align: center;display: block;
+}
+.subtitle {
+    font-style: italic;
+    text-align: right;
+    margin: 6px;
+    font-size: 12px;
+}
+
+.username,.rating{
+    text-align: center;
+    margin: 8px auto;
+}
+.dummy {
+    display: block;
+    width: 64%;
+    margin: 0 auto;
+}

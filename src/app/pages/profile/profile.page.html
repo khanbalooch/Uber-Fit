@@ -7,78 +7,317 @@
     <ion-title>Profile</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content padding>
+<ion-content>
+  <ion-card>
+    <ion-card-content align-items-center>
+      <ion-button size="small" shape="round" color="primary" fill="outline" *ngIf="!isEdit" (click)="onEditProfile()"
+        text-center>
+        <ion-icon name="create"></ion-icon> Edit
+      </ion-button>
+      <ion-button shape="round" color="secondary" fill="outline" size="small" *ngIf="isEdit" (click)="onUpdateProfile()"
+        text-center>
+        <ion-icon name="checkmark"></ion-icon> Update
+      </ion-button>
+      <ion-button shape="round" color="warning" fill="outline" size="small" *ngIf="isEdit" (click)="onCancelEdit()"
+        text-center>
+        <ion-icon name="close-circle"></ion-icon> Cancel
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
   <ion-grid>
-    <ion-row>
-      <ion-col class="container">
-        <div class="pattern">
-          <ion-label slot="end" class="edit-container" (click)="onEditPage()" >
-            <ion-icon name="create" class="edit-icon" color="warning"></ion-icon>
-          </ion-label>
-        </div>
-      </ion-col>
+    <ion-row class="title">
+        <ion-col size="6" *ngIf="!isEdit">
+          <ion-text>
+            <ion-label>{{userProfile?.type}}</ion-label>
+            <ion-label class="subtitle" color="primary">{{userProfile?.subType}}</ion-label>
+          </ion-text>
+        </ion-col>
+        <ion-col size="6" *ngIf="!isEdit">
+          <ion-text>
+            <ion-label>Joined </ion-label>
+            <ion-label class="subtitle" color="primary">{{userProfile?.startDate}}</ion-label>
+          </ion-text>
+        </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col class="lt" size="1">
-        <div class="profilePic" style="background-image:url('../../../assets/images/wt.jpg')"></div>
-      </ion-col>
-      <ion-col class="rt" size="11">
-        <strong>John Smith</strong>
+    <ion-row justify-content-between>
+      <ion-col size="4" class="lt">
+        <div class="img-outer">
+          <div class="profilePic" [ngStyle]="{'background-image': 'url(' + userProfile?.pictureURL + ')'}">
+            <ion-icon name="create" class="edit-pic" *ngIf="isEdit"></ion-icon>
+          </div>
+        </div>
         <div class="rating">
-          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-        <div class="profContent">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="3">
-                <ion-label>
-                  <ion-icon name="man"></ion-icon>
-                </ion-label>
-              </ion-col>
-              <ion-col size="9">
-                <ion-label>Male</ion-label>
-              </ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col size="3">
-                <ion-label>
-                  <ion-icon name="mail-open"></ion-icon>
-                </ion-label>
-              </ion-col>
-              <ion-col size="9">
-                <ion-label>john@email.com</ion-label>
-              </ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col size="3">
-                <ion-label>
-                  <ion-icon name="locate"></ion-icon>
-                </ion-label>
-              </ion-col>
-              <ion-col size="9">
-                <ion-label>District 2 1657 Riverside Drive</ion-label>
-              </ion-col>
-            </ion-row>
-
-            <ion-row>
-              <ion-col size="3">
-                <ion-label>
-                  <ion-icon name="ribbon"></ion-icon>
-                </ion-label>
-              </ion-col>
-              <ion-col size="9">
-                <ion-label>Yoga, Swimming, Athletics</ion-label>
-              </ion-col>
-            </ion-row>
-
-          </ion-grid>
-
+          <ion-icon name="star" color="primary"></ion-icon>
+          <ion-icon name="star" color="primary"></ion-icon>
+          <ion-icon name="star" color="primary"></ion-icon>
+          <ion-icon name="star" color="primary"></ion-icon>(10)
         </div>
       </ion-col>
+      <ion-col size="8" *ngIf="!isEdit">
+        <ion-item>
+          <!-- <strong>{{userProfile.firstName}} {{userProfile.lastName}}</strong> -->
+          <ion-text>
+            <p>{{userProfile?.firstName}} {{userProfile?.lastName}}</p>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            {{userProfile?.age}} Years Old <ion-icon class="gender" name="man" *ngIf="userProfile?.gender == 'm'" color="primary"></ion-icon>
+            <ion-icon class="gender" name="woman" *ngIf="userProfile?.gender == 'f'" color="primary"></ion-icon>
+          </ion-text>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" *ngIf="isEdit">
+        <ion-label>First Name</ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]='userProfile.firstName' type="text" placeholder="First name" value="{{userProfile.firstName}}"
+            disabled="{{!isEdit}}"></ion-input>
+        </ion-item>
+        <ion-label>Last Name</ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]='userProfile.lastName' type="text" placeholder="Last name" value="{{userProfile.lastName}}"
+            disabled="{{!isEdit}}"></ion-input>
+        </ion-item>
+      </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col size="12" *ngIf="!isEdit">
+        <ion-item>
+          <ion-text>{{userProfile?.email}}</ion-text>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" *ngIf="isEdit">
+        <ion-label>Email</ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]='userProfile.email' type="text" placeholder="First name" value="{{userProfile.email}}"
+            disabled="{{!isEdit}}"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" *ngIf="isEdit">
+        <ion-label>Type</ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]='userProfile.type' type="text" placeholder="Type" value="{{userProfile.type}}"
+            disabled="{{!isEdit}}"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6" *ngIf="isEdit">
+        <ion-label>Age</ion-label>
+        <ion-item>
+          <ion-input [(ngModel)]='userProfile.age' type="text" placeholder="Age" value="{{userProfile.age}}" disabled="{{!isEdit}}"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6" *ngIf="isEdit">
+        <ion-label>Gender</ion-label>
+        <ion-item>
+          <ion-select value="{{userProfile.gender}}" placeholder="Select One">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!isEdit">
+      <ion-col col="8">
+        <ion-label>
+          <ion-text>
+            Skills
+          </ion-text>
+        </ion-label>
+      </ion-col>
+      <ion-col size="4"></ion-col>
+    </ion-row>
+    <ion-card *ngIf="!isEdit" class="skills text container">
+      <ion-card-header>
+        <ion-text>{{userProfile?.skill[0].name}}</ion-text>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-text>
+                {{userProfile?.skill[0].type}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-text>
+                {{userProfile?.skill[0].subType}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-text>
+              Level: {{userProfile?.skill[0].level}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item>
+              <ion-text>
+                {{userProfile?.skill[0].certification}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-item>
+              <ion-text>
+                {{userProfile?.skill[0].detail}}
+              </ion-text>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="isEdit" class="skills Edit">
+      <ion-card-header>
+        <ion-card-title>Skills</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="6" *ngIf="isEdit">
+            <ion-label>Skill Name</ion-label>
+            <ion-item>
+              <ion-input [(ngModel)]='userProfile.skill[0].name' type="text" placeholder="Skill Name" value="{{userProfile.skill[0].name}}"
+                disabled="{{!isEdit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="6" *ngIf="isEdit">
+            <ion-label>Type</ion-label>
+            <ion-item>
+              <ion-input [(ngModel)]='userProfile.skill[0].type' type="text" placeholder="Sub Type" value="{{userProfile.skill[0].type}}"
+                disabled="{{!isEdit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6" *ngIf="isEdit">
+            <ion-label>Sub Type</ion-label>
+            <ion-item>
+              <ion-input [(ngModel)]='userProfile.skill[0].subType' type="text" placeholder="Sub Type" value="{{userProfile.skill[0].subType}}"
+                disabled="{{!isEdit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6" *ngIf="isEdit">
+            <ion-label>Level</ion-label>
+            <ion-item>
+              <ion-input [(ngModel)]='userProfile.skill[0].level' type="text" placeholder="Level" value="{{userProfile.skill[0].level}}"
+                disabled="{{!isEdit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+
+          <ion-col size="12" *ngIf="isEdit">
+            <ion-label>Certification</ion-label>
+            <ion-item>
+              <ion-input [(ngModel)]='userProfile.skill[0].certification' type="text" placeholder="certification" value="{{userProfile.skill[0].certification}}"
+                disabled="{{!isEdit}}"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12" *ngIf="isEdit">
+            <ion-label>Detail</ion-label>
+            <ion-item>
+              <ion-textarea [(ngModel)]='userProfile.skill[0].detail' placeholder="Enter Skill Detail Here..." value="{{userProfile.skill[0].detail}}"></ion-textarea>
+              <!-- <ion-input [(ngModel)]='userProfile.skill[0].detail' type="text" placeholder="Detail" value="{{userProfile.skill[0].detail}}"
+                    disabled="{{!isEdit}}"></ion-input> -->
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-button size="small" shape="round" color="primary" fill="outline" (click)="onAddSkill()" text-center>
+          <ion-icon name="plus"></ion-icon> Add More Skills
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-card *ngIf="!isEdit">
+      <ion-card-header>
+        <ion-card-title>Address</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-text>
+            <p>Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi</p>
+          </ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="isEdit">
+      <ion-card-header>
+        <ion-card-title>Address</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-label>City</ion-label>
+              <ion-item>
+                <ion-input [(ngModel)]='userProfile.address[0].city' type="text" placeholder="City" value="{{userProfile.address[0].city}}"
+                  disabled="{{!isEdit}}"></ion-input>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-label>State</ion-label>
+              <ion-item>
+                <ion-input [(ngModel)]='userProfile.address[0].state' type="text" placeholder="State" value="{{userProfile.address[0].state}}"
+                  disabled="{{!isEdit}}"></ion-input>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-label>Steet</ion-label>
+              <ion-item>
+                <ion-input [(ngModel)]='userProfile.address[0].street' type="text" placeholder="Street" value="{{userProfile.address[0].street}}"
+                  disabled="{{!isEdit}}"></ion-input>
+              </ion-item>
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-label>Zip</ion-label>
+              <ion-item>
+                <ion-input [(ngModel)]='userProfile.address[0].zip' type="text" placeholder="Zip" value="{{userProfile.address[0].zip}}"
+                  disabled="{{!isEdit}}"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+
+
+
+
+
+
+    <!-- <ion-row *ngIf="isEdit">
+      <ion-col size="12">
+        <ion-label>
+          <ion-text>Address</ion-text>
+        </ion-label>
+      </ion-col>
+
+    </ion-row> -->
 
   </ion-grid>
+
 </ion-content>
 <app-footer></app-footer>

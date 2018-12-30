@@ -1,98 +1,100 @@
-import { Trainer } from './trainer.model';
-// id
-// name
-//imgPath
-// experience
-// offers
-// discription
-// rate
-// time
-// focus
+import { Injectable } from '@angular/core';
+// import { Trainer } from './trainer.model';
+import { Observable, of, throwError } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { catchError, tap, map } from 'rxjs/operators';
 
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+const apiUrl = "http://apps.capbpm.com/UF/api/v1/person";
+
+
+@Injectable({
+    providedIn: 'root'
+})
 export class trainerService {
-    selectedTrainer: Trainer;
-    selectedTrainerId: any;
-  
+    //selectedTrainer: Trainer;
+    selectedTrainer: any;
+    constructor(private http: HttpClient) { }
 
-    private trainers: Trainer[] = [
-        new Trainer(
-            '1',
-            'Cardio Master',
-            '../../assets/images/cardio.jpg',
-            '5 Years',
-            'Chrismis Offer',
-            'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist.',
-            '$40',
-            '1 hr',
-            'Yoga'
-
-        ),
-        new Trainer(
-            '2',
-            'Mr. John',
-            '../../assets/images/cf.jpg',
-            '3 Years',
-            'Exclusive Offer',
-            'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist.',
-            '$50',
-            '1.5 hr',
-            'Cross Fit'
-
-        ),
-        new Trainer(
-            '3',
-            'Kerry Hill',
-            '../../assets/images/swt.png',
-            '1 Years',
-            'Limited Time Offer',
-            'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist.',
-            '$100',
-            '0.5 hr',
-            'Weight Loosing'
-
-        ),
-        new Trainer(
-            '4',
-            'John Wick',
-            '../../assets/images/wt.jpg',
-            '2 Years',
-            'Monthly Offer',
-            'Apart from being a certified Personal trainer through the American Council on Exercise.Erwin is also a fully qualified physiotharapist.',
-            '$150',
-            '1 hr',
-            'Walking and Running'
-
-        )
-    ]
-
-    setTrainerID(id: any) {
-        this.selectedTrainerId = id;
-    }
-    getTrainerID() {
-        return this.selectedTrainerId;
+    private handleError(error: HttpErrorResponse) {
+        if (error.error instanceof ErrorEvent) {
+            // A client-side or network error occurred. Handle it accordingly.
+            console.error('An error occurred:', error.error.message);
+        } else {
+            // The backend returned an unsuccessful response code.
+            // The response body may contain clues as to what went wrong,
+            console.error(
+                `Backend returned code ${error.status}, ` +
+                `body was: ${error.error}`);
+        }
+        // return an observable with a user-facing error message
+        return throwError('Something bad happened; please try again later.');
     }
 
-    getAllTrainers() {
-        return this.trainers.slice();
+    private extractData(res: Response) {
+        let body = res;
+        return body || {};
+    }
+
+    getAllTrainers(): Observable<any> {
+        return this.http.get(apiUrl, httpOptions).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+    }
+
+    setSelectedTrainer(trainer) {
+        this.selectedTrainer = trainer;
+    }
+    getSelectedTrainer() {
+        return this.selectedTrainer;
+    }
+
+
+    getTrainerByID(id: string): Observable<any> {
+        const url = `${apiUrl}/${id}`;
+        return this.http.get(url, httpOptions).pipe(
+            map(this.extractData),
+            catchError(this.handleError));
+    }
+
+    // async getTrainerByID(id: string): Promise<any> {
+
+    //     const url = `${apiUrl}/${id}`;
+    //     const data = await this.http.get(url, httpOptions).toPromise();
+    //     return data;
+    // }
+
+    setTrainerIDOLD(id: any) {
+        //this.selectedTrainerId = id;
+    }
+    getTrainerID_old() {
+        // return this.selectedTrainerId;
+    }
+
+    getAllTrainersOlder() {
+        //return this.trainers.slice();
     }
 
     getTrainer(id: string) {
-        var trainers = this.getAllTrainers();
-        //console.log(trainers);
-        for (var i = 0; i < trainers.length; i++) {
+        // var trainers = this.getAllTrainers();
+        // //console.log(trainers);
+        // for (var i = 0; i < trainers.length; i++) {
 
-            if (trainers[i].id == id) {
-                //console.log(trainers[i]);
-                this.selectedTrainer = trainers[i];
-                return this.selectedTrainer;
-            }
-        }
+        //     if (trainers[i].id == id) {
+        //         //console.log(trainers[i]);
+        //         this.selectedTrainer = trainers[i];
+        //         return this.selectedTrainer;
+        //     }
+        // }
         /* let trainers = this.getAllTrainers();
          return trainers.filter(function(trainer){
              return trainer.id == id;
-         });*/
+         });
+         */
     }
-  
+
 
 }
 
