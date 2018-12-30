@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,7 +17,7 @@ import { AuthenticationService } from './shared/services/authentication.service'
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicStorageModule.forRoot()],
   providers: [
     StatusBar,
     SplashScreen,
@@ -24,8 +25,8 @@ import { AuthenticationService } from './shared/services/authentication.service'
     AuthenticationService,
     AuthGuardService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

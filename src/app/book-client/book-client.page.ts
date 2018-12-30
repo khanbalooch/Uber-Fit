@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Trainer } from '../shared/trainer.model';
 import { trainerService } from '../shared/trainer.service';
 
 @Component({
@@ -9,15 +7,13 @@ import { trainerService } from '../shared/trainer.service';
   styleUrls: ['./book-client.page.scss', './book-client.page.css'],
 })
 export class BookClientPage implements OnInit {
-  trainderId: any;
-  selectedTrainer: Trainer;
+  selectedTrainer: any;
   isSuccess: boolean;
 
   constructor(private trainerService: trainerService) { }
 
   ngOnInit() {
-    this.trainderId = this.trainerService.getTrainerID();
-    this.selectedTrainer = this.trainerService.getTrainer(this.trainderId);
+    this.selectedTrainer = this.trainerService.getSelectedTrainer();
     this.isSuccess = true;
     setTimeout(() => {
       this.isSuccess = false;

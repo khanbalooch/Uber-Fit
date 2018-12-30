@@ -8,32 +8,41 @@ import { trainerService } from '../shared/trainer.service';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss','tab2.page.css']
+  styleUrls: ['tab2.page.scss', 'tab2.page.css']
 })
 export class Tab2Page implements OnInit {
-  trainers: Trainer[];
-  constructor(private trainerService: trainerService, private router: Router,public loadingController: LoadingController) { }
-  
-
+  trainers: any;
+  error: any;
+  constructor(private trainerService: trainerService, private router: Router, public loadingController: LoadingController) { }
   ngOnInit() {
-    this.trainers = this.trainerService.getAllTrainers();
+    this.getAllTrainers();
   }
 
-  loadTrainer(trainer: any) {
-    this.trainerService.setTrainerID(trainer.id);
-    this.presentLoading();
+  selectedTrainer(trainer) {
+    this.trainerService.setSelectedTrainer(trainer);
     this.router.navigateByUrl('/trainer');
   }
-  //custom loader
-  async presentLoading() {
+
+
+  //getAllTrainers
+  async getAllTrainers() {
     const loading = await this.loadingController.create({
       message: 'Finding Trainers in your Area',
-      duration: 1500,
       spinner: 'bubbles',
       cssClass: 'tLoader'
     });
-    return await loading.present();
-  }
+    await loading.present();
+    await this.trainerService.getAllTrainers()
+      .subscribe(res => {
+        console.log(res);
+        this.trainers = res;
+        loading.dismiss();
+      }, err => {
+        this.error = err;
+        console.log(err);
 
+        loading.dismiss();
+      });
+  }
 
 }
