@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "707834194438",
+    "firebase_url": "https://trainer-application.firebaseio.com",
+    "project_id": "trainer-application",
+    "storage_bucket": "trainer-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707834194438:android:0ad531ac3518b6e4",
+        "android_client_info": {
+          "package_name": "com.capbpm.trainerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707834194438-omdneincesr7mr0s4jk6ij2klu12k6gs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capbpm.trainerapp",
+            "certificate_hash": "db0a029162785a836d8ae794692c0d59ad985d8d"
+          }
+        },
+        {
+          "client_id": "707834194438-7abia1erq3qojkmfq3jj21hig90pqb48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1y51m197i9xTNWWd2zSc7df12EZaMCyg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707834194438-7abia1erq3qojkmfq3jj21hig90pqb48.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "707834194438-s8iqqffb7fmlnvgbgesir165fjge7tmi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.capbpm.trainerapp"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
