@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'music', loadChildren: './pages/music/music.module#MusicPageModule', canActivate: [AuthGuardService] },
   { path: 'global', loadChildren: './pages/global/global.module#GlobalPageModule', canActivate: [AuthGuardService] },
   { path: 'direction', loadChildren: './pages/direction/direction.module#DirectionPageModule', canActivate: [AuthGuardService] },
+  { path: 'signup', loadChildren: './public/signup/signup.module#SignupPageModule' }
 
-  
 
 
 

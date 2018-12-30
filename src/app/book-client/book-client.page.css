@@ -313,3 +313,9 @@ button {
   text-align: center;
   margin: 8px auto;
 }
+
+.dummy {
+  display: block;
+  width: 64%;
+  margin: 0 auto;
+}
