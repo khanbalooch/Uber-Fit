@@ -17,18 +17,18 @@
     </ion-card-header>
   </ion-card>
   <ion-list *ngIf="trainers?.length > 0">
-    <div ion-item *ngFor="let trainer of trainers">
+    <div ion-item *ngFor="let trainer of trainers | female">
       <ion-grid (click)="selectedTrainer(trainer)">
         <ion-row>
           <ion-col size="10">
             <ion-row>
               <ion-col size="3">
-                <ion-avatar  *ngIf="trainer?.pictureURL != 'string'">
+                <ion-avatar *ngIf="trainer?.pictureURL != 'string'">
                   <img src="{{trainer?.pictureURL}}" alt="{{trainer?.firstName}}">
                 </ion-avatar>
                 <ion-avatar *ngIf="trainer?.pictureURL == 'string'">
-                    <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
-                  </ion-avatar>
+                  <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
+                </ion-avatar>
                 <div class="rating">
                   <!-- <rating [rate]="5" readonly="false" small="false" (rateChange)="onRateChange($event)">
                       </rating> -->
