@@ -14,7 +14,6 @@ import { trainerService } from './shared/trainer.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
-//import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [AppComponent],
