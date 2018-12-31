@@ -7,13 +7,13 @@
     <ion-title>Book Client</ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content >
+<ion-content>
   <ion-grid>
-      <!-- align-items-center -->
-    <ion-row >
+    <!-- align-items-center -->
+    <ion-row>
       <ion-col size="1"></ion-col>
       <ion-col size="10">
-        <div class="img-outer"  *ngIf="selectedTrainer?.pictureURL != 'string'">
+        <div class="img-outer" *ngIf="selectedTrainer?.pictureURL != 'string'">
           <div class="profilePic" [ngStyle]="{'background-image': 'url(' + selectedTrainer?.pictureURL + ')'}">
           </div>
         </div>
@@ -111,10 +111,8 @@
     <ion-item>
       <ion-label>
         {{ selectedTrainer?.age}} years old
-        <ion-icon class="gender" name="man" *ngIf="selectedTrainer?.gender == 'm'  || selectedTrainer?.gender == 'M'"
-          color="primary"></ion-icon>
-        <ion-icon class="gender" name="woman" *ngIf="selectedTrainer?.gender == 'f' || selectedTrainer?.gender == 'F'"
-          color="primary"></ion-icon>
+        <ion-icon class="gender" name="man" *ngIf="selectedTrainer?.gender == 'M'" color="primary"></ion-icon>
+        <ion-icon class="gender" name="woman" *ngIf="selectedTrainer?.gender == 'F'" color="primary"></ion-icon>
       </ion-label>
     </ion-item>
     <ion-item *ngIf="selectedTrainer.address.length > 0">
