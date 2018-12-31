@@ -8,7 +8,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+  <!-- <app-google-map></app-google-map> -->
 </ion-content>
 <app-footer></app-footer>

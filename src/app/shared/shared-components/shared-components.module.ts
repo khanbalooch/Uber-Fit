@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { GoogleMapComponent } from './google-map/google-map.component';
 
 
 
@@ -11,12 +12,13 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    GoogleMapComponent
   ],
   imports: [
     CommonModule,
-    IonicModule.forRoot() ,
+    IonicModule.forRoot(),
   ],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, GoogleMapComponent]
 })
 export class SharedComponentsModule { }
