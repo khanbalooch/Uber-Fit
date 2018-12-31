@@ -45,4 +45,8 @@ export class Tab2Page implements OnInit {
       });
   }
 
+  isValidPic(url:any){
+    return (/\.(gif|jpg|jpeg|tiff|png)$/i).test(url);
+  }
+
 }

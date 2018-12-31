@@ -17,12 +17,13 @@ export class Tab1Page implements OnInit {
   constructor(private trainerService: trainerService, private router: Router, public loadingController: LoadingController) { }
   ngOnInit() {
     this.getAllTrainers();
+    console.log('isvlid pic: ', this.isValidPic(''));
   }
+
   selectedTrainer(trainer) {
     this.trainerService.setSelectedTrainer(trainer);
     this.router.navigateByUrl('/trainer');
   }
-
 
   //getAllTrainers
   async getAllTrainers() {
@@ -43,6 +44,12 @@ export class Tab1Page implements OnInit {
 
         loading.dismiss();
       });
+  
+  
+  }
+
+  isValidPic(url:any){
+    return (/\.(gif|jpg|jpeg|tiff|png)$/i).test(url);
   }
 
 
