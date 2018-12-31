@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 import { SharedComponentsModule } from '../../shared/shared-components/shared-components.module';
+import { AgmCoreModule } from '@agm/core';
 import { GlobalPage } from './global.page';
 
 const routes: Routes = [
@@ -20,8 +21,11 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     SharedComponentsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDbTdI4CxHBY3u4S_WlrvgjY4h3V-KrAv0'
+    })
   ],
   declarations: [GlobalPage]
 })
-export class GlobalPageModule {}
+export class GlobalPageModule { }

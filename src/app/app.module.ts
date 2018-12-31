@@ -14,6 +14,7 @@ import { trainerService } from './shared/trainer.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+//import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,10 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    // AgmCoreModule.forRoot({
+    //   apiKey: 'AIzaSyDbTdI4CxHBY3u4S_WlrvgjY4h3V-KrAv0'
+    // })
   ],
   providers: [
     NativeStorage,
