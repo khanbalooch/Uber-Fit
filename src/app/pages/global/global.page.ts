@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //import { GlobalService } from '../../shared/services/global.service';
-import { MapService } from '../../shared/services/map.service';
+
 
 @Component({
   selector: 'app-global',
@@ -8,16 +8,12 @@ import { MapService } from '../../shared/services/map.service';
   styleUrls: ['./global.page.scss', './global.page.css'],
 })
 export class GlobalPage implements OnInit {
-  lat: any;
-  lng: any;
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 
-  constructor(private mapS: MapService) { }
+  constructor() { }
   ngOnInit() {
-    this.mapS.getLocation().subscribe(res => {
-       this.lat = res.latitude;
-       this.lng = res.longitude;
-      console.log(res);
-    });
+    
   }
 
 }
