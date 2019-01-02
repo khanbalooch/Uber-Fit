@@ -1,0 +1,50 @@
+.container {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg {
+    padding: 36% 0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    /* width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%); */
+}
+
+.title, .title-bold {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.btn-c {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.text-default {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+
+.title-bold {
+    font-weight: bold;
+    color: #fff;
+    font-size: 46px;
+}

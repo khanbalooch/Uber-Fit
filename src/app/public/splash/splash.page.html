@@ -1,22 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>splash</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <div class="container bg" style="background: url('../../../assets/images/Welcome.jpg');">
+    <div class="inner-splash" >
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div class="heading">
+              <ion-label class="title">Find Your </ion-label>
+              <ion-label class="title-bold">Fitness</ion-label>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="btn-c">
+              <ion-button shape="round" size="default" expand="block" (click)="gotoLogin()"  color="medium">LOGIN</ion-button>
+            </div>
 
-<ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-button shape="round" (click)="gotoLogin()" >Login</ion-button>
-    </ion-row>
-    <ion-row>
-      <ion-button shape="round" (click)="gotoSignup()" >Signup</ion-button>
-    </ion-row>
-    <ion-row>
-      <label>Just let me in</label>
-    </ion-row>
-    <ion-row>
-
-    </ion-row>
-  </ion-grid>
+          </ion-col>
+          <ion-col size="12">
+            <div class="btn-c">
+              <ion-button shape="round" size="default" expand="block" fill="outline" (click)="gotoSignup()"  color="dark">SIGNUP</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12"> <label class="text-default">Just let me in</label></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
 </ion-content>

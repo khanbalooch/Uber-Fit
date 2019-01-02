@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-splash',
   templateUrl: './splash.page.html',
-  styleUrls: ['./splash.page.scss'],
+  styleUrls: ['./splash.page.scss','./splash.page.css'],
 })
 export class SplashPage implements OnInit {
 
