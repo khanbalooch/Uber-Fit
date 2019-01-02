@@ -9,10 +9,8 @@ import { AuthenticationService } from '../shared/services/authentication.service
 export class TabsPage {
 
   constructor(private authService: AuthenticationService){}
-  isClicked(tab){
+  isClicked(tab) {
   }
-  
-
 
 
 }

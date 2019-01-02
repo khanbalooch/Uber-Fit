@@ -29,7 +29,7 @@ export class AppComponent {
         if(state){                                //mean user is logged in
             this.router.navigate(['tabs/tab1']);
         }else{                                    // user is nt logged in
-            this.router.navigate(['login']);
+            this.router.navigate(['splash']);
         }
       });
     });
