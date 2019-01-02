@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+  styleUrls: ['./signup.page.scss','./signup.page.css'],
 })
 export class SignupPage implements OnInit {// implements OnInit {
 

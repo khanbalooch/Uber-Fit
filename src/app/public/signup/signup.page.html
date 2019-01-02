@@ -1,38 +1,35 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>signup</ion-title>
+  <ion-toolbar color="light">
+    <ion-title text-center>signup</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <ion-grid>
-      <ion-row justify-content-center>
-        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div text-center>
-            <h4>Trainer App</h4>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center color="light" class="logo">
+          <img src="../../../assets/images/gym-logo.png" alt="logo">
+        </div>
+        <div padding>
+          <div class="input-container">
+            <ion-input  class="inputElem" [(ngModel)]='signupDetails.name' type="text" placeholder="Name" padding></ion-input>
           </div>
-          <div padding>
-            <ion-item>
-              <ion-input [(ngModel)]='signupDetails.name' type="text" placeholder="Name"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input [(ngModel)]='signupDetails.email' type="text" placeholder="email"></ion-input>
-            </ion-item>
-    
-            <ion-item>
-              <ion-input [(ngModel)]='signupDetails.password' type="password" placeholder="Password"></ion-input>
-            </ion-item>
+          <div class="input-container">
+            <ion-input  class="inputElem" [(ngModel)]='signupDetails.email' type="text" placeholder="email" padding></ion-input>
           </div>
-    
-          <div padding>
-            <ion-button (click)='signUp()' size="large" expand="block">Sign Up</ion-button>
+          <div class="input-container">
+            <ion-input  class="inputElem" [(ngModel)]='signupDetails.password' type="password" placeholder="Password" padding></ion-input>
           </div>
+        </div>
+        <div class="block-c">
+          <a (click)='gotoLogin()'>Already have account? <strong>Sign In!</strong></a>
+        </div>
+        <div class="block-c">
+          <ion-button (click)='signUp()' size="default" color="light" expand="full">Sign Up</ion-button>
+        </div>
 
-          <div padding>
-              <a (click)='gotoLogin()' >I'll do this later</a>
-          </div>
-
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

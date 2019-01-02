@@ -1,33 +1,55 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+  <ion-toolbar color="light">
+    <ion-title text-center>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-grid>
-        <ion-row justify-content-center>
-          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-            <div text-center>
-              <h4>Trainer App</h4>
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center color="light" class="logo">
+          <img src="../../../assets/images/gym-logo.png" alt="logo">
+        </div>
+        <div padding>
+
+          <div class="input-container">
+            <!-- <ion-label class="primary-color input-label" color="light">Name</ion-label> -->
+            <ion-input class="inputElem" [(ngModel)]='loginCredentials.username' type="text" placeholder="Username" padding></ion-input>
+          </div>
+
+          <div class="input-container">
+            <!-- <ion-label class="input-label" color="light">Password</ion-label> -->
+            <ion-input class="inputElem" [(ngModel)]='loginCredentials.password' type="password" placeholder="Password" padding></ion-input>
+          </div>
+          <div class="block">
+            <div class="lt">
+              <ion-label color="light">
+                <ion-checkbox color="light" size="small"></ion-checkbox>Remember Me
+              </ion-label>
             </div>
-            <div padding>
-              <ion-item>
-                <ion-input [(ngModel)]='loginCredentials.username' type="text" placeholder="Username"></ion-input>
-              </ion-item>
-      
-              <ion-item>
-                <ion-input [(ngModel)]='loginCredentials.password' type="password" placeholder="Password"></ion-input>
-              </ion-item>
+            <div class="rt">
+              <ion-label color="light">
+                <ion-icon name="help-circle-outline"></ion-icon>Forgot Password
+              </ion-label>
             </div>
-      
-            <div padding>
-              <ion-button (click)='login()' size="large" expand="block">Login</ion-button>
-            </div>
-            <div padding>
-              <a (click)='gotoSignup()'> Don't have an Account yet? Sign Up</a>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+          </div>
+        </div>
+
+        <div class="block-c">
+          <ion-button (click)='login()' size="default" color="light" expand="full">Login</ion-button>
+        </div>
+        <div class="block-c">
+          <ion-label color="light" class="text-c" text-center>Or connect with</ion-label>
+          <div class="social">
+            <ion-icon color="light" class="s-icon" name="logo-facebook"></ion-icon>
+            <ion-icon color="light" class="s-icon" name="logo-googleplus"></ion-icon>
+          </div>
+        </div>
+        <div class="block-c" text-center>
+          <a (click)='gotoSignup()'> Don't have an account yet? <strong>Sign Up</strong></a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

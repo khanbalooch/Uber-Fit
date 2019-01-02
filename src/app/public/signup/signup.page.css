@@ -1,0 +1,17 @@
+.inputElem {
+    display: block;
+    width: 100%;
+    border: 2px solid #3fa2f7;
+}
+.block-c {
+    padding: 6px 0;
+}
+.input-container {
+    display: block;
+    margin: 12px 0;
+}
+ion-header ion-toolbar ion-title {
+    background: #3fa2f7;
+    color: #fff;
+    text-transform: uppercase;
+}

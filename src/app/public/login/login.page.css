@@ -1,0 +1,88 @@
+ion-header ion-toolbar ion-title {
+    background: #3fa2f7;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.title {
+    color: #3fa2f7;
+}
+
+.inputElem {
+    display: block;
+    width: 100%;
+    border: 2px solid #3fa2f7;
+}
+
+
+.input-label {
+    color: #3fa2f7;
+    display: block;
+    margin: 2px 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.input-container {
+    display: block;
+    margin: 12px 0;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lt, .rt {
+    width: auto;
+    font-size: 12px;
+}
+
+.lt {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+ion-checkbox {
+    width: 14px;
+    height: 14px;
+    margin: 0px 6px;
+}
+
+ion-button {
+    color: #fff;
+}
+
+ion-button button {
+    color: #fff;
+}
+
+.social {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.social .s-icon {
+    font-size: 24px;
+    margin: 5px 6px;
+}
+.block-c {
+    padding: 6px 0;
+}
+
+.text-c {
+    display: block;
+    text-align: center;
+}
+
+a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
