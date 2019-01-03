@@ -73,6 +73,11 @@ ion-checkbox {
     height: 12px;
     margin: 0 4px;
 }
+.text-center {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
 
 /* ion-header ion-toolbar ion-title {
     background: #3fa2f7;

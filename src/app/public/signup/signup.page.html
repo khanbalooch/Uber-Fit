@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
+    </ion-buttons>
     <ion-title text-center>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -23,8 +26,10 @@
             <ion-label class="icon txt_w">
               <ion-icon name="mail"></ion-icon>
             </ion-label>
-            <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.email'
-              type="text" placeholder="email" padding></ion-input>
+            <ion-item>
+              <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.email'
+                type="text" placeholder="email" padding></ion-input>
+            </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -32,8 +37,10 @@
             <ion-label class="icon txt_w">
               <ion-icon name="lock"></ion-icon>
             </ion-label>
-            <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.password'
-              type="password" placeholder="Password" padding></ion-input>
+            <ion-item>
+              <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.password'
+                type="password" placeholder="Password" padding></ion-input>
+            </ion-item>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -41,8 +48,10 @@
             <ion-label class="icon txt_w">
               <ion-icon name="lock"></ion-icon>
             </ion-label>
-            <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.Cpassword'
-              type="password" placeholder="Confirm Password" padding></ion-input>
+            <ion-item>
+              <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='signupDetails.Cpassword'
+                type="password" placeholder="Confirm Password" padding></ion-input>
+            </ion-item>
           </ion-col>
         </ion-row>
 
@@ -70,7 +79,7 @@
     </div>
     <ion-grid>
       <ion-row>
-        <ion-label  class="plain-txt txt-s" (click)="gotoLogin()">Already have account? <strong>Sign in!</strong></ion-label>
+        <ion-label class="plain-txt txt-s" (click)="gotoLogin()">Already have account? <strong>Sign in!</strong></ion-label>
       </ion-row>
     </ion-grid>
   </div>

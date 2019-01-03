@@ -13,3 +13,13 @@ ion-checkbox{
 ion-input{
     --padding-start : 30px;
 }
+ion-item {
+    --background : transparent !important; 
+    --background-activated:transparent !important;
+    --border-width: 1px 1px 1px 1px;
+    --border-color: #fff;
+    --border-radius: 30px;
+    --highlight-background: none;
+    --full-highlight-height: none;
+    --inset-highlight-height: none;
+}
