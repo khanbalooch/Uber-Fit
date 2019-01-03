@@ -1,0 +1,13 @@
+ion-button {
+    --ion-color-base :#ec6708 !important;
+    --background:#ec6708 !important;
+    --padding-bottom: 30px;
+    --padding-top: 30px;
+}
+
+ion-button.white-outline {
+    --ion-color-base :#fff !important;
+    --background:#fff !important;
+    --padding-bottom: 30px;
+    --padding-top: 30px;
+}

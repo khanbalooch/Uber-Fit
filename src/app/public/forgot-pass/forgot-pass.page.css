@@ -13,36 +13,18 @@
     color: #fff;
     text-transform: uppercase;
 }
+
 .title-bold {
     font-weight: bold;
     color: #fff;
     font-size: 46px;
 }
 
-.check-item {
-    margin: 0 4px;
-}
-.check-c {
+.f-txt {
+    font-size: 12px;
+    text-align: center;
     display: block;
     margin: 0 auto;
-    width: 96%;
-}
-
-
-
-.main {
-    display: block;
-    width: 100%;
-    position: relative;
-}
-
-.bottom-text {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
 }
 
 .form-container {

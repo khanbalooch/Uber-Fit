@@ -1,33 +1,51 @@
 <ion-content>
-  <div class="container bg" style="background: url('../../../assets/images/Welcome.jpg');">
-    <div class="inner-splash" >
-      
+  <div class="AppBg" style="background: url('../../../assets/images/Welcome.jpg');">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="heading">
+            <ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">Fitness</ion-label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <div class="form-container">
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <div class="heading">
-              <ion-label class="title">Find Your </ion-label>
-              <ion-label class="title-bold">Fitness</ion-label>
-            </div>
+            <ion-button shape="round" size="default" expand="block" fill="solid" (click)="gotoLogin()" color="medium">LOGIN</ion-button>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col size="12">
-            <div class="btn-c">
-              <ion-button shape="round" size="default" expand="block" (click)="gotoLogin()"  color="medium">LOGIN</ion-button>
-            </div>
+      </ion-grid>
 
-          </ion-col>
+      <ion-grid>
+        <ion-row>
           <ion-col size="12">
-            <div class="btn-c">
-              <ion-button shape="round" size="default" expand="block" fill="outline" (click)="gotoSignup()"  color="dark">SIGNUP</ion-button>
-            </div>
+            <span class="spacer"></span>
           </ion-col>
         </ion-row>
+      </ion-grid>
+      <ion-grid>
         <ion-row>
-          <ion-col size="12"> <label class="text-default">Just let me in</label></ion-col>
+          <ion-col size="12">
+            <ion-button class="white-outline" shape="round" size="default" expand="block" fill="outline" (click)="gotoSignup()" color="dark">SIGNUP</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12"> <label class="plain-txt s-text">Just let me in</label></ion-col>
         </ion-row>
       </ion-grid>
     </div>
+
+
+
+
+
+    <!--form-container-->
   </div>
+  <!--main-->
 </ion-content>

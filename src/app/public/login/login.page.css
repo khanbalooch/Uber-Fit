@@ -1,4 +1,74 @@
-ion-header ion-toolbar ion-title {
+.heading {
+    display: block;
+    overflow: hidden;
+    padding: 22px 0 16px 0;
+}
+
+.title, .title-bold {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.title-bold {
+    font-weight: bold;
+    color: #fff;
+    font-size: 46px;
+}
+
+.form-container {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.icon {
+    position: absolute;
+    top: 24px;
+    left: 18px;
+}
+
+.check-item {
+    font-size: 12px;
+}
+
+.social-login {
+    margin: 20px 0;
+}
+
+.social-login ion-icon {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.main {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+
+.bottom-text {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+}
+
+.check-c {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ion-header ion-toolbar ion-title {
     background: #3fa2f7;
     color: #fff;
     text-transform: uppercase;
@@ -90,4 +160,4 @@ a {
     display: block;
     text-align: center;
     font-size: 14px;
-}
+} */

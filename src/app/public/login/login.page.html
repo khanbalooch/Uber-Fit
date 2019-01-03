@@ -4,52 +4,142 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-grid>
-    <ion-row justify-content-center>
-      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-        <div text-center color="light" class="logo">
-          <img src="../../../assets/images/gym-logo.png" alt="logo">
-        </div>
-        <div padding>
-
-          <div class="input-container">
-            <!-- <ion-label class="primary-color input-label" color="light">Name</ion-label> -->
-            <ion-input class="inputElem" [(ngModel)]='loginCredentials.username' type="text" placeholder="Username" padding></ion-input>
+<ion-content class="main">
+  <div class="AppBg" style="background:url('../../../assets/images/Welcome.jpg');">
+    <!--logo start here-->
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="heading">
+            <ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">Fitness</ion-label>
           </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--logo end here-->
+    <div class="form-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="input-c">
+            <ion-label class="icon txt_w">
+              <ion-icon name="person"></ion-icon>
+            </ion-label>
+            <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='loginCredentials.username'
+              type="text" placeholder="Name" padding></ion-input>
+          </ion-col>
+        </ion-row>
 
-          <div class="input-container">
-            <!-- <ion-label class="input-label" color="light">Password</ion-label> -->
-            <ion-input class="inputElem" [(ngModel)]='loginCredentials.password' type="password" placeholder="Password" padding></ion-input>
-          </div>
-          <div class="block">
-            <div class="lt">
-              <ion-label color="light">
-                <ion-checkbox color="light" size="small"></ion-checkbox>Remember Me
-              </ion-label>
+        <ion-row>
+          <ion-col size="12" class="input-c">
+            <ion-label class="icon txt_w">
+              <ion-icon name="lock"></ion-icon>
+            </ion-label>
+            <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='loginCredentials.password'
+              type="password" placeholder="Password" padding></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-checkbox color="primary"></ion-checkbox>
+            <ion-label class="check-item txt_w">Remember me</ion-label>
+          </ion-col>
+          <ion-col size="6">
+            <a (click)='onForgotPass()'>
+              <ion-icon name="help-circle-outline" class="txt_w"></ion-icon>
+              <ion-label class="check-item txt_w">Forgot Password</ion-label>
+            </a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button shape="round" size="default" expand="block" fill="solid" (click)='login()'>LOGIN</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="social-login">
+        <ion-row>
+          <ion-col size="12">
+            <ion-label class="plain-txt">Or connect with</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="2"></ion-col>
+          <ion-col size="4">
+            <ion-icon class="plain-txt" name="logo-facebook"></ion-icon>
+          </ion-col>
+          <ion-col size="4">
+            <ion-icon class="plain-txt" name="logo-googleplus"></ion-icon>
+          </ion-col>
+          <ion-col size="2"></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <ion-label class="bottom-text">Don't have account? <strong>Sign up!</strong></ion-label>
+        </ion-row>
+      </ion-grid>
+
+
+    </div>
+    <ion-grid>
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <ion-row justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <div text-center color="light" class="logo">
+              <img src="../../../assets/images/gym-logo.png" alt="logo">
             </div>
-            <div class="rt">
-              <ion-label color="light">
-                <ion-icon name="help-circle-outline"></ion-icon>Forgot Password
-              </ion-label>
+            <div padding>
+    
+              <div class="input-container">
+                <ion-input class="inputElem" [(ngModel)]='loginCredentials.username' type="text" placeholder="Username" padding></ion-input>
+              </div>
+    
+              <div class="input-container">
+                <ion-input class="inputElem" [(ngModel)]='loginCredentials.password' type="password" placeholder="Password" padding></ion-input>
+              </div>
+              <div class="block">
+                <div class="lt">
+                  <ion-label color="light">
+                    <ion-checkbox color="light" size="small"></ion-checkbox>Remember Me
+                  </ion-label>
+                </div>
+                <div class="rt">
+                  <ion-label color="light">
+                    <ion-icon name="help-circle-outline"></ion-icon>Forgot Password
+                  </ion-label>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+    
+            <div class="block-c">
+              <ion-button (click)='login()' size="default" color="light" expand="full">Login</ion-button>
+            </div>
+            <div class="block-c">
+              <ion-label color="light" class="text-c" text-center>Or connect with</ion-label>
+              <div class="social">
+                <ion-icon color="light" class="s-icon" name="logo-facebook"></ion-icon>
+                <ion-icon color="light" class="s-icon" name="logo-googleplus"></ion-icon>
+              </div>
+            </div>
+            <div class="block-c" text-center>
+              <a (click)='gotoSignup()'> Don't have an account yet? <strong>Sign Up</strong></a>
+            </div>
+          </ion-col>
+        </ion-row> -->
+    </ion-grid>
+  </div>
 
-        <div class="block-c">
-          <ion-button (click)='login()' size="default" color="light" expand="full">Login</ion-button>
-        </div>
-        <div class="block-c">
-          <ion-label color="light" class="text-c" text-center>Or connect with</ion-label>
-          <div class="social">
-            <ion-icon color="light" class="s-icon" name="logo-facebook"></ion-icon>
-            <ion-icon color="light" class="s-icon" name="logo-googleplus"></ion-icon>
-          </div>
-        </div>
-        <div class="block-c" text-center>
-          <a (click)='gotoSignup()'> Don't have an account yet? <strong>Sign Up</strong></a>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
