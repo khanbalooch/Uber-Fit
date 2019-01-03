@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class SignupPage implements OnInit {// implements OnInit {
 
 
-  signupDetails = { name: '', email: '', password: '' };
+  signupDetails = { name: '', email: '', password: '',Cpassword: '' };
   constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {}
@@ -28,7 +28,8 @@ export class SignupPage implements OnInit {// implements OnInit {
         this.http.post(signUpURL, {
             'firstName': this.signupDetails.name,
             'email': this.signupDetails.email,
-            'password': this.signupDetails.password
+            'password': this.signupDetails.password,
+            
         }, options).subscribe(
             data => {console.log(data);
                 this.router.navigate(['/login']);
