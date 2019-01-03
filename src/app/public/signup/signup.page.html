@@ -79,41 +79,11 @@
     </div>
     <ion-grid>
       <ion-row>
-        <ion-label class="plain-txt txt-s" (click)="gotoLogin()">Already have account? <strong>Sign in!</strong></ion-label>
+        <ion-col size="12">
+            <ion-label class="plain-txt" (click)="gotoLogin()">Already have account? <strong>Sign in!</strong></ion-label>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
 
-
-
-
-
-
-  <!-- <ion-grid>
-    <ion-row justify-content-center>
-      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-        <div text-center color="light" class="logo">
-         
-        </div>
-        <div padding>
-          <div class="input-container">
-            <ion-input  class="inputElem" [(ngModel)]='signupDetails.name' type="text" placeholder="Name" padding></ion-input>
-          </div>
-          <div class="input-container">
-            <ion-input  class="inputElem" [(ngModel)]='signupDetails.email' type="text" placeholder="email" padding></ion-input>
-          </div>
-          <div class="input-container">
-            <ion-input  class="inputElem" [(ngModel)]='signupDetails.password' type="password" placeholder="Password" padding></ion-input>
-          </div>
-        </div>
-        <div class="block-c">
-          <a (click)='gotoLogin()'>Already have account? <strong>Sign In!</strong></a>
-        </div>
-        <div class="block-c">
-          <ion-button (click)='signUp()' size="default" color="light" expand="full">Sign Up</ion-button>
-        </div>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
 </ion-content>
