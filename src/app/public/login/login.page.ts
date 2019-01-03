@@ -29,6 +29,7 @@ export class LoginPage implements OnInit {
   onForgotPass() {
     this.router.navigateByUrl('/forgot-pass');
   }
+ 
 
 
 }

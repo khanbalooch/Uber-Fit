@@ -4,6 +4,8 @@
 
 /** Ionic CSS Variables **/
 
+
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -88,4 +90,8 @@
     --ion-color-custom-tint: #fff;
 
   
+}
+
+ion-toolbar {
+  --ion-color-base :#ec6708 !important;
 }

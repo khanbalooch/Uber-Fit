@@ -21,6 +21,7 @@
 
 .check-item {
     margin: 0 4px;
+    font-size: 12px;
 }
 .check-c {
     display: block;
@@ -30,7 +31,7 @@
 
 
 
-.main {
+/* .main {
     display: block;
     width: 100%;
     position: relative;
@@ -43,11 +44,11 @@
     position: absolute;
     bottom: 30px;
     left: 0;
-}
+} */
 
 .form-container {
     display: block;
-    width: 70%;
+    width: 88%;
     margin: 0 auto;
 }
 
@@ -56,3 +57,16 @@
     top: 24px;
     left: 18px;
 }
+
+ion-checkbox {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
+}
+
+.txt-s {
+    margin: 16px auto 0 auto;
+}
+
+
+

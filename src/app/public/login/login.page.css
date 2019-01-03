@@ -22,7 +22,7 @@
 
 .form-container {
     display: block;
-    width: 70%;
+    width: 88%;
     margin: 0 auto;
 }
 
@@ -46,7 +46,7 @@
     margin: 0 auto;
 }
 
-.main {
+/* .main {
     display: block;
     width: 100%;
     position: relative;
@@ -59,13 +59,19 @@
     position: absolute;
     bottom: 30px;
     left: 0;
-}
+} */
 
 .check-c {
     display: block;
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
+}
+
+ion-checkbox {
+    width: 12px;
+    height: 12px;
+    margin: 0 4px;
 }
 
 /* ion-header ion-toolbar ion-title {
