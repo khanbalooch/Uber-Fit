@@ -8,13 +8,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   styleUrls: ['./signup.page.scss','./signup.page.css'],
 })
 export class SignupPage implements OnInit {// implements OnInit {
-
+  //test
 
   signupDetails = { name: '', email: '', password: '',Cpassword: '' };
   constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {}
-
   signUp() {
       console.log(this.signupDetails);
     const httpHeaders = new HttpHeaders({
