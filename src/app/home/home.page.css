@@ -78,8 +78,11 @@
     font-size: 10px;
     color: #838383;
 }
-ion-grid.filter {
+ion-grid.filter,ion-grid.banner {
     background: #f6f6f6;
+}
+ion-grid.banner {
+   padding: 0;
 }
 .banner{
     display: block;

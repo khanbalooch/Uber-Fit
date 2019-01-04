@@ -22,9 +22,12 @@ ion-item.btm-c {
 ion-grid.listing{
     padding: 0 !important;
 }
-ion-grid.filter {
+ion-grid.filter,ion-grid.banner {
     --background: #f6f6f6;
 }
 ion-content {
     --background: #f4f4f4;
+}
+.card-content-md {
+    padding: 4px;
 }
