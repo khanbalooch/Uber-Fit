@@ -72,4 +72,24 @@ ion-checkbox {
 }
 
 
+ion-radio-group ion-item {
+    display: inline-block !important;
+    vertical-align: middle;
+    width: 50%;
+}
+ion-radio-group ion-radio {
+    margin: 0 12px;
+}
+ion-radio-group ion-label {
+    margin: 0;
+    padding: 0;
+}
+.heading {
+    display: block;
+    overflow: hidden;
+    padding: 4px 0 4px 0;
+}
+
+
+
 

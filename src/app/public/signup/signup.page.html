@@ -61,13 +61,17 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="6">
-            <ion-checkbox color="primary"></ion-checkbox>
-            <ion-label class="check-item txt_w">CLIENT</ion-label>
-          </ion-col>
-          <ion-col size="6">
-            <ion-checkbox color="primary"></ion-checkbox>
-            <ion-label class="check-item txt_w">TRAINER</ion-label>
+          <ion-col size="12">
+                <ion-radio-group>
+                  <ion-item>
+                      <ion-label>CLIENT</ion-label>
+                      <ion-radio mode="md" color="primary" slot="start" value="C"></ion-radio>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>TRAINER</ion-label>
+                      <ion-radio mode="md"  color="primary" slot="start" value="T"></ion-radio>
+                  </ion-item>
+                </ion-radio-group>
           </ion-col>
         </ion-row>
         <ion-row>
