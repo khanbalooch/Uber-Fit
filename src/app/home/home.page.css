@@ -84,6 +84,9 @@ ion-grid.filter,ion-grid.banner {
 ion-grid.banner {
    padding: 0;
 }
+ion-card {
+    margin: 12px 8px !important;
+}
 .banner{
     display: block;
     width: 100%;
