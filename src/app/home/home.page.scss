@@ -1,0 +1,30 @@
+ion-toolbar {
+    --ion-color-base :#f66c0a !important;
+}
+
+ion-item {
+    --inner-padding-start: 1px !important;
+    --inner-padding-end: 1px !important;
+    --inner-padding-top: 1px !important;
+    --inner-padding-bottom: 1px !important;
+    --background : transparent !important; 
+    --background-activated:transparent !important;
+    --border-width: 0 0 0 0 !important;
+    --border-color: transparent;
+    --border-radius: none;
+    --highlight-background: none;
+    --full-highlight-height: none;
+    --inset-highlight-height: none;
+}
+ion-item.btm-c {
+    --min-height: 28px;
+}
+ion-grid.listing{
+    padding: 0 !important;
+}
+ion-grid.filter {
+    --background: #f6f6f6;
+}
+ion-content {
+    --background: #f4f4f4;
+}
