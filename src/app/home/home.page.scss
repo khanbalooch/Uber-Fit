@@ -7,6 +7,8 @@ ion-item {
     --inner-padding-end: 1px !important;
     --inner-padding-top: 1px !important;
     --inner-padding-bottom: 1px !important;
+    --padding-start: 1px !important;
+    --padding-end: 1px !important;
     --background : transparent !important; 
     --background-activated:transparent !important;
     --border-width: 0 0 0 0 !important;
@@ -27,7 +29,4 @@ ion-grid.filter,ion-grid.banner {
 }
 ion-content {
     --background: #f4f4f4;
-}
-.card-content-md {
-    padding: 4px;
 }

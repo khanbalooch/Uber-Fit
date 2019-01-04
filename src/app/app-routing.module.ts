@@ -19,6 +19,8 @@ const routes: Routes = [
   { path: 'signup', loadChildren: './public/signup/signup.module#SignupPageModule' },
   { path: 'splash', loadChildren: './public/splash/splash.module#SplashPageModule' },
   { path: 'forgot-pass', loadChildren: './public/forgot-pass/forgot-pass.module#ForgotPassPageModule' },
+  { path: 'filter', loadChildren: './pages/filter/filter.module#FilterPageModule', canActivate: [AuthGuardService]  },
+
 
 
 

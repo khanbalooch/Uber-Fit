@@ -4,14 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { SharedComponentsModule } from '../shared/shared-components/shared-components.module';
-import { FilterPage } from '../pages/filter/filter.page';
-import { HomePage } from './home.page';
+
+import { FilterPage } from './filter.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomePage
+    component: FilterPage
   }
 ];
 
@@ -20,10 +19,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    SharedComponentsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [HomePage, FilterPage],
-  entryComponents: [FilterPage]
+  declarations: [FilterPage]
 })
-export class HomePageModule { }
+export class FilterPageModule {}

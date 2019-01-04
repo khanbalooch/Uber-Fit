@@ -1,3 +1,48 @@
+@import '../../theme/fonts.css';
+.filter-txt, .username {
+    font-family: 'Roboto-Medium';
+    font-size: 18px;
+    color: #4F5153;
+    text-transform: uppercase;
+}
+
+.filter-c {
+    font-size: 18px;
+    color: #4F5153;
+}
+
+.top-c .age {
+    font-family: 'Lato-Bold';
+    font-size: 10px;
+    color: #626465;
+}
+
+.lato-sm {
+    font-family: 'Lato-Bold';
+    font-size: 10px;
+    color: #888888;
+}
+
+.price .value {
+    font-family: 'Roboto-Medium';
+    font-size: 22px;
+    color: #4F5153;
+}
+
+.price .time {
+    font-family: 'Roboto-Regular';
+    font-size: 22px;
+    color: #888888;
+}
+
+.card-content-md {
+    padding: 4px;
+}
+
+.username {
+    text-transform: capitalize;
+}
+
 .s-icon {
     color: #fff;
     font-size: 18px;
@@ -5,31 +50,52 @@
 }
 
 .chat-c, .call-c {
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     width: auto;
     margin: 0 6px;
 }
 
+.call-c {
+    margin-left: 24px !important;
+}
+
+ion-text ion-icon {
+    width: 10px !important;
+    height: 10px;
+    font-size: 10px;
+    margin: 0 4px;
+}
+
+
 .contacts ion-badge {
     font-size: 8px;
+    min-width: 18px;
+    height: 15px;
+    position: absolute;
+    top: -8px;
 }
 
 .contacts ion-icon {
+    position: relative;
     color: #a8a8a8;
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
 }
 
 .filter-c {
     float: right;
-    width: auto;
+    width: 100%;
     overflow: hidden;
 }
 
 .contacts {
-    overflow: hidden;
-    display: block;
     float: left;
+    width: 100%;
     margin: 0;
+    position: relative;
 }
 
 .card-content-ios {
@@ -42,14 +108,14 @@
 }
 
 .top-c .lt {
-    width: 74%;
+    width: 67%;
     float: left;
     margin: 0;
     padding: 0;
 }
 
 .top-c .rt {
-    width: 25%;
+    width: 33%;
     float: right;
     margin: 0;
     padding: 0;
@@ -78,24 +144,30 @@
     font-size: 10px;
     color: #838383;
 }
-ion-grid.filter,ion-grid.banner {
+
+ion-grid.filter, ion-grid.banner {
     background: #f6f6f6;
 }
+
 ion-grid.banner {
-   padding: 0;
+    padding: 0;
 }
+
 ion-card {
     margin: 12px 8px !important;
 }
-.banner{
+
+.banner {
     display: block;
     width: 100%;
     margin: 0 auto;
     height: auto;
 }
+
 .col-lt {
     width: 18% !important;
 }
+
 .col-ct {
     width: 44% !important;
 }
