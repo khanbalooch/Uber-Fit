@@ -1,0 +1,240 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">Search for trainers</ion-title>
+    <ion-searchbar animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
+    <ion-icon class="s-icon" name="search" slot="end" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
+  </ion-toolbar>
+  <!--filter-->
+  <ion-grid class="filter">
+    <ion-row>
+      <ion-col size="6">
+        <ion-label class="contacts">
+          <div class="chat-c">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <ion-badge color="danger">66</ion-badge>
+          </div>
+          <div class="call-c">
+            <ion-icon name="call"></ion-icon>
+            <ion-badge color="danger">66</ion-badge>
+          </div>
+        </ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <div class="filter-c">
+          <ion-label *ngIf="isShowFilter" (click)="onFilterBtnClick()">
+            Show filter <ion-icon name="ios-arrow-down"></ion-icon>
+          </ion-label>
+          <ion-label *ngIf="!isShowFilter" (click)="onFilterBtnClick()">
+            Hide filter <ion-icon name="ios-arrow-up"></ion-icon>
+          </ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <!--end of filter-->
+</ion-header>
+<ion-content>
+
+  <ion-grid class="listing">
+    <ion-row>
+      <ion-col size="12">
+        <!-- trainer-->
+        <ion-card>
+          <ion-card-content>
+            <ion-item class="top-c">
+              <div class="lt">
+                <ion-avatar>
+                  <img src="../../assets/images/cardio.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <ion-text class="username">
+                    <strong>John Doe</strong>
+                  </ion-text>
+                  <ion-text class="age">
+                    23 years old
+                  </ion-text>
+                </ion-label>
+              </div>
+              <div class="rt">
+                <ion-label>
+                  <ion-text class="price">
+                    <strong>$55</strong>/hr
+                  </ion-text>
+                </ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="btm-c">
+              <ion-text class="col col-lt">
+                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                <ion-label> 4.7</ion-label>
+              </ion-text>
+              <ion-text class="col col-ct">
+                <ion-icon name="paper-plane"></ion-icon>
+                0.09 mile away
+              </ion-text>
+              <ion-text class="col col-rt">
+                <ion-label>Yoga trainer</ion-label>
+              </ion-text>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!--end trainer-->
+        <!-- trainer-->
+        <ion-card>
+          <ion-card-content>
+            <ion-item class="top-c">
+              <div class="lt">
+                <ion-avatar>
+                  <img src="../../assets/images/cardio.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <ion-text class="username">
+                    <strong>John Doe</strong>
+                  </ion-text>
+                  <ion-text class="age">
+                    23 years old
+                  </ion-text>
+                </ion-label>
+              </div>
+              <div class="rt">
+                <ion-label>
+                  <ion-text class="price">
+                    <strong>$55</strong>/hr
+                  </ion-text>
+                </ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="btm-c">
+              <ion-text class="col col-lt">
+                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                <ion-label> 4.7</ion-label>
+              </ion-text>
+              <ion-text class="col col-ct">
+                <ion-icon name="paper-plane"></ion-icon>
+                0.09 mile away
+              </ion-text>
+              <ion-text class="col col-rt">
+                <ion-label>Yoga trainer</ion-label>
+              </ion-text>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!--end trainer-->
+        <!-- trainer-->
+        <ion-card>
+          <ion-card-content>
+            <ion-item class="top-c">
+              <div class="lt">
+                <ion-avatar>
+                  <img src="../../assets/images/cardio.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <ion-text class="username">
+                    <strong>John Doe</strong>
+                  </ion-text>
+                  <ion-text class="age">
+                    23 years old
+                  </ion-text>
+                </ion-label>
+              </div>
+              <div class="rt">
+                <ion-label>
+                  <ion-text class="price">
+                    <strong>$55</strong>/hr
+                  </ion-text>
+                </ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="btm-c">
+              <ion-text class="col col-lt">
+                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                <ion-label> 4.7</ion-label>
+              </ion-text>
+              <ion-text class="col col-ct">
+                <ion-icon name="paper-plane"></ion-icon>
+                0.09 mile away
+              </ion-text>
+              <ion-text class="col col-rt">
+                <ion-label>Yoga trainer</ion-label>
+              </ion-text>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!--end trainer-->
+        <!-- trainer-->
+        <ion-card>
+          <ion-card-content>
+            <ion-item class="top-c">
+              <div class="lt">
+                <ion-avatar>
+                  <img src="../../assets/images/cardio.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <ion-text class="username">
+                    <strong>John Doe</strong>
+                  </ion-text>
+                  <ion-text class="age">
+                    23 years old
+                  </ion-text>
+                </ion-label>
+              </div>
+              <div class="rt">
+                <ion-label>
+                  <ion-text class="price">
+                    <strong>$55</strong>/hr
+                  </ion-text>
+                </ion-label>
+              </div>
+            </ion-item>
+            <ion-item class="btm-c">
+              <ion-text class="col col-lt">
+                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                <ion-label> 4.7</ion-label>
+              </ion-text>
+              <ion-text class="col col-ct">
+                <ion-icon name="paper-plane"></ion-icon>
+                0.09 mile away
+              </ion-text>
+              <ion-text class="col col-rt">
+                <ion-label>Yoga trainer</ion-label>
+              </ion-text>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        <!--end trainer-->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
+<ion-footer>
+  <ion-grid class="banner">
+    <ion-row>
+      <ion-col size="12">
+        <img class="banner" src="../../assets/images/banner-img.JPG" alt="banner">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-toolbar color="light">
+    <ion-grid no-padding no-margin>
+      <ion-row>
+        <ion-col>
+          <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
+            <ion-icon class="txt_w" name="search"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
+            <ion-icon class="txt_w " name="paper-plane"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="onProfilePage()" class="clear" size="small" fill="clear">
+            <ion-icon class="txt_w" name="contact"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

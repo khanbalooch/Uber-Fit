@@ -1,0 +1,120 @@
+.s-icon {
+    color: #fff;
+    font-size: 18px;
+    margin: 0 8px;
+}
+
+.chat-c, .call-c {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    margin: 0 6px;
+}
+
+.contacts ion-badge {
+    font-size: 8px;
+}
+
+.contacts ion-icon {
+    color: #a8a8a8;
+}
+
+.filter-c {
+    float: right;
+    width: auto;
+    overflow: hidden;
+}
+
+.contacts {
+    overflow: hidden;
+    display: block;
+    float: left;
+    margin: 0;
+}
+
+.card-content-ios {
+    padding: 8px 6px;
+}
+
+.top-c, .btm-c {
+    display: block;
+    overflow: hidden;
+}
+
+.top-c .lt {
+    width: 74%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.top-c .rt {
+    width: 25%;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+.top-c .age {
+    font-size: 10px;
+    display: block;
+}
+
+.lt ion-avatar, .lt ion-label {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.lt ion-label {
+    padding: 0 6px;
+}
+
+.btm-c .col {
+    width: 38%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -2px;
+    text-align: center;
+    font-size: 10px;
+    color: #838383;
+}
+ion-grid.filter,ion-grid.banner {
+    background: #f6f6f6;
+}
+ion-grid.banner {
+   padding: 0;
+}
+ion-card {
+    margin: 12px 8px !important;
+}
+.banner{
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+.col-lt {
+    width: 18% !important;
+}
+.col-ct {
+    width: 44% !important;
+}
+
+.col ion-label, .col ion-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -2px;
+    width: auto;
+}
+
+.top-c .username, .top-c .price {
+    color: #3b3f42;
+}
+
+.rating {
+    color: #ffd13d;
+    font-size: 14px;
+    width: 14px !important;
+    height: 14px;
+    line-height: 14px;
+}
