@@ -22,7 +22,7 @@ export class AuthenticationService {
   }
 
   login(credentials: any) {
-    console.log(credentials);
+    //console.log(credentials);
 
     this.http.get( this.authUrl + '?email=' + credentials.username + '&password=' + credentials.password ).
     subscribe(data => {
@@ -38,13 +38,13 @@ export class AuthenticationService {
   }
 
   logout() {
-    console.log("loggin out");
+    console.log('logging out');
     return this.storage.remove(TOKEN_KEY).then( ()=>{
       this.authenticationState.next(false);
     });
   }
-  
-  isAuthenticated(){
+
+  isAuthenticated() {
     return this.authenticationState.value;
   }
   

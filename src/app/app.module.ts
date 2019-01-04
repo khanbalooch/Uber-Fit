@@ -14,6 +14,7 @@ import { trainerService } from './shared/trainer.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     AppRoutingModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
     // AgmCoreModule.forRoot({
     //   apiKey: 'AIzaSyDbTdI4CxHBY3u4S_WlrvgjY4h3V-KrAv0'
     // })
@@ -35,6 +38,8 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     trainerService,
     AuthenticationService,
     AuthGuardService,
+    FormsModule,
+    ReactiveFormsModule,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
   ],
