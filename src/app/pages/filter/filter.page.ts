@@ -40,8 +40,8 @@ export class FilterPage implements OnInit {
     this.router.navigateByUrl('/global');
   }
 
-  check(item){
-    console.log(item);
+  onChange(r){
+    console.log(r);
   }
 
 }
