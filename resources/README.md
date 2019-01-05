@@ -6,3 +6,8 @@ Cordova reference documentation:
 
 - Icons: https://cordova.apache.org/docs/en/latest/config_ref/images.html
 - Splash Screens: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/
+
+############# If you see error, run below commnd ######################
+--[error] Unable to find node_modules/im.ltdev.cordova.UserAgent. Are you sure im.ltdev.cordova.UserAgent is installed?
+
+cordova plugin add https://github.com/LouisT/cordova-useragent

@@ -28,12 +28,7 @@ export class LoginPage implements OnInit {
       password: this.loginForm.get('password').value
     });
   }
-
-  facebookLogin() {
-    console.log('facebookLogin>>>');
-    this.authService.facebookLogin();
-  }
-
+  
   gotoSignup() {
     console.log('going to signup page');
     this.router.navigateByUrl('/signup');

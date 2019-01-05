@@ -3,7 +3,6 @@ import { BehaviorSubject } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 const TOKEN_KEY = 'auth-token';
 
@@ -14,11 +13,9 @@ const TOKEN_KEY = 'auth-token';
 export class AuthenticationService {
 
   user: any;
-  userData = {};
   authenticationState = new BehaviorSubject(false);
   authUrl = 'http://apps.capbpm.com/UF/api/v1/person/findByEmailAndPassword';
-  constructor(private storage: Storage, private plt: Platform, private http: HttpClient,
-      private facebook: Facebook) {
+  constructor(private storage: Storage, private plt: Platform, private http: HttpClient ) {
     this.plt.ready().then( () => {
       this.checkToken();
     } );
@@ -43,21 +40,6 @@ export class AuthenticationService {
     return this.storage.set(TOKEN_KEY, 'anonymous-token').then( res => {
       this.authenticationState.next(true);
     });
-  }
-
-  facebookLogin() {
-    this.facebook.login(['public_profile', 'email'])
-      .then((res1: FacebookLoginResponse) => {
-          console.log('Logged into Facebook!', res1);
-          this.facebook.api('me?fields=id,name,email,first_name,picture.width(720).height(720).as(picture_large)', []).then(profile => {
-              this.userData = {email: profile['email'], first_name: profile['first_name'], last_name: profile['last_name'],
-                picture: profile['picture_large']['data']['url'], username: profile['name']};
-                return this.storage.set(TOKEN_KEY, 'trainer-token').then( res => {
-                  this.authenticationState.next(true);
-                });
-          });
-      })
-      .catch(e => console.log('Error logging into Facebook', e));
   }
 
   logout() {
