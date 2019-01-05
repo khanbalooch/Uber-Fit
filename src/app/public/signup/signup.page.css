@@ -75,7 +75,11 @@ ion-checkbox {
 }
 
 .error {
+    background: #fff;
+    padding: 1px 0;
+    width: auto;
     display: block;
+    overflow: hidden;
 }
 
 .txt-s {

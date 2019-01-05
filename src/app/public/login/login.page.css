@@ -42,7 +42,7 @@
 }
 
 .social-login {
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 .social-login ion-icon {
@@ -98,9 +98,12 @@ ion-checkbox {
 }
 
 .error {
+    background: #fff;
+    padding: 1px 0;
+    width: auto;
     display: block;
+    overflow: hidden;
 }
-
 /* ion-header ion-toolbar ion-title {
     background: #3fa2f7;
     color: #fff;

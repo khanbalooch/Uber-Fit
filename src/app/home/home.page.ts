@@ -14,7 +14,9 @@ export class HomePage implements OnInit {
   isShowSearchBar: boolean = false;
   isShowFilter: boolean = true;
 
-  constructor(private router: Router, public modalController: ModalController) { }
+  constructor(private router: Router, public modalController: ModalController) {
+      console.log('In Home Page');
+  }
 
   ngOnInit() {
   }
