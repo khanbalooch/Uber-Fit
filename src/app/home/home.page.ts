@@ -25,6 +25,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getAllTrainers();
+
   }
   selectedTrainer(trainer) {
     this.trainerS.setSelectedTrainer(trainer);
@@ -47,7 +48,6 @@ export class HomePage implements OnInit {
       }, err => {
         this.error = err;
         console.log(err);
-
         loading.dismiss();
       });
   }
