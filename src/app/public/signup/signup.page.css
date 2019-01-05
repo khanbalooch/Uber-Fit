@@ -67,6 +67,11 @@ ion-checkbox {
     margin: 0 4px;
 }
 
+.errors-c {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
 .txt-s {
     margin: 16px auto 0 auto;
 }
