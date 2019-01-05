@@ -24,17 +24,20 @@
       <div class="form-container">
         <ion-grid>
             <ion-row>
-                <ion-label color="medium" *ngIf="(signupForm.dirty || signupForm.touched) && email.invalid && email.errors.required">
+                <ion-label color="medium" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
                     email is required.
                 </ion-label>
-                <ion-label color="medium" *ngIf="(signupForm.dirty || signupForm.touched) && email.invalid && email.errors.email">
+                <ion-label color="medium" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
                     Invalid email address.
                 </ion-label>
-                <ion-label color="medium" *ngIf="(signupForm.dirty || signupForm.touched) && password.invalid && password.errors.required">
+                <ion-label color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
                     Password is required.
                 </ion-label>
-                <ion-label color="medium" *ngIf="(signupForm.dirty || signupForm.touched) && cPassword.invalid && cPassword.errors.required">
+                <ion-label color="medium" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.required">
                     Confirm Your Password
+                </ion-label>
+                <ion-label color="medium" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.compare">
+                    Password Does Not Match
                 </ion-label>
                 
             </ion-row>
@@ -89,9 +92,9 @@
                         <ion-radio mode="md" formControlName='type'  color="primary" slot="start" value="T"></ion-radio>
                     </ion-item>
                   </ion-radio-group>
-                  <!--<ion-label color="medium" *ngIf="(signupForm.dirty || signupForm.touched) && type.invalid && type.errors.required">
+                  <ion-label color="medium" *ngIf="(type.dirty || type.touched) && type.invalid && type.errors.required">
                       Join you as ?
-                  </ion-label>-->
+                  </ion-label>
             </ion-col>
           </ion-row>
           <ion-row>

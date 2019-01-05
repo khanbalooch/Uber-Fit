@@ -25,13 +25,13 @@
       <div class="form-container">
         <ion-grid>
           <ion-row>
-              <ion-label color="medium" *ngIf="(loginForm.dirty || loginForm.touched) && username.invalid && username.errors.required">
+              <ion-label color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required">
                   username is required.
               </ion-label>
-              <ion-label color="medium" *ngIf="(loginForm.dirty || loginForm.touched) && username.invalid && username.errors.email">
+              <ion-label color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.email">
                   Invalid username.
               </ion-label>
-              <ion-label color="medium" *ngIf="(loginForm.dirty || loginForm.touched) && password.invalid && password.errors.required">
+              <ion-label color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required">
                   Password is required.
               </ion-label>
               
