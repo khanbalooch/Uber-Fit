@@ -36,6 +36,11 @@ export class AuthenticationService {
         console.log(error);
     });
   }
+  windowLogin() {
+    return this.storage.set(TOKEN_KEY, 'anonymous-token').then( res => {
+      this.authenticationState.next(true);
+    });
+  }
 
   logout() {
     console.log('logging out');

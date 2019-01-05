@@ -14,7 +14,6 @@ import { compareValidator } from 'src/app/shared/validators/validators';
 
 export class SignupPage implements OnInit {// implements OnInit {
 
-  signupDetails = { name: '', email: '', password: '', Cpassword: '' };
   signupForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required ]),
@@ -26,20 +25,17 @@ export class SignupPage implements OnInit {// implements OnInit {
 
   ngOnInit() { }
   signUp() {
-    console.log(this.signupDetails);
     const httpHeaders = new HttpHeaders({
       'Content-Type': 'application/json',
       'Cache-Control': 'no-cache'
     });
-    let options = {
-      headers: httpHeaders
-    };
-    let signUpURL = 'http://apps.capbpm.com/UF/api/v1/person';
-    this.http.post(signUpURL, {
-      'firstName': this.signupDetails.name,
-      'email': this.signupDetails.email,
-      'password': this.signupDetails.password,
+    const options = { headers: httpHeaders };
+    const signUpURL = 'http://apps.capbpm.com/UF/api/v1/person';
 
+    this.http.post(signUpURL, {
+      'email': this.signupForm.get('email').value ,
+      'password': this.signupForm.get('password').value,
+      'type': this.signupForm.get('type').value
     }, options).subscribe(
       data => {
         console.log(data);

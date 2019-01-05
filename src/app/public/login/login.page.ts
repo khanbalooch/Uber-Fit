@@ -28,6 +28,7 @@ export class LoginPage implements OnInit {
       password: this.loginForm.get('password').value
     });
   }
+  
   gotoSignup() {
     console.log('going to signup page');
     this.router.navigateByUrl('/signup');

@@ -85,11 +85,11 @@
                   <ion-radio-group>
                     <ion-item>
                         <ion-label>CLIENT</ion-label>
-                        <ion-radio mode="md" formControlName='type' color="primary" slot="start" value="C"></ion-radio>
+                        <ion-radio mode="md" formControlName='type' color="primary" slot="start" value="CUSTOMER"></ion-radio>
                     </ion-item>
                     <ion-item>
                         <ion-label>TRAINER</ion-label>
-                        <ion-radio mode="md" formControlName='type'  color="primary" slot="start" value="T"></ion-radio>
+                        <ion-radio mode="md" formControlName='type'  color="primary" slot="start" value="TRAINER"></ion-radio>
                     </ion-item>
                   </ion-radio-group>
                   <ion-label color="medium" *ngIf="(type.dirty || type.touched) && type.invalid && type.errors.required">
