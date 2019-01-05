@@ -40,131 +40,69 @@
   <ion-grid class="listing">
     <ion-row>
       <ion-col size="12">
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col dist col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
+        <!--not found-->
+        <ion-card *ngIf="trainers?.length == 0">
+          <ion-card-header>
+            <ion-card-content>No Trainer Found!</ion-card-content>
+          </ion-card-header>
         </ion-card>
-        <!--end trainer-->
-
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
+        <!--end of not found-->
+        <!--got error-->
+        <ion-card *ngIf="error">
+          <ion-card-header>
+            <ion-card-content>{{error}}</ion-card-content>
+          </ion-card-header>
         </ion-card>
-        <!--end trainer-->
-
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-        <!--end trainer-->
+        <!--end err statement-->
+        <ion-list *ngIf="trainers?.length > 0">
+          <!-- trainer-->
+          <ion-card *ngFor="let trainer of trainers">
+            <ion-card-content (click)="selectedTrainer(trainer)"> 
+              <ion-item class="top-c">
+                <div class="lt">
+                  <ion-avatar *ngIf="isValidPic(trainer?.pictureURL)">
+                    <img src="{{trainer?.pictureURL}}" alt="{{trainer?.firstName}}">
+                  </ion-avatar>
+                  <ion-avatar *ngIf="!isValidPic(trainer?.pictureURL)">
+                    <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <ion-text class="username">
+                      {{trainer?.firstName}}
+                    </ion-text>
+                    <ion-text class="age">
+                      {{trainer?.age}} years old
+                    </ion-text>
+                  </ion-label>
+                </div>
+                <div class="rt">
+                  <ion-label>
+                    <ion-text class="price">
+                      <span class="value">$55</span> <span class="time">/hr</span>
+                    </ion-text>
+                  </ion-label>
+                </div>
+              </ion-item>
+              <ion-item class="btm-c">
+                <ion-text class="col col-lt">
+                  <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                  <ion-label class="lato-sm">
+                    <span *ngIf="trainer?.ratingScore == 'null'">0.0</span>
+                    <span *ngIf="trainer?.ratingScore != 'null'">{{trainer?.ratingScore}}</span>
+                  </ion-label>
+                </ion-text>
+                <ion-text class="col dist col-ct">
+                  <ion-icon mode="ios" name="paper-plane"></ion-icon>
+                  <ion-label class="lato-sm"> 0.09 mile away</ion-label>
+                </ion-text>
+                <ion-text class="col col-rt">
+                  <ion-label class="lato-sm">Yoga trainer</ion-label>
+                </ion-text>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <!--end trainer-->
+        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>

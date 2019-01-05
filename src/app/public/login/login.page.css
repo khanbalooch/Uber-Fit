@@ -49,6 +49,9 @@
     text-align: center;
     display: block;
     margin: 0 auto;
+    font-size: 22px;
+    width:22px;
+    height: 22px;
 }
 
 /* .main {
