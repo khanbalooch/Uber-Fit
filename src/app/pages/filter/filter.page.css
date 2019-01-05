@@ -68,7 +68,6 @@ ion-text ion-icon {
     margin: 0 4px;
 }
 
-
 .contacts ion-badge {
     font-size: 8px;
     min-width: 18px;
@@ -189,4 +188,34 @@ ion-card {
     width: 14px !important;
     height: 14px;
     line-height: 14px;
+}
+
+/*gender*/
+
+
+ion-radio-group ion-item {
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 8px;
+}
+ion-radio-group ion-item .txt-c{
+    width: 50px;
+    height: 40px;
+    z-index: 99999;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+ion-radio {
+    position: relative;
+}
+ion-radio-group.gender ion-item ion-icon {
+    color: #ec6708;
+    text-align: center;
+    display: block;
+    margin: 4px 10px;
+}
+.g-item-c{
+    overflow: hidden;
 }

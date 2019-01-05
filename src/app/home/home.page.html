@@ -21,11 +21,11 @@
       </ion-col>
       <ion-col size="7">
         <div class="filter-c">
-          <ion-label *ngIf="isShowFilter" (click)="onFilterBtnClick()">
+          <ion-label class="pointer" *ngIf="isShowFilter" (click)="onFilterBtnClick()">
             <span class="filter-txt">Show filters</span>
             <ion-icon name="ios-arrow-down"></ion-icon>
           </ion-label>
-          <ion-label *ngIf="!isShowFilter" (click)="onFilterBtnClick()">
+          <ion-label class="pointer" *ngIf="!isShowFilter" (click)="onFilterBtnClick()">
             <span class="filter-txt">Hide filters</span>
             <ion-icon name="ios-arrow-up"></ion-icon>
           </ion-label>
@@ -71,7 +71,7 @@
                 <ion-label class="lato-sm"> 4.7</ion-label>
               </ion-text>
               <ion-text class="col dist col-ct">
-                <ion-icon  mode="ios" name="paper-plane"></ion-icon>
+                <ion-icon mode="ios" name="paper-plane"></ion-icon>
                 <ion-label class="lato-sm"> 0.09 mile away</ion-label>
               </ion-text>
               <ion-text class="col col-rt">
@@ -187,12 +187,12 @@
         </ion-col>
         <ion-col>
           <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
-            <ion-icon class="txt_w " name="paper-plane"></ion-icon>
+            <ion-icon class="txt_w " src="../../assets/icon/map-icon_navigation.svg"></ion-icon>
           </ion-button>
         </ion-col>
         <ion-col>
           <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
-            <ion-icon class="txt_w" name="contact"></ion-icon>
+            <ion-icon class="txt_w" src="../../assets/icon/profile_icon_navigation.svg"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>

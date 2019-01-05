@@ -1,4 +1,33 @@
 <ion-footer>
+  <ion-toolbar color="light">
+    <ion-grid no-padding no-margin>
+      <ion-row>
+        <ion-col>
+          <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
+            <ion-icon class="txt_w" name="search"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
+            <ion-icon class="txt_w " src="../../assets/icon/map-icon_navigation.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
+            <ion-icon class="txt_w" src="../../assets/icon/profile_icon_navigation.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+
+
+
+<!-- <ion-footer>
   <ion-grid fill="primary" style="background: #f66c0a;" no-padding no-margin>
     <ion-row>
       <ion-col>
@@ -14,7 +43,6 @@
       <ion-col>
         <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
           <ion-icon name="globe"></ion-icon>
-          <!-- <ion-icon src="../../assets/icon/cir-sine-icon.svg"></ion-icon> -->
         </ion-button>
       </ion-col>
       <ion-col>
@@ -24,5 +52,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-footer>
-
+</ion-footer> -->

@@ -8,21 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss', './header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isShowSearchBar: boolean = false;
+  isShowFilter: boolean = true;
 
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
-
-  onDialPage() {
-    this.router.navigateByUrl('/dial');
+  onShowSearchbar() {
+    this.isShowSearchBar = true;
+  }
+  onCancel(event) {
+    this.isShowSearchBar = false;
   }
 
-  onChatPage() {
-    this.router.navigateByUrl('/chat');
-  }
+  // onDialPage() {
+  //   this.router.navigateByUrl('/dial');
+  // }
 
-  onMusicalPage() {
-    this.router.navigateByUrl('/music');
-  }
+  // onChatPage() {
+  //   this.router.navigateByUrl('/chat');
+  // }
+
+  // onMusicalPage() {
+  //   this.router.navigateByUrl('/music');
+  // }
 }

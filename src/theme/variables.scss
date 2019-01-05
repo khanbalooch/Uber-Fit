@@ -101,10 +101,10 @@
     --ion-color-custom-contrast-rgb: 0, 0, 0;
     --ion-color-custom-shade: #fff;
     --ion-color-custom-tint: #fff;
-
+    
+    ion-toolbar {
+      --ion-color-base :#f66c0a !important;
+    }
 
 }
 
-ion-toolbar {
-  --ion-color-base :#ec6708 !important;
-}

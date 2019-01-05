@@ -8,6 +8,7 @@ import { SharedComponentsModule } from '../shared/shared-components/shared-compo
 import { FilterPage } from '../pages/filter/filter.page';
 import { HomePage } from './home.page';
 
+
 const routes: Routes = [
   {
     path: '',

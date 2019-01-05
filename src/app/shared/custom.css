@@ -4,7 +4,9 @@ ion-app.ios {
     font-family: TradeGothic !important;
     font-size: 10px;
 }
-
+.pointer {
+    cursor:pointer !important;
+}
 ion-app.android {
     font-family: TradeGothic !important;
     font-size: 10px;

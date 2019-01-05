@@ -30,6 +30,29 @@ ion-grid.filter,ion-grid.banner {
 ion-content {
     --background: #f4f4f4;
 }
-ion-card {
-    --background: #ffff;
+ion-radio-group ion-item {
+    --border-width: 0 0 0 0;
+    --border-color: none;
+    --border-radius: none;
+    --color: #fff;
+    --border-color: transparent;
+
+    --inner-padding-start: 0 !important;
+    --inner-padding-end: 0 !important;
+    --inner-padding-top: 0 !important;
+    --inner-padding-bottom: 0 !important;
+    --padding-start: 0 !important;
+    --padding-end: 0 !important;
+}
+ion-radio {
+    --ion-color-base :#ec6708 !important;
+    --background:#ec6708 !important;
+}
+/*gender*/
+ion-radio-group.gender ion-item{
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --border-radius: 6px;
+    --border-color: #ec6708;
+
 }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24.687 24.687">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffae74;
+      }
+    </style>
+  </defs>
+  <path id="_ionicons_svg_ios-navigate" class="cls-1" d="M60.344,48A12.344,12.344,0,1,0,72.687,60.344,12.342,12.342,0,0,0,60.344,48Zm0,19.94v-7.6H52.765l13.275-5.7Z" transform="translate(-48 -48)"/>
+</svg>
