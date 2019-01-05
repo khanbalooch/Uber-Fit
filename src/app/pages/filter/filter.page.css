@@ -1,6 +1,7 @@
-@import '../../../theme/fonts.css';
+@import url('https://fonts.googleapis.com/css?family=Lato:700|Roboto:400,500');
+/* @import '../../../theme/fonts.css'; */
 .filter-txt, .username {
-    font-family: 'Roboto-Medium';
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #4F5153;
     text-transform: uppercase;
@@ -12,25 +13,25 @@
 }
 
 .top-c .age {
-    font-family: 'Lato-Bold';
+    font-family: 'Lato', sans-serif;
     font-size: 10px;
     color: #626465;
 }
 
 .lato-sm {
-    font-family: 'Lato-Bold';
+    font-family: 'Lato', sans-serif;
     font-size: 10px;
     color: #888888;
 }
 
 .price .value {
-    font-family: 'Roboto-Medium';
+    font-family: 'Roboto', sans-serif;
     font-size: 22px;
     color: #4F5153;
 }
 
 .price .time {
-    font-family: 'Roboto-Regular';
+    font-family: 'Roboto', sans-serif;
     font-size: 22px;
     color: #888888;
 }
@@ -67,6 +68,7 @@ ion-text ion-icon {
     font-size: 10px;
     margin: 0 4px;
 }
+
 
 .contacts ion-badge {
     font-size: 8px;
