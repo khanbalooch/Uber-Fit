@@ -1,7 +1,7 @@
 .heading {
     display: block;
     overflow: hidden;
-    padding: 22px 0 16px 0;
+    padding: 2px 0 2px 0;
 }
 
 .title, .title-bold {
@@ -84,6 +84,7 @@ ion-checkbox {
     text-align: center;
     margin: 0 auto;
 }
+
 /*
     forms validation
 */
@@ -92,6 +93,12 @@ ion-checkbox {
     display: block;
     margin: 0 auto;
     text-align: center;
+    min-height: 40px;
+    font-size: 12px;
+}
+
+.error {
+    display: block;
 }
 
 /* ion-header ion-toolbar ion-title {
