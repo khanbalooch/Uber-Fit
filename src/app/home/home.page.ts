@@ -19,9 +19,11 @@ export class HomePage implements OnInit {
   isShowSearchBar: boolean = false;
   isShowFilter: boolean = true;
 
+
   constructor(private router: Router, public modalController: ModalController, private trainerS: trainerService, private loadingController: LoadingController) {
     //console.log('In Home Page');
   }
+
 
   ngOnInit() {
     this.getAllTrainers();
