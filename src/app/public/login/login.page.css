@@ -9,7 +9,7 @@
     width: 100%;
     text-align: center;
     font-size: 28px;
-    line-height:28px;
+    line-height: 28px;
     color: #fff;
     text-transform: uppercase;
 }
@@ -20,6 +20,7 @@
     font-size: 36px;
     line-height: 28px;
 }
+
 .fp-text {
     font-size: 12px;
 }
@@ -77,10 +78,20 @@ ion-checkbox {
     height: 12px;
     margin: 0 4px;
 }
+
 .text-center {
     display: block;
     text-align: center;
     margin: 0 auto;
+}
+/*
+    forms validation
+*/
+
+.errors-c {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 /* ion-header ion-toolbar ion-title {
