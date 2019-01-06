@@ -7,10 +7,15 @@ import { AuthenticationService } from './shared/services/authentication.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent {
- 
+  //  public appMenu = [
+  //    {title: 'page1', url: '/trainer', icon: 'star'},
+  //    {title: 'page2', url: '/trainer', icon: 'star'},
+  //    {title: 'Log out', url: '' }
+  //  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -20,17 +25,20 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
+  onLogout(){
+    this.authService.logout();
+  }
 
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.authService.authenticationState.subscribe(state=>{
+      this.authService.authenticationState.subscribe(state => {
         console.log('auth changed:' + state);
-        if(state){                                //mean user is logged in
-            this.router.navigate(['/home']);
-        }else{                                    // user is nt logged in
-            this.router.navigate(['splash']);
+        if (state) {                                //mean user is logged in
+          this.router.navigate(['/home']);
+        } else {                                    // user is nt logged in
+          this.router.navigate(['splash']);
         }
       });
     });

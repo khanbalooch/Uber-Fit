@@ -1,8 +1,8 @@
 /*customLoader*/
-
-ion-app.ios {
-    font-family: TradeGothic !important;
-    font-size: 10px;
+@import url('https://fonts.googleapis.com/css?family=Lato:700|Roboto:400,500');
+.lato {
+    font-family: 'Lato', sans-serif;
+    color: #626465;
 }
 .pointer {
     cursor:pointer !important;
@@ -25,7 +25,24 @@ ion-app.android {
     padding: 0;
     overflow: hidden;
 }
-
+.headerBg {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: bottom right !important;
+    background-color: #f66c0a !important;
+    padding: 4px 0 !important; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.dp{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    display: block;
+    width: 80px;
+    height: 80px;
+}
 .txt_w {
     color: #fff;
 }
