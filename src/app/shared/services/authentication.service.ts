@@ -21,8 +21,7 @@ export class AuthenticationService {
     } );
   }
 
-  login(credentials: any) {
-    //console.log(credentials);
+    /*login(credentials: any) {
 
     this.http.get( this.authUrl + '?email=' + credentials.username + '&password=' + credentials.password ).
     subscribe(data => {
@@ -35,6 +34,22 @@ export class AuthenticationService {
     error => {
         console.log(error);
     });
+  }*/
+  async login(credentials: any) {
+
+    try {
+      const data = await this.http.get( this.authUrl + '?email=' + credentials.username + '&password=' + credentials.password ).toPromise();
+      if ( data[0] ) {
+      const token = await  this.storage.set(TOKEN_KEY, 'trainer-token');
+      this.authenticationState.next(true);
+      return Promise.resolve(); // user found
+      } else {
+        return Promise.reject(0); // user not found
+      }
+    } catch (error) { //some error occured
+      console.log(error);
+      return Promise.reject(1);
+    }
   }
   windowLogin() {
     return this.storage.set(TOKEN_KEY, 'anonymous-token').then( res => {
