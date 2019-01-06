@@ -32,6 +32,7 @@ ion-content {
 }
 ion-radio-group ion-item {
     --border-width: 0 0 0 0;
+    --inner-border-width: 0 0 0 0 !important;
     --border-color: none;
     --border-radius: none;
     --color: #fff;
@@ -52,6 +53,7 @@ ion-radio {
 ion-radio-group.gender ion-item{
     --background: #fff !important;
     --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
     --border-radius: 6px;
     --border-color: #a8a8a8;
 
@@ -62,6 +64,7 @@ ion-radio-group.gender ion-icon{
 ion-radio-group.gender ion-item.item-radio-checked {
     --background: #fff !important;
     --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
     --border-radius: 6px;
     --border-color: #ec6708;
 
@@ -74,6 +77,7 @@ ion-radio-group.gender ion-item.item-radio-checked  ion-icon{
 ion-radio-group.gender ion-radio {
     --ion-color-base: transparent !important;
     --border-width: 0 0 0 0 !important;
+    --inner-border-width: 0 0 0 0 !important;
     --checkmark-color: transparent !important;
     --size: 0 !important;
 
@@ -94,6 +98,7 @@ ion-radio-group.filterBy ion-item.item-radio-checked,
 ion-radio-group.filterBy ion-item.item-radio-checked ion-label .txt {
     --background: #fff !important;
     --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
     --border-radius: 6px;
     --border-color: #ec6708;
     color: #ec6708;
@@ -102,6 +107,7 @@ ion-radio-group.filterBy ion-item.item-radio-checked ion-label .txt {
 ion-radio-group.filterBy > ion-item{
     --background: #fff !important;
     --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
     --border-radius: 6px;
     --border-color: #a8a8a8;
 
@@ -113,7 +119,23 @@ ion-radio-group.gender ion-item.item-radio-checked  ion-text{
 ion-radio-group.filterBy ion-radio {
     --ion-color-base: transparent !important;
     --border-width: 0 0 0 0 !important;
+    --inner-border-width: 0 0 0 0 !important;
     --checkmark-color: transparent !important;
     --size: 0 !important;
 
+}
+ion-select {
+    max-width: 100%;
+    min-width: 100%;
+    font-size: 12px;
+}
+ion-item.skills-c {
+    --background: #fff !important; 
+    --border-color: #e2e2e2 !important;
+    --border-radius: 4px !important;  
+    
+}
+ion-badge {
+    --background : #ff0100;
+    --color: #fff;
 }
