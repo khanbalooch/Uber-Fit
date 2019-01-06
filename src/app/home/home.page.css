@@ -1,7 +1,9 @@
 /*@import '../../theme/fonts.css';*/
+
 @import url('https://fonts.googleapis.com/css?family=Lato:700|Roboto:400,500');
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Lato', sans-serif; */
+
 .filter-txt, .username {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
@@ -70,7 +72,6 @@ ion-text ion-icon {
     font-size: 10px;
     margin: 0 4px;
 }
-
 
 .contacts ion-badge {
     font-size: 8px;
@@ -192,4 +193,12 @@ ion-card {
     width: 14px !important;
     height: 14px;
     line-height: 14px;
+}
+
+.tmp_adj {
+    font-size: 14px;
+}
+ion-menu-button {
+    width: 30px;
+    height:30px;
 }
