@@ -1,170 +1,95 @@
 <ion-header>
   <ion-toolbar color="light">
-    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">Search for trainers</ion-title>
+    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">
+        <ion-row>
+          <ion-col size="3">
+            <span>
+              <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+              <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+            </span>
+            <span>
+                <ion-icon name="call"></ion-icon>
+                <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+            </span>
+          </ion-col>
+          <ion-col size="7">
+              Search for trainers
+          </ion-col>
+      </ion-row>
+    </ion-title>
     <ion-searchbar animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
     <ion-icon class="s-icon" name="search" slot="end" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
+    <ion-icon class="s-icon" name="funnel" slot="end" (click)="onFilterBtnClick()"></ion-icon>
   </ion-toolbar>
-  <!--filter-->
-  <ion-grid class="filter">
-    <ion-row>
-      <ion-col size="5" class="noti-c">
-        <ion-label class="contacts">
-          <div class="chat-c">
-            <ion-icon mode="ios" name="chatbubbles"></ion-icon>
-            <ion-badge mode="md" color="danger" slot="top">66</ion-badge>
-          </div>
-          <div class="call-c">
-            <ion-icon name="call"></ion-icon>
-            <ion-badge mode="md" color="danger" slot="top">66</ion-badge>
-          </div>
-        </ion-label>
-      </ion-col>
-      <ion-col size="7">
-        <div class="filter-c">
-          <ion-label class="pointer" *ngIf="isShowFilter" (click)="onFilterBtnClick()">
-            <span class="filter-txt">Show filters</span>
-            <ion-icon name="ios-arrow-down"></ion-icon>
-          </ion-label>
-          <ion-label class="pointer" *ngIf="!isShowFilter" (click)="onFilterBtnClick()">
-            <span class="filter-txt">Hide filters</span>
-            <ion-icon name="ios-arrow-up"></ion-icon>
-          </ion-label>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <!--end of filter-->
 </ion-header>
 <ion-content>
 
   <ion-grid class="listing">
     <ion-row>
       <ion-col size="12">
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col dist col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
+        <!--not found-->
+        <ion-card *ngIf="trainers?.length == 0">
+          <ion-card-header>
+            <ion-card-content>No Trainer Found!</ion-card-content>
+          </ion-card-header>
         </ion-card>
-        <!--end trainer-->
-
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
+        <!--end of not found-->
+        <!--got error-->
+        <ion-card *ngIf="error">
+          <ion-card-header>
+            <ion-card-content>{{error}}</ion-card-content>
+          </ion-card-header>
         </ion-card>
-        <!--end trainer-->
-
-        <!-- trainer-->
-        <ion-card>
-          <ion-card-content>
-            <ion-item class="top-c">
-              <div class="lt">
-                <ion-avatar>
-                  <img src="../../assets/images/cardio.jpg">
-                </ion-avatar>
-                <ion-label>
-                  <ion-text class="username">
-                    John Doe
-                  </ion-text>
-                  <ion-text class="age">
-                    23 years old
-                  </ion-text>
-                </ion-label>
-              </div>
-              <div class="rt">
-                <ion-label>
-                  <ion-text class="price">
-                    <span class="value">$55</span> <span class="time">/hr</span>
-                  </ion-text>
-                </ion-label>
-              </div>
-            </ion-item>
-            <ion-item class="btm-c">
-              <ion-text class="col col-lt">
-                <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                <ion-label class="lato-sm"> 4.7</ion-label>
-              </ion-text>
-              <ion-text class="col col-ct">
-                <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-              </ion-text>
-              <ion-text class="col col-rt">
-                <ion-label class="lato-sm">Yoga trainer</ion-label>
-              </ion-text>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
-        <!--end trainer-->
+        <!--end err statement-->
+        <ion-list *ngIf="trainers?.length > 0">
+          <!-- trainer-->
+          <ion-card *ngFor="let trainer of trainers">
+            <ion-card-content (click)="selectedTrainer(trainer)"> 
+              <ion-item class="top-c">
+                <div class="lt">
+                  <ion-avatar *ngIf="isValidPic(trainer?.pictureURL)">
+                    <img src="{{trainer?.pictureURL}}" alt="{{trainer?.firstName}}">
+                  </ion-avatar>
+                  <ion-avatar *ngIf="!isValidPic(trainer?.pictureURL)">
+                    <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
+                  </ion-avatar>
+                  <ion-label>
+                    <ion-text class="username">
+                      {{trainer?.firstName}}
+                    </ion-text>
+                    <ion-text class="age">
+                      {{trainer?.age}} years old
+                    </ion-text>
+                  </ion-label>
+                </div>
+                <div class="rt">
+                  <ion-label>
+                    <ion-text class="price">  
+                      <span class="value">$55</span> <span class="time">/hr</span>
+                    </ion-text>
+                  </ion-label>
+                </div>
+              </ion-item>
+              <ion-item class="btm-c">
+                <ion-text class="col col-lt">
+                  <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                  <ion-label class="lato-sm">
+                    <span *ngIf="trainer?.ratingScore == 'null'">0.0</span>
+                    <span *ngIf="trainer?.ratingScore != 'null'">{{trainer?.ratingScore}}</span>
+                  </ion-label>
+                </ion-text>
+                <ion-text class="col dist col-ct">
+                  <ion-icon mode="ios" name="paper-plane"></ion-icon>
+                  <ion-label class="lato-sm"> 0.09 mile away</ion-label>
+                </ion-text>
+                <ion-text class="col col-rt">
+                  <ion-label class="lato-sm">Yoga trainer</ion-label>
+                </ion-text>
+              </ion-item>
+            </ion-card-content>
+          </ion-card>
+          <!--end trainer-->
+        </ion-list>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -180,19 +105,19 @@
   <ion-toolbar color="light">
     <ion-grid no-padding no-margin>
       <ion-row>
-        <ion-col>
+        <ion-col text-center>
           <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
             <ion-icon class="txt_w" name="search"></ion-icon>
           </ion-button>
         </ion-col>
-        <ion-col>
+        <ion-col text-center>
           <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
-            <ion-icon class="txt_w " src="../../assets/icon/map-icon_navigation.svg"></ion-icon>
+            <ion-icon class="txt_w " name="navigate"></ion-icon>
           </ion-button>
         </ion-col>
-        <ion-col>
+        <ion-col text-center>
           <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
-            <ion-icon class="txt_w" src="../../assets/icon/profile_icon_navigation.svg"></ion-icon>
+            <ion-icon class="txt_w" name="contact"></ion-icon>
           </ion-button>
         </ion-col>
       </ion-row>

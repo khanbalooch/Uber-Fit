@@ -17,7 +17,6 @@ export class Tab1Page implements OnInit {
   constructor(private trainerService: trainerService, private router: Router, public loadingController: LoadingController) { }
   ngOnInit() {
     this.getAllTrainers();
-    console.log('isvlid pic: ', this.isValidPic(''));
   }
 
   selectedTrainer(trainer) {

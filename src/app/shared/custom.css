@@ -7,6 +7,8 @@ ion-app.ios {
 .pointer {
     cursor:pointer !important;
 }
+
+
 ion-app.android {
     font-family: TradeGothic !important;
     font-size: 10px;
@@ -47,7 +49,7 @@ ion-app.android {
     background: #fff !important;
     opacity: 1 !important;
     /*verticaly center*/
-    height: 88%;
+    height: 80%;
     transform: translateY(-50%);
     top: 50%;
 }
@@ -61,7 +63,7 @@ ion-app.android {
     -moz-box-shadow: none;
     background: #fff;
     width: 100%;
-    height: 88%;
+    height: 80%;
 }
 
 .tLoader loading-content {

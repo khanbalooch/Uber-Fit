@@ -53,6 +53,70 @@ ion-radio-group.gender ion-item{
     --background: #fff !important;
     --border-width: 1px 1px 1px 1px !important;
     --border-radius: 6px;
+    --border-color: #a8a8a8;
+
+}
+ion-radio-group.gender ion-icon{
+    --color: #a8a8a8;
+}
+ion-radio-group.gender ion-item.item-radio-checked {
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --border-radius: 6px;
     --border-color: #ec6708;
 
+}
+ion-radio-group.gender ion-item.item-radio-checked  ion-icon{
+    --color: #ec6708;
+    color: #ec6708;
+}
+
+ion-radio-group.gender ion-radio {
+    --ion-color-base: transparent !important;
+    --border-width: 0 0 0 0 !important;
+    --checkmark-color: transparent !important;
+    --size: 0 !important;
+
+}
+
+ion-range {
+    --bar-background: #d9d9d9 !important;
+    --ion-color-base:  #ec6708  !important;
+    --bar-background-active: #ec6708  !important;
+}
+
+/*filter by radiogroup*/
+ion-radio-group.filterBy ion-item {
+    --color: #a8a8a8;
+}
+
+ion-radio-group.filterBy ion-item.item-radio-checked,
+ion-radio-group.filterBy ion-item.item-radio-checked ion-label .txt {
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --border-radius: 6px;
+    --border-color: #ec6708;
+    color: #ec6708;
+
+}
+ion-radio-group.filterBy > ion-item{
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --border-radius: 6px;
+    --border-color: #a8a8a8;
+
+}
+ion-radio-group.gender ion-item.item-radio-checked  ion-text{
+    --color: #ec6708;
+    color: #ec6708;
+}
+ion-radio-group.filterBy ion-radio {
+    --ion-color-base: transparent !important;
+    --border-width: 0 0 0 0 !important;
+    --checkmark-color: transparent !important;
+    --size: 0 !important;
+
+}
+ion-title{
+    padding: 0 6px;
 }

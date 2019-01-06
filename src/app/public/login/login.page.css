@@ -1,7 +1,7 @@
 .heading {
     display: block;
     overflow: hidden;
-    padding: 22px 0 16px 0;
+    padding: 2px 0 2px 0;
 }
 
 .title, .title-bold {
@@ -42,13 +42,16 @@
 }
 
 .social-login {
-    margin: 12px 0;
+    margin: 6px 0;
 }
 
 .social-login ion-icon {
     text-align: center;
     display: block;
     margin: 0 auto;
+    font-size: 22px;
+    width:22px;
+    height: 22px;
 }
 
 /* .main {
@@ -84,6 +87,7 @@ ion-checkbox {
     text-align: center;
     margin: 0 auto;
 }
+
 /*
     forms validation
 */
@@ -92,8 +96,17 @@ ion-checkbox {
     display: block;
     margin: 0 auto;
     text-align: center;
+    min-height: 40px;
+    font-size: 12px;
 }
 
+.error {
+    background: #fff;
+    padding: 1px 0;
+    width: auto;
+    display: block;
+    overflow: hidden;
+}
 /* ion-header ion-toolbar ion-title {
     background: #3fa2f7;
     color: #fff;
