@@ -124,18 +124,26 @@ ion-radio-group.filterBy ion-radio {
     --size: 0 !important;
 
 }
+ion-title{
+    padding: 0 6px;
+}
+ion-item.skills-c {
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
+    --border-radius: 6px;
+    --border-color: #a8a8a8;
+} 
 ion-select {
     max-width: 100%;
     min-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     font-size: 12px;
 }
-ion-item.skills-c {
-    --background: #fff !important; 
-    --border-color: #e2e2e2 !important;
-    --border-radius: 4px !important;  
-    
-}
-ion-badge {
-    --background : #ff0100;
-    --color: #fff;
+
+ion-range {
+     //--knob-background: url ('../../../assets/icon/icon-knob.png') !important;
+     //--knob-background: red;
 }

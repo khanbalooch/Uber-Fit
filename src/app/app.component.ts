@@ -10,6 +10,7 @@ import { AuthenticationService } from './shared/services/authentication.service'
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
+ 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
