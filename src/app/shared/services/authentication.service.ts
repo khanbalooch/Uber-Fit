@@ -46,7 +46,7 @@ export class AuthenticationService {
       } else {
         return Promise.reject(0); // user not found
       }
-    } catch (error) { //some error occured
+    } catch (error) {             // some error occured
       console.log(error);
       return Promise.reject(1);
     }
