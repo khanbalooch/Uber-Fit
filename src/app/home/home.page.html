@@ -1,20 +1,24 @@
 <ion-header>
   <ion-toolbar color="light">
-    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">
-        <ion-row>
-          <ion-col size="3">
-            <span>
-              <ion-icon mode="ios" name="chatbubbles"></ion-icon>
-              <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-            </span>
-            <span>
-                <ion-icon name="call"></ion-icon>
-                <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-            </span>
-          </ion-col>
-          <ion-col size="7">
-              Search for trainers
-          </ion-col>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="txt_w tmp_adj" text-center *ngIf="!isShowSearchBar">
+      <ion-row>
+        <ion-col size="3">
+          <span>
+            <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+            <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+          </span>
+          <span>
+            <ion-icon name="call"></ion-icon>
+            <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+          </span>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+        <ion-col size="6">
+          Search trainers
+        </ion-col>
       </ion-row>
     </ion-title>
     <ion-searchbar animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
@@ -44,7 +48,7 @@
         <ion-list *ngIf="trainers?.length > 0">
           <!-- trainer-->
           <ion-card *ngFor="let trainer of trainers">
-            <ion-card-content (click)="selectedTrainer(trainer)"> 
+            <ion-card-content (click)="selectedTrainer(trainer)">
               <ion-item class="top-c">
                 <div class="lt">
                   <ion-avatar *ngIf="isValidPic(trainer?.pictureURL)">
@@ -64,7 +68,7 @@
                 </div>
                 <div class="rt">
                   <ion-label>
-                    <ion-text class="price">  
+                    <ion-text class="price">
                       <span class="value">$55</span> <span class="time">/hr</span>
                     </ion-text>
                   </ion-label>

@@ -26,6 +26,25 @@
 <ion-content >
   <ion-grid>
     <ion-row>
+        <ion-col size="12">
+            <ion-item class="title-c">
+              <ion-label class="title">
+               What skills do you like?
+              </ion-label>
+            </ion-item>
+            
+            <ion-item class="input-c skills-c">
+                <ion-select multiple="true" cancelText="Cancel" okText="OK">
+                    <ion-select-option value="yoga">Yoga</ion-select-option>
+                    <ion-select-option value="swimming">Swimming</ion-select-option>
+                    <ion-select-option value="running">Running</ion-select-option>
+                    <ion-select-option value="gymnastics">Gymnatics</ion-select-option>
+                    <ion-select-option value="weights">Weights</ion-select-option>
+                  </ion-select>
+            </ion-item>
+          </ion-col>
+
+
       <ion-col size="12">
         <ion-item class="title-c">
           <ion-label class="title">
@@ -77,7 +96,7 @@
           </ion-label>
         </ion-item>
         <ion-item class="input-c">
-            <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="30" step="3" snaps="false">
+            <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="1000" step="3" snaps="false">
               </ion-range>
         </ion-item>
       </ion-col>
@@ -167,7 +186,7 @@
           </ion-label>
         </ion-item>
         <ion-item class="input-c">
-          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="30" step="3" snaps="false">
+          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="10" max="100" step="3" snaps="false">
           </ion-range>
           
         </ion-item>
