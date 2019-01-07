@@ -16,8 +16,6 @@ import { AuthenticationService } from './shared/services/authentication.service'
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { Facebook } from '@ionic-native/facebook/ngx';
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,7 +39,6 @@ import { Facebook } from '@ionic-native/facebook/ngx';
     FormsModule,
     ReactiveFormsModule,
     Geolocation,
-    Facebook,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
   ],

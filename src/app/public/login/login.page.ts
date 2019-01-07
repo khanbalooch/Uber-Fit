@@ -41,11 +41,6 @@ export class LoginPage implements OnInit {
     }
   }
 
-  facebookLogin() {
-    console.log('facebookLogin>>>');
-    this.authService.facebookLogin();
-  }
-
   gotoSignup() {
     console.log('going to signup page');
     this.router.navigateByUrl('/signup');
