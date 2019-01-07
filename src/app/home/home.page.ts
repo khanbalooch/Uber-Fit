@@ -47,12 +47,10 @@ export class HomePage implements OnInit {
         longitude: responseObj.longitude
       };
       localStorage.setItem('location', JSON.stringify(loc));
-      alert('lat--' + loc.latitude + 'long---' + loc.longitude);
       loading.dismiss();
       this.getAllTrainers();
      }).catch((error) => {
        loading.dismiss();
-       alert(JSON.stringify(error));
        console.log(error);
      });
   }
