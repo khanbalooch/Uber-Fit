@@ -27,25 +27,28 @@ export class GlobalPage implements OnInit {
 
    async getLocation() {
     try {
-      const location = JSON.parse(localStorage.getItem('location'));
-      if (location && location.latitude && location.longitude) {
-        this.location.lat = location.latitude;
-        this.location.lng = location.longitude;
+      let loc = JSON.parse(localStorage.getItem('location'));
+      if (loc && loc.latitude && loc.longitude) {
+        this.location.lat = loc.latitude;
+        this.location.lng = loc.longitude;
+        alert('lat--' + this.location.lat + 'long---' + this.location.lng);
       } else {
         this.geolocation.getCurrentPosition().then((resp) => {
           const responseObj = resp.coords;
-          const loc = {
+          loc = {
             latitude: responseObj.latitude,
             longitude: responseObj.longitude
           };
           this.location.lat = loc.latitude;
           this.location.lng = loc.longitude;
+          alert('lat--' + this.location.lat + 'long---' + this.location.lng);
           localStorage.setItem('location', JSON.stringify(loc));
        }).catch((error) => {
-
+          alert(JSON.stringify(error));
        });
       }
     } catch (error) {
+      alert(JSON.stringify(error));
       console.log(error);
     }
   }

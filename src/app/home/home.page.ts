@@ -31,10 +31,15 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     this.getGeolocation();
-    this.getAllTrainers();
   }
 
-  getGeolocation() {
+  async getGeolocation() {
+    const loading = await this.loadingController.create({
+      message: 'Finding your location',
+      spinner: 'bubbles',
+      cssClass: 'tLoader'
+    });
+    await loading.present();
     this.geolocation.getCurrentPosition().then((resp) => {
       const responseObj = resp.coords;
       const loc = {
@@ -42,7 +47,12 @@ export class HomePage implements OnInit {
         longitude: responseObj.longitude
       };
       localStorage.setItem('location', JSON.stringify(loc));
+      alert('lat--' + loc.latitude + 'long---' + loc.longitude);
+      loading.dismiss();
+      this.getAllTrainers();
      }).catch((error) => {
+       loading.dismiss();
+       alert(JSON.stringify(error));
        console.log(error);
      });
   }
