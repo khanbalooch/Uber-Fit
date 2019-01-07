@@ -10,7 +10,7 @@
 
 <ion-content>
   <agm-map (mapReady)='onMapReady($event)' [backgroundColor]='medium' [latitude]="location.lat" [longitude]="location.lng">
-    <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
+    <agm-marker [title]="you" [label]="Y" [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
   </agm-map>
 </ion-content>
 <app-footer></app-footer>
