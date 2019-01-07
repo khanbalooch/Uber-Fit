@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { ThrowStmt } from '@angular/compiler';
+import { LoadingController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-global',
@@ -12,7 +14,9 @@ export class GlobalPage implements OnInit {
   protected map: any;
   location = {lat: 41.355423, lng: -72.102760};
 
-  constructor(private geolocation: Geolocation) {}
+  constructor(private geolocation: Geolocation,
+    private storage: Storage,
+    private loadingController: LoadingController) {}
 
   onMapReady(agm) {
     this.map = agm;
@@ -23,10 +27,24 @@ export class GlobalPage implements OnInit {
 
    async getLocation() {
     try {
-      const location = await this.geolocation.getCurrentPosition();
-      console.log(location);
-      this.location.lat = location.coords.latitude;
-      this.location.lng = location.coords.longitude;
+      const location = JSON.parse(localStorage.getItem('location'));
+      if (location && location.latitude && location.longitude) {
+        this.location.lat = location.latitude;
+        this.location.lng = location.longitude;
+      } else {
+        this.geolocation.getCurrentPosition().then((resp) => {
+          const responseObj = resp.coords;
+          const loc = {
+            latitude: responseObj.latitude,
+            longitude: responseObj.longitude
+          };
+          this.location.lat = loc.latitude;
+          this.location.lng = loc.longitude;
+          localStorage.setItem('location', JSON.stringify(loc));
+       }).catch((error) => {
+
+       });
+      }
     } catch (error) {
       console.log(error);
     }
