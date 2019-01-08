@@ -1,48 +1,93 @@
-<ion-header>
-  <ion-toolbar color="light">
-    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">
+<ion-header mode="ios">
+    <ion-toolbar color="medium">
+        <ion-title>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="2">
+                <div class="sideMenu">
+                  <ion-buttons slot="start">
+                    <ion-menu-button></ion-menu-button>
+                  </ion-buttons>
+                </div>
+              </ion-col>
+              <ion-col size="7">
+                <ion-label *ngIf="!isShowSearchBar">Search for trainers</ion-label>
+                <ion-searchbar color="medium" mode="md" animated showCancelButton placeholder="Search trainer here..."
+                  (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
+              </ion-col>
+              <ion-col size="3">
+                <div class="icon-rt">
+                  <ion-icon class="s-icon pointer" slot="end" name="search" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
+                  <ion-icon mode="ios" class="s-icon pointer" slot="end" name="funnel" slot="end" (click)="onFilterBtnClick()"></ion-icon>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-title>
+      </ion-toolbar>
+      <ion-grid class="notiBg">
         <ion-row>
-            <ion-col size="3">
-              <span>
-                <ion-icon mode="ios" name="chatbubbles"></ion-icon>
-                <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-              </span>
-              <span>
-                  <ion-icon name="call"></ion-icon>
-                  <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-              </span>
-            </ion-col>
-            <ion-col size="7">
-                Search for trainers
-            </ion-col>
+          <ion-col size="2">
+            <div class="notiBlock">
+              <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+              <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+            </div>
+          </ion-col>
+          <ion-col size="2">
+            <div class="notiBlock">
+              <ion-icon name="call"></ion-icon>
+              <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+            </div>
+          </ion-col>
+          <ion-col class="8">
+          </ion-col>
         </ion-row>
+      </ion-grid>
+
+  <!-- <ion-toolbar color="medium">
+    <ion-title class="txt_w" text-center *ngIf="!isShowSearchBar">
+      <ion-row>
+        <ion-col size="3">
+          <span>
+            <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+            <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+          </span>
+          <span>
+            <ion-icon name="call"></ion-icon>
+            <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+          </span>
+        </ion-col>
+        <ion-col size="7">
+          Search for trainers
+        </ion-col>
+      </ion-row>
     </ion-title>
     <ion-searchbar animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
     <ion-icon class="s-icon" name="search" slot="end" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
     <ion-icon class="s-icon" name="funnel" slot="end" (click)="onFilterBtnClick()"></ion-icon>
-  </ion-toolbar>
+  </ion-toolbar> -->
 </ion-header>
 
-<ion-content >
+<ion-content>
   <ion-grid>
     <ion-row>
-        <ion-col size="12">
-            <ion-item class="title-c">
-              <ion-label class="title">
-               What skills do you like?
-              </ion-label>
-            </ion-item>
-            
-            <ion-item class="input-c skills-c">
-                <ion-select multiple="true" cancelText="Cancel" okText="OK">
-                    <ion-select-option value="yoga">Yoga</ion-select-option>
-                    <ion-select-option value="swimming">Swimming</ion-select-option>
-                    <ion-select-option value="running">Running</ion-select-option>
-                    <ion-select-option value="gymnastics">Gymnatics</ion-select-option>
-                    <ion-select-option value="weights">Weights</ion-select-option>
-                  </ion-select>
-            </ion-item>
-          </ion-col>
+      <ion-col size="12">
+        <ion-item class="title-c">
+          <ion-label class="title">
+            What skills do you like?
+          </ion-label>
+        </ion-item>
+
+        <ion-item class="input-c skills-c">
+          <ion-select multiple="true" cancelText="Cancel" okText="OK">
+            <ion-select-option value="yoga">Yoga</ion-select-option>
+            <ion-select-option value="swimming">Swimming</ion-select-option>
+            <ion-select-option value="running">Running</ion-select-option>
+            <ion-select-option value="gymnastics">Gymnatics</ion-select-option>
+            <ion-select-option value="weights">Weights</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
 
 
       <ion-col size="12">
@@ -57,21 +102,21 @@
               <ion-label class="txt-c">
                 <ion-icon name="transgender"></ion-icon>
               </ion-label>
-              <ion-radio color="light"  mode="ios" slot="start" value="T"></ion-radio>
+              <ion-radio color="light" mode="ios" slot="start" value="T"></ion-radio>
             </ion-item>
 
             <ion-item class="g-item-c">
-              <ion-label  class="txt-c">
+              <ion-label class="txt-c">
                 <ion-icon name="female"></ion-icon>
               </ion-label>
-              <ion-radio color="light"  mode="ios" slot="start" value="F"></ion-radio>
+              <ion-radio color="light" mode="ios" slot="start" value="F"></ion-radio>
             </ion-item>
 
             <ion-item class="g-item-c">
-              <ion-label  class="txt-c">
+              <ion-label class="txt-c">
                 <ion-icon name="male"></ion-icon>
               </ion-label>
-              <ion-radio color="light"  mode="ios" slot="start" value="M"></ion-radio>
+              <ion-radio color="light" mode="ios" slot="start" value="M"></ion-radio>
             </ion-item>
           </ion-radio-group>
         </ion-item>
@@ -82,10 +127,11 @@
           <ion-label class="title">Distance</ion-label>
         </ion-item>
         <ion-item class="input-c">
-            <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="30" step="3" snaps="false">
-              <!-- <ion-label slot="start">0.0 Km</ion-label>
+          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="30" step="3"
+            snaps="false">
+            <!-- <ion-label slot="start">0.0 Km</ion-label>
               <ion-label slot="end">30.0 Km</ion-label> -->
-            </ion-range>
+          </ion-range>
         </ion-item>
       </ion-col>
 
@@ -96,8 +142,9 @@
           </ion-label>
         </ion-item>
         <ion-item class="input-c">
-            <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="1000" step="3" snaps="false">
-              </ion-range>
+          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="1" max="1000" step="3"
+            snaps="false">
+          </ion-range>
         </ion-item>
       </ion-col>
 
@@ -109,8 +156,8 @@
         </ion-item>
         <ion-item class="input-c filter-c">
           <ion-radio-group class="filterBy">
-            <ion-item class="first" >
-              <ion-label  class="label-chk">
+            <ion-item class="first">
+              <ion-label class="label-chk">
                 <ion-item>
                   <ion-label>
                     <ion-text class="txt">
@@ -123,7 +170,7 @@
             </ion-item>
 
             <ion-item>
-              <ion-label  class="label-chk">
+              <ion-label class="label-chk">
                 <ion-item>
                   <ion-label>
                     <ion-text class="txt">
@@ -140,7 +187,7 @@
             </ion-item>
 
             <ion-item>
-              <ion-label  class="label-chk">
+              <ion-label class="label-chk">
                 <ion-item>
                   <ion-label>
                     <ion-text class="txt">
@@ -158,7 +205,7 @@
             </ion-item>
 
             <ion-item>
-              <ion-label  class="label-chk">
+              <ion-label class="label-chk">
                 <ion-item>
                   <ion-label>
                     <ion-text class="txt">
@@ -173,7 +220,7 @@
                   </ion-label>
                 </ion-item>
               </ion-label>
-              <ion-radio  mode="ios" slot="start" value="4p"></ion-radio>
+              <ion-radio mode="ios" slot="start" value="4p"></ion-radio>
             </ion-item>
 
           </ion-radio-group>
@@ -186,16 +233,17 @@
           </ion-label>
         </ion-item>
         <ion-item class="input-c">
-          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="10" max="100" step="3" snaps="false">
+          <ion-range class="range-d" mode="ios" color="primary" dualKnobs="true" pin="true" min="10" max="100" step="3"
+            snaps="false">
           </ion-range>
-          
+
         </ion-item>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
 <ion-footer>
-  <ion-toolbar color="light">
+  <ion-toolbar color="medium">
     <ion-grid no-padding no-margin>
       <ion-row>
         <ion-col>

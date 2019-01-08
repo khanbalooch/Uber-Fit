@@ -1,3 +1,6 @@
+// ion-toolbar {
+//     --background: #f66c0a;
+// }
 ion-list.sideMenu ion-item {
     --inner-padding-top: 0 !important;
     --inner-padding-bottom: 0 !important;
@@ -15,9 +18,7 @@ ion-list.sideMenu ion-label{
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 }
-ion-toolbar {
-    --background: #f66c0a;
-}
+
 ion-list.sideMenu ion-item ion-icon{
     margin: 0 6px;
 }

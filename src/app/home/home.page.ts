@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { trainerService } from '../shared/trainer.service';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -20,15 +23,38 @@ export class HomePage implements OnInit {
   isShowFilter: boolean = true;
 
 
-  constructor(private router: Router, public modalController: ModalController, private trainerS: trainerService, private loadingController: LoadingController) {
+  constructor(private router: Router, public modalController: ModalController, private trainerS: trainerService, private loadingController: LoadingController,
+      private geolocation: Geolocation) {
     //console.log('In Home Page');
   }
 
 
   ngOnInit() {
-    this.getAllTrainers();
-
+    this.getGeolocation();
   }
+
+  async getGeolocation() {
+    const loading = await this.loadingController.create({
+      message: 'Finding your location',
+      spinner: 'bubbles',
+      cssClass: 'tLoader'
+    });
+    await loading.present();
+    this.geolocation.getCurrentPosition().then((resp) => {
+      const responseObj = resp.coords;
+      const loc = {
+        latitude: responseObj.latitude,
+        longitude: responseObj.longitude
+      };
+      localStorage.setItem('location', JSON.stringify(loc));
+      loading.dismiss();
+      this.getAllTrainers();
+     }).catch((error) => {
+       loading.dismiss();
+       console.log(error);
+     });
+  }
+
   selectedTrainer(trainer) {
     this.trainerS.setSelectedTrainer(trainer);
     this.router.navigateByUrl('/trainer');
@@ -64,12 +90,12 @@ export class HomePage implements OnInit {
   onCancel(event) {
     this.isShowSearchBar = false;
   }
-  async onFilterBtnClick() {
+  async onFilterBtnClick() {    
     const modal = await this.modalController.create({
       component: FilterPage
     });
-    return await modal.present();
     this.isShowFilter = !this.isShowFilter;
+    return await modal.present();
   }
 
   onProfilePage() {

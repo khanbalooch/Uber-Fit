@@ -1,21 +1,21 @@
 <ion-header>
-  <ion-toolbar color="light">
+  <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
     <ion-title text-center>Forgot password?</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <div class="AppBg" style="background:url('../../../assets/images/Welcome.jpg');">
     <!--logo start here-->
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <div class="heading">
-            <ion-label class="title">Find Your </ion-label>
-            <ion-label class="title-bold">Fitness</ion-label>
+          <div class="heading f-logo">
+            <img src="../../../assets/images/findYourFitness.svg" alt="Find Your Fitness">
+            <!-- <ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">Fitness</ion-label> -->
           </div>
         </ion-col>
       </ion-row>
@@ -25,32 +25,29 @@
       <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <ion-label class="txt_w f-txt">
+            <ion-label class="txt_w center h-p text-small">
               We just need your registered email address to send you password reset.
             </ion-label>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="12" class="input-c">
-            <ion-label class="icon txt_w">
-              <ion-icon name="mail"></ion-icon>
-            </ion-label>
-            <ion-item>
-              <ion-input shape="round" fill="outline" color="primary" class="input-El" [(ngModel)]='forgotPassDetails.email'
-                type="text" placeholder="email" padding></ion-input>
+          <ion-col size="12">
+            <ion-item class="uberInput uberPrimary input-c">
+              <ion-label class="icon txt_w">
+                <ion-icon name="mail"></ion-icon>
+              </ion-label>
+              <ion-input shape="round" fill="outline" color="light" [(ngModel)]='forgotPassDetails.email' type="text"
+                placeholder="email" padding></ion-input>
             </ion-item>
           </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="12">
-            <ion-button shape="round" size="default" expand="block" fill="solid" (click)='onForgotPass()'>Send</ion-button>
+          <ion-col size="12" class="no-v-pad">
+            <ion-button class="uberPrimary" shape="round" size="default" expand="block" fill="solid" (click)='onForgotPass()'
+              color="medium">Send</ion-button>
+          </ion-col>
+          <ion-col size="12" class="no-v-pad">
+            <ion-label (click)='onLoginPage()' class="txt_w text-primary center pointer">Go back to <strong>Login!</strong></ion-label>
           </ion-col>
         </ion-row>
-      </ion-grid>
-      <ion-grid>
-        <ion-col>
-          <ion-label (click)='onLoginPage()' class="plain-txt pointer">Go back to <strong>Login!</strong></ion-label>
-        </ion-col>
       </ion-grid>
     </div>
     <!--end of form-container-->

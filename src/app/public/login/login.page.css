@@ -1,4 +1,14 @@
-.heading {
+.input-container{
+    width: 232px;
+    margin: 0 auto 6px auto;
+}
+.ftr-s {
+    margin: 0 0 12px 0;
+}
+.login-logo {
+    margin: 0 auto;
+}
+/* .heading {
     display: block;
     overflow: hidden;
     padding: 2px 0 2px 0;
@@ -67,8 +77,22 @@
     position: absolute;
     bottom: 30px;
     left: 0;
-} */
+} 
+.errors-c {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 40px;
+    font-size: 12px;
+}
 
+.error {
+    background: #fff;
+    padding: 1px 0;
+    width: auto;
+    display: block;
+    overflow: hidden;
+}
 .check-c {
     display: block;
     margin: 0 auto;
@@ -87,26 +111,16 @@ ion-checkbox {
     text-align: center;
     margin: 0 auto;
 }
+*/
+
+
+
 
 /*
     forms validation
 */
 
-.errors-c {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    min-height: 40px;
-    font-size: 12px;
-}
 
-.error {
-    background: #fff;
-    padding: 1px 0;
-    width: auto;
-    display: block;
-    overflow: hidden;
-}
 /* ion-header ion-toolbar ion-title {
     background: #3fa2f7;
     color: #fff;

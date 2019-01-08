@@ -1,4 +1,16 @@
-.heading {
+.splash-heading {
+    /* margin: 130px auto 58px auto; */
+    margin: 30% auto 10% auto;
+}
+.s-text {
+    display: block;
+    margin: 20px auto;
+}
+
+.spacer {
+    margin: 10px 0;
+}
+/* .heading {
     display: block;
     overflow: hidden;
     padding: 22px 0 16px 0;
@@ -20,62 +32,11 @@
     color: #fff;
     font-size: 36px;
     line-height: 28px;
-}
-.form-container {
+} */
+
+/* .form-container {
     display: block;
     width: 70%;
     margin: 0 auto;
-}
-.s-text {
-    display: block;
-    margin: 20px auto;
-}
-.spacer {
-    margin: 10px 0;
-}
-
-/* .container {
-    display: block;
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-}
-
-.bg {
-    padding: 36% 0;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center center !important;
- 
-}
-
-.title, .title-bold {
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 36px;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.btn-c {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
-}
-
-.text-default {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-weight: bold;
-    color: #fff;
-}
-
-.title-bold {
-    font-weight: bold;
-    color: #fff;
-    font-size: 46px;
 } */
+

@@ -1,17 +1,48 @@
 /*customLoader*/
+
 @import url('https://fonts.googleapis.com/css?family=Lato:700|Roboto:400,500');
 .lato {
     font-family: 'Lato', sans-serif;
     color: #626465;
 }
-.pointer {
-    cursor:pointer !important;
+
+.notiBg {
+    background: #f6f6f6;
+    height: 46px;
+    padding: 6px 0;
 }
 
+.contentBg {
+    background: #f5f5f5;
+}
+.notiBg ion-icon {
+    color: #a8a8a8;
+    font-size: 16px;
 
-ion-app.android {
-    font-family: TradeGothic !important;
-    font-size: 10px;
+    position: relative;
+}
+.notiBg .notiBlock {
+    display: block;
+}
+.notiBg ion-badge {
+    background: #ff0000;
+    font-size: 9px;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+
+    width: auto;
+    height: 16px;
+    position: absolute;
+    top: -4px;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+ion-footer.mainFooter ion-icon {
+    color: #ffae74;
+    width: 22px;
+    height: 22px;
 }
 
 .AppBg {
@@ -25,17 +56,20 @@ ion-app.android {
     padding: 0;
     overflow: hidden;
 }
+
 .headerBg {
     background-repeat: no-repeat !important;
     background-size: contain !important;
     background-position: bottom right !important;
-    background-color: #f66c0a !important;
-    padding: 4px 0 !important; 
+    /* background-color: #f66c0a !important; */
+    padding: 4px 0 !important;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-.dp{
+
+
+.dp {
     background-repeat: no-repeat !important;
     background-size: cover !important;
     background-position: center center !important;
@@ -43,12 +77,28 @@ ion-app.android {
     width: 80px;
     height: 80px;
 }
+
 .txt_w {
     color: #fff;
 }
+.no-v-pad {
+    padding-top: 0;
+    padding-bottom: 0;
+}
 
 .input-c {
+    display: block;
+    overflow: hidden;
+    /* position: relative; */
+}
+ion-input {
     position: relative;
+}
+.icon {
+    position: absolute;
+    top: 9px;
+    left: 12px;
+    color: #fff;
 }
 
 .input-El {
@@ -59,7 +109,10 @@ ion-app.android {
 .plain-txt {
     display: block;
     text-align: center;
-    color: #fff;
+}
+.center {
+    display: block;
+    text-align: center;
 }
 
 .tLoader ion-backdrop {
@@ -85,4 +138,52 @@ ion-app.android {
 
 .tLoader loading-content {
     font-size: 16px;
+}
+.heading {
+    width: 181px;
+    display: block;
+}
+
+.text-primary {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.text-small {
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+}
+.check-item {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+}
+.s-icons {
+    display: block;
+    width: 232px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+}
+.error {
+    font-size: 12px;
+    margin:  0 auto;
+    display: block;
+    text-align: center;
+}
+ion-label.error {
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: -4px;
+}
+.s-icons > img {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 14px;
+}
+.s-icons > img:first-child {
+    margin-left: 0;
 }

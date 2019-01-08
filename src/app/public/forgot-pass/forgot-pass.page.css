@@ -1,4 +1,11 @@
-.heading {
+.h-p {
+   width: 200px;
+   margin: 0 auto;
+}
+.f-logo {
+    margin: 15% auto 5% auto;
+}
+/* .heading {
     display: block;
     overflow: hidden;
     padding: 22px 0 16px 0;
@@ -21,6 +28,12 @@
     font-size: 36px;
     line-height: 28px;
 }
+.form-container {
+    display: block;
+    width: 88%;
+    margin: 0 auto;
+}
+
 
 .f-txt {
     font-size: 12px;
@@ -28,15 +41,10 @@
     display: block;
     margin: 0 auto;
 }
+*/
 
-.form-container {
-    display: block;
-    width: 88%;
-    margin: 0 auto;
-}
 
-.icon {
-    position: absolute;
-    top: 24px;
-    left: 18px;
-}
+
+
+
+
