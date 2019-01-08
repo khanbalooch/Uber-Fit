@@ -15,6 +15,7 @@ import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,9 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IonicStorageModule.forRoot(),
     FormsModule,
     ReactiveFormsModule
-    // AgmCoreModule.forRoot({
-    //   apiKey: 'AIzaSyDbTdI4CxHBY3u4S_WlrvgjY4h3V-KrAv0'
-    // })
   ],
   providers: [
     NativeStorage,
@@ -40,6 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AuthGuardService,
     FormsModule,
     ReactiveFormsModule,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 
   ],

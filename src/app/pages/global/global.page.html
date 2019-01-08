@@ -9,9 +9,8 @@
 </ion-header>
 
 <ion-content>
-  <agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-map (mapReady)='onMapReady($event)' [backgroundColor]='medium' [latitude]="location.lat" [longitude]="location.lng">
+    <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
   </agm-map>
-  <!-- <app-google-map></app-google-map> -->
 </ion-content>
 <app-footer></app-footer>
