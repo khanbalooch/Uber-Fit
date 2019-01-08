@@ -64,12 +64,12 @@ export class HomePage implements OnInit {
   onCancel(event) {
     this.isShowSearchBar = false;
   }
-  async onFilterBtnClick() {
+  async onFilterBtnClick() {    
     const modal = await this.modalController.create({
       component: FilterPage
     });
-    return await modal.present();
     this.isShowFilter = !this.isShowFilter;
+    return await modal.present();
   }
 
   onProfilePage() {

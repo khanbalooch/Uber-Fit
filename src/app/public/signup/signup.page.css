@@ -1,4 +1,17 @@
-.heading {
+.signup-logo {
+    display: block;
+    margin: 4% auto 2% auto;
+}
+ ion-label.error {
+    width: 100%;
+    height: 15px;
+    position: absolute;
+    bottom: -4px;
+}
+/* .input-outer {
+    position: relative;
+} */
+/* .heading {
     display: block;
     overflow: hidden;
     padding: 0 0 0 0;
@@ -33,20 +46,7 @@
     width: 96%;
 }
 
-/* .main {
-    display: block;
-    width: 100%;
-    position: relative;
-}
 
-.bottom-text {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-} */
 
 .form-container {
     display: block;
@@ -136,4 +136,4 @@ ion-radio-group ion-label {
 .no-v-pad {
     padding-top: 0;
     padding-bottom: 0;
-}
+} */

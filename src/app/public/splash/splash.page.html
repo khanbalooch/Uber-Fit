@@ -1,44 +1,41 @@
-<ion-content>
+<ion-content mode="ios">
   <div class="AppBg" style="background: url('../../../assets/images/Welcome.jpg');">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12">
-          <div class="heading">
-            <ion-label class="title">Find Your </ion-label>
-            <ion-label class="title-bold">Fitness</ion-label>
+    <ion-grid class="no-v-pad">
+      <ion-row class="no-v-pad">
+        <ion-col size="12" class="no-v-pad">
+          <div class="heading splash-heading">
+            <img src="../../../assets/images/findYourFitness.svg" alt="Find Your Fitness">
+            <!-- <ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">Fitness</ion-label> -->
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
 
     <div class="form-container">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12">
-            <ion-button shape="round" size="default" expand="block" fill="solid" (click)="gotoLogin()" color="medium">LOGIN</ion-button>
+      <ion-grid  class="no-v-pad">
+        <ion-row  class="no-v-pad">
+          <ion-col size="12"  class="no-v-pad">
+            <ion-button class="uberPrimary" shape="round" size="default" expand="block" fill="solid" (click)="gotoLogin()" color="medium">LOGIN</ion-button>
+            <ion-button class="white-outline uberSecondary" shape="round" size="default" expand="block" fill="outline" (click)="gotoSignup()" color="light">SIGNUP</ion-button>
+          </ion-col>
+          <ion-col size="12"  class="no-v-pad"> 
+            <label class="txt_w center text-primary" (click)="windowLogin()">Just let me in</label>
           </ion-col>
         </ion-row>
       </ion-grid>
-
-      <ion-grid>
+      <!-- <ion-grid>
         <ion-row>
           <ion-col size="12">
-            <span class="spacer"></span>
+           
           </ion-col>
         </ion-row>
-      </ion-grid>
-      <ion-grid>
+      </ion-grid> -->
+      <!-- <ion-grid>
         <ion-row>
-          <ion-col size="12">
-            <ion-button class="white-outline" shape="round" size="default" expand="block" fill="outline" (click)="gotoSignup()" color="dark">SIGNUP</ion-button>
-          </ion-col>
+         
         </ion-row>
-      </ion-grid>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12"> <label class="plain-txt s-text" (click)="windowLogin()">Just let me in</label></ion-col>
-        </ion-row>
-      </ion-grid>
+      </ion-grid> -->
     </div>
     <!--form-container-->
   </div>

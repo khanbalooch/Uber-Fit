@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700|Roboto:400,500');
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
@@ -19,7 +20,9 @@
 
 
 
+
 :root {
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-cprimary: #3fa2f7;
@@ -78,7 +81,7 @@
   --ion-color-dark-tint: #fff;
 
   /** medium **/
-  --ion-color-medium: #ec6708;
+  --ion-color-medium: #f66c0a;
   --ion-color-medium-rgb: 152, 154, 162;
   --ion-color-medium-contrast: #ffffff;
   --ion-color-medium-contrast-rgb: 255, 255, 255;
@@ -86,24 +89,130 @@
   --ion-color-medium-tint: #a2a4ab;
 
   /** light **/
-  --ion-color-light: #3fa2f7;
+  --ion-color-light: #fff;
   --ion-color-light-rgb: 244, 244, 244;
-  --ion-color-light-contrast: #fff;
+  --ion-color-light-contrast: #f66c0a;
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 
-
-    /** custom **/
-    --ion-color-custom: #fff;
-    --ion-color-custom-rgb: #ffffff;
-    --ion-color-custom-contrast: #fff;
-    --ion-color-custom-contrast-rgb: 0, 0, 0;
-    --ion-color-custom-shade: #fff;
-    --ion-color-custom-tint: #fff;
     
     ion-toolbar {
       --ion-color-base :#f66c0a !important;
+    
+    }
+    ion-title {
+      font-family: 'Roboto', sans-serif;
+      // font-size: 18px;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: center;
+    }
+    ion-item.uberInput {
+      --background : transparent !important; 
+      --background-activated:transparent !important;
+      --border-width: 1px 1px 1px 1px;
+      --border-color: #fff;
+      --border-radius: 30px;
+      --highlight-background: none;
+      --full-highlight-height: none;
+      --inset-highlight-height: none;
+    }
+    ion-item.uberRadio {
+      --background : transparent !important; 
+      --background-activated:transparent !important;
+      --border-width: 0 0 0 0;
+      --border-radius: none;
+      --color: #fff;
+      --border-color: transparent;
+      --inner-padding-start: 0 !important;
+      --inner-padding-end: 0 !important;
+      --inner-padding-top: 0 !important;
+      --inner-padding-bottom: 0 !important;
+      --padding-start: 0 !important;
+      --padding-end: 0 !important;
+    }
+  
+    ion-button.uberPrimary {
+         --ion-color-base :#f26d00 !important;
+         --ion-color-base: -moz-linear-gradient(left, #f26d00 0%, #ff7d1a 100%) !important;
+         --ion-color-base: -webkit-linear-gradient(left, #f26d00 0%,#ff7d1a 100%) !important;
+         --ion-color-base: linear-gradient(to right, #f26d00 0%,#ff7d1a 100%) !important;
+         --background:#ec6708 !important;
+        /*fonts*/
+         font-family: 'Roboto', sans-serif;
+         font-size: 15px;
+         font-weight: 400;
+         /*dimentions*/
+         width: 232px;
+         height: 64px;
+         margin: 0 auto 12px auto;
+
+         
+    }
+    ion-button.uberSecondary {
+      /*light color scheme*/
+      font-family: 'Roboto', sans-serif;
+      font-size: 15px;
+      font-weight: 400;      
+      /*dimentions*/
+      width: 232px;
+      height: 64px;
+      margin: 0 auto 12px auto;
+    }
+    ion-item.uberPrimary {
+      /*input Elem*/
+      width: 232px;
+      height: 64px;
+      margin: 4px auto 0px auto;
+    }
+    ion-item.uberPrimary ion-icon{
+      color: #fff;
+    }
+    ion-item.uberChk {
+      --background : transparent !important; 
+      --background-activated:transparent !important;
+      --border-width: 0 0 0 0;
+      --border-radius: none;
+      --color: #fff;
+      --border-color: transparent;
+      --inner-padding-start: 0 !important;
+      --inner-padding-end: 0 !important;
+      --inner-padding-top: 0 !important;
+      --inner-padding-bottom: 0 !important;
+      --padding-start: 0 !important;
+      --padding-end: 0 !important;
+      --min-height: 20px;
+    }
+    ion-item.uberChk ion-checkbox,
+    ion-item.uberRadio ion-radio{
+      --border-radius: none;
+      --background: transparent !important;
+      --border-color: #fff;
+      margin: 0 6px 0 0;
+      width: 14px;
+      height: 14px;
+    }
+    ion-item.uberRadio ion-radio{
+      border: 1px solid #fff;
+    }
+    ion-item.uberChk ion-label{
+      margin: 0;
+    }
+    ion-item.uberLink {
+      --background : transparent !important; 
+      --background-activated:transparent !important;
+      --border-width: 0 0 0 0;
+      --border-radius: none;
+      --color: #fff;
+      --border-color: transparent;
+      --inner-padding-start: 0 !important;
+      --inner-padding-end: 0 !important;
+      --inner-padding-top: 0 !important;
+      --inner-padding-bottom: 0 !important;
+      --padding-start: 0 !important;
+      --padding-end: 0 !important;
+      --min-height: 20px;
     }
 
 }

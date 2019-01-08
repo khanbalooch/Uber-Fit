@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="light">
+  <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
@@ -13,105 +13,122 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <div class="heading">
-            <ion-label class="title">Find Your </ion-label>
-            <ion-label class="title-bold">Fitness</ion-label>
+          <div class="heading login-logo">
+            <img src="../../../assets/images/findYourFitness.svg" alt="Find Your Fitness">
+            <!-- <ion-label class="title">Find Your </ion-label>
+            <ion-label class="title-bold">Fitness</ion-label> -->
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
     <!--logo end here-->
-    <form  [formGroup]="loginForm" (ngSubmit)="login()"> 
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-container">
-        <ion-grid>
-          <ion-row class="errors-c" >
-              <ion-label  class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
-                  username is required.
-              </ion-label>
-              <ion-label  class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
-                  Invalid username.
-              </ion-label>
+        <ion-grid class="no-v-pad">
+          <ion-row class="errors-c">
 
-              <ion-label  class="error center" color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !loginForm.valid">
-                  Password is required.
-              </ion-label>
-              
+
+
+
           </ion-row>
-          <ion-row>
-            <ion-col size="12" class="input-c">
-              <ion-label class="icon txt_w">
-                <ion-icon name="person"></ion-icon>
-              </ion-label>
-              
-              <ion-item>
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-item class="uberInput uberPrimary input-c">
+                <ion-label class="icon txt_w">
+                  <ion-icon name="person"></ion-icon>
+                </ion-label>
                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='username'
                   type="text" placeholder="Name" padding></ion-input>
               </ion-item>
-              
-  
+              <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
+                username is required.
+              </ion-label>
+              <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
+                Invalid username.
+              </ion-label>
             </ion-col>
           </ion-row>
-  
-          <ion-row>
-            <ion-col size="12" class="input-c">
-              <ion-label class="icon txt_w">
-                <ion-icon name="lock"></ion-icon>
-              </ion-label>
-              <ion-item>
+
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-item class="uberInput uberPrimary input-c">
+                <ion-label class="icon txt_w">
+                  <ion-icon name="lock"></ion-icon>
+                </ion-label>
                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='password'
                   type="password" placeholder="Password" padding></ion-input>
               </ion-item>
+              <ion-label class="error center" color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !loginForm.valid">
+                Password is required.
+              </ion-label>
             </ion-col>
           </ion-row>
-  
-          <ion-row>
-            <ion-col size="6">
-              <ion-checkbox color="primary"></ion-checkbox>
-              <ion-label class="check-item txt_w">Remember me</ion-label>
-            </ion-col>
-            <ion-col size="6">
-              <a (click)='onForgotPass()' class="fp-text">
-                <ion-icon name="help-circle-outline" class="txt_w"></ion-icon>
-                <ion-label class="check-item txt_w">Forgot Password</ion-label>
-              </a>
-            </ion-col>
-          </ion-row>
-          <ion-row>
-            <ion-col size="12">
-              <ion-button type="submit" [disabled]="!loginForm.valid" shape="round" size="default" expand="block" fill="solid">LOGIN</ion-button>
+
+          <div class="input-container no-v-pad">
+            <ion-row class="no-v-pad">
+              <ion-col size="6" class="no-v-pad">
+                <ion-item class="uberChk">
+                  <ion-label class="check-item txt_w">Remember me</ion-label>
+                  <ion-checkbox slot="start" color="medium"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6" class="no-v-pad">
+                <ion-item class="uberLink">
+                  <a (click)='onForgotPass()' class="fp-text pointer">
+                    <ion-label class="check-item" color="light">Forgot Password</ion-label>
+                  </a>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </div>
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-button class="uberPrimary" type="submit" [disabled]="!loginForm.valid" shape="round" size="default"
+                expand="block" fill="solid" color="medium">LOGIN</ion-button>
             </ion-col>
           </ion-row>
         </ion-grid>
-        <ion-grid class="social-login">
-          <ion-row>
-            <ion-col size="12">
-              <ion-label class="plain-txt">Or connect with</ion-label>
+        <ion-grid class="social-login no-v-pad">
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <ion-label class="center text-primary txt_w">Or connect with</ion-label>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="2"></ion-col>
+            <ion-col size="12">
+              <div class="s-icons">
+                <img src="../../../assets/icon/fb_icon.svg" alt="Fb">
+                <img src="../../../assets/icon/google_icon.svg" alt="">
+              </div>
+            </ion-col>
+          </ion-row>
+          <!-- <ion-col size="2"></ion-col>
             <ion-col size="4">
-              <ion-icon class="plain-txt" name="logo-facebook"></ion-icon>
+              <ion-icon class="plain-txt" src="../../../assets/icon/fb_icon.svg"></ion-icon>
             </ion-col>
             <ion-col size="4">
-              <ion-icon class="plain-txt" name="logo-googleplus"></ion-icon>
+              <ion-icon class="plain-txt" src="../../../assets/icon/google_icon.svg" ></ion-icon>
             </ion-col>
             <ion-col size="2"></ion-col>
-          </ion-row>
+          </ion-row> -->
         </ion-grid>
-  
-        <ion-grid>
-          <ion-row>
-            <ion-col size="12">
-              <ion-label class="txt_w pointer text-center" (click)="gotoSignup()" text-center>Don't have account? <strong>Sign
-                  up!</strong></ion-label>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-  
-  
       </div>
     </form>
-  </div>
 
+
+
+
+    <ion-footer mode="ios">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-label class="text-primary txt_w center pointer" (click)="gotoSignup()" text-center>Don't have account?
+              <strong>Sign
+                up!</strong></ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-footer>
+
+  </div>
 </ion-content>
