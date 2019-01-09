@@ -1,0 +1,6 @@
+{
+  "appId": "com.capbpm.iq",
+  "appName": "Find Your Fitness",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}
