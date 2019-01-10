@@ -1,4 +1,239 @@
-.gender {
+.card-content-md {
+    padding: 10px;
+}
+
+.userPic-c {
+    display: block;
+    overflow: hidden;
+}
+
+.userPic {
+    width: 96px;
+    height: 94px;
+    position: relative;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    border-radius: 50%;
+    float: right;
+}
+
+.pic-container {
+    margin: 0 0 12px 0;
+}
+
+.name {
+    color: #4f5153;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    line-height: 22px;
+    margin: 0 0 4px 0;
+}
+
+.username {
+    display: block;
+    text-align: center;
+    margin: 0 auto 0 10px;
+}
+
+.age {
+    font-size: 10px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-weight: bold;
+    color: #626465;
+    margin: 0 0 20px 0;
+}
+
+.rating {
+    display: block;
+    text-align: center;
+    margin: 12px auto 0 auto;
+}
+
+.review-v {
+    font-size: 10px;
+    color: #626465;
+}
+
+.r-value {
+    color: #4f5153;
+    font-size: 22px;
+}
+
+.fav-c ion-icon {
+    color: #a9a9a9;
+    width: 16px;
+    height: 16px;
+    float: right;
+}
+
+.fav {
+    color: #fd0000 !important;
+}
+
+.status {
+    background: #63de36;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 16px;
+}
+
+ion-icon.star {
+    width: 20px;
+    height: 20px;
+    color: #ffbb00;
+}
+
+.contacts-c {
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    margin: 0 0 18px 0;
+}
+
+.userContacts {
+    min-width: 238px;
+    display: block;
+    margin: 0 auto;
+}
+
+.userContacts .contact {
+    display: inline-block;
+    vertical-align: middle;
+    width: 33%;
+    text-align: center;
+}
+
+.userContacts .contact:first-child {
+    margin-left: 0;
+}
+
+.contact img {
+    width: 24px;
+    height: 16px;
+    margin: 0 auto;
+}
+
+.contactTxt {
+    font-size: 12px;
+    color: #626465;
+}
+
+.book-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    margin: 0 4px 0 0;
+}
+
+.title {
+    text-transform: uppercase;
+    color: #4f5153;
+    font-weight: 500;
+}
+
+ion-list.services ion-item {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 10px;
+}
+
+ion-list.cert ion-item {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 9px;
+}
+
+.cert-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+}
+
+.about-content {
+    font-size: 10px;
+}
+
+ion-slides {
+    margin-bottom: 16px !important;
+}
+
+.swiper-pagination.swiper-pagination-bullets {
+    bottom: -20px !important;
+}
+
+.feedbackOpts ion-card-content {
+    padding: 0;
+}
+
+.feedRating {
+    float: right;
+}
+
+.feedRating ion-icon {
+    width: 8px;
+    height: 8px;
+    font-size: 8px;
+    line-height: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #ffcc3e;
+}
+
+.feedUser ion-avatar, .feedUser ion-label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+    margin-left: -2px;
+}
+
+.feedUser ion-label {
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+.feedContent {
+    font-size: 8px;
+}
+
+ion-slide ion-card {
+    padding: 10px;
+}
+.feedbackContainer ion-card {
+    margin: 0 0 34px 0;
+}
+.img-container {
+    margin: 0 0 34px 0;
+}
+
+ion-slide .feedContent {
+    text-align: left;
+}
+.feedbackContainer ion-card-content {
+    padding: 0px;
+}
+
+.feedbackContainer ion-avatar {
+    width: 50px;
+    height: 50px;
+}
+.btn-container {
+    margin: 0 0 26px 0;
+}
+.service-list-c,.cert-list-c,.about-cont {
+    margin: 0 0 14px 0;
+}
+.gal-title {
+    margin: 0 0 12px 0;
+}
+/* .gender {
     font-size: 22px;
 }
 .profilePic{
@@ -8,7 +243,7 @@
     margin: 0 auto;
 }
 
-.title {
+.title {*
     font-size: 14px; text-align: center;display: block;
 }
 .subtitle {
@@ -26,4 +261,4 @@
     display: block;
     width: 64%;
     margin: 0 auto;
-}
+} */

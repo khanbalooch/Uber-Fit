@@ -1,14 +1,347 @@
 <app-header></app-header>
 <ion-header>
-  <ion-toolbar  color="medium">
+  <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title text-center>Trainer</ion-title>
+    <ion-title text-center>Trainer profile</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-grid>
+
+
+
+
+  <div class="card-container">
+    <ion-card>
+      <ion-card-content>
+        <ion-grid class="no-pad">
+          <ion-row class="no-v-pad top">
+            <ion-col size="6" class="lt">
+              <ion-label class="text-primary">Report</ion-label>
+            </ion-col>
+            <ion-col class="fav-block rt" size="6">
+              <div class="fav-c pointer" (click)="onFavBtn()">
+                <ion-icon name="heart-empty" *ngIf="!isFav"></ion-icon>
+                <ion-icon class="fav" name="heart" *ngIf="isFav"></ion-icon>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-pad pic-container">
+            <ion-col class="no-v-pad" size="1"></ion-col>
+            <ion-col size="7" class="no-pad">
+              <div class="userPic-c">
+                <div class="userPic content-c" style="background: url('../../assets/images/wt.jpg');">
+                  <span class="status"></span>
+                </div>
+
+              </div>
+              <!-- <div class="username">
+                <ion-label class="text-primary name">
+                  John Doe
+                </ion-label>
+                <ion-label class="lato age">
+                  23 years old
+                </ion-label>
+              </div> -->
+            </ion-col>
+            <ion-col size="4">
+              <div class="rating">
+                <div class="icon-c">
+                  <ion-icon class="star" name="star-half"></ion-icon>
+                  <ion-label class="text-primary r-value">4.7</ion-label>
+                </div>
+                <ion-label class="lato review-v">(78 Review)</ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-v-pad">
+            <ion-col size="12" class="no-v-pad">
+              <div class="username" class="no-v-pad">
+                <ion-label class="text-primary name">
+                  John Doe
+                </ion-label>
+                <ion-label class="lato age">
+                  23 years old
+                </ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="contacts-c no-v-pad">
+            <ion-col size="12" class="no-pad">
+              <div class="userContacts">
+                <div class="callme contact">
+                  <img src="../../assets/icon/call_icon.svg" alt="Call">
+                  <ion-label class="lato contactTxt">Call me</ion-label>
+                </div>
+                <div class="callme contact">
+                  <img src="../../assets/icon/message_icon.svg" alt="Call">
+                  <ion-label class="lato contactTxt">Message Me</ion-label>
+                </div>
+                <div class="callme contact">
+                  <img src="../../assets/icon/Location.svg" alt="Call">
+                  <ion-label class="lato contactTxt">0.9 mile away</ion-label>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-pad btn-container">
+            <ion-col size="12" class="no-pad">
+              <ion-button class="uberPrimary" shape="round" size="default" expand="block" fill="solid" (click)="onBookClient()"
+                color="medium">
+                <ion-icon class="book-icon" name="calendar"></ion-icon>
+                <ion-label> Book</ion-label>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-pad">
+            <ion-col class="no-pad" size="12">
+              <ion-label class="text-primary title">
+                My services
+              </ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row class="no-pad service-list-c">
+            <ion-col class="no-pad" size="12">
+              <ion-list class="services">
+                <ion-item class="lato">
+                  Yoga Trainer
+                </ion-item>
+                <ion-item class="lato">
+                  Fitness Trainer
+                </ion-item>
+                <ion-item class="lato">
+                  Cardio Trainer
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad">
+            <ion-col class="no-pad" size="12">
+              <ion-label class="text-primary title">
+                Certifications
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad cert-list-c">
+            <ion-col class="no-pad" size="12">
+              <ion-list class="cert">
+                <ion-item class="lato">
+                  <ion-icon class="cert-icon" mode="ios" name="checkmark-circle-outline" color="medium"></ion-icon>
+                  Licensed Fitness Trainer
+                </ion-item>
+                <ion-item class="lato">
+                  <ion-icon class="cert-icon" mode="ios" name="checkmark-circle-outline" color="medium"></ion-icon>
+                  Certified Personal Trainer
+                </ion-item>
+                <ion-item class="lato">
+                  <ion-icon class="cert-icon" mode="ios" name="checkmark-circle-outline" color="medium"></ion-icon>
+                  Licensed Yoga Trainer
+                </ion-item>
+                <ion-item class="lato">
+                  <ion-icon class="cert-icon" mode="ios" name="checkmark-circle-outline" color="medium"></ion-icon>
+                  Certified Fitness Trainer
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad">
+            <ion-col class="no-pad" size="12">
+              <ion-label class="text-primary title">
+                About Me
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad about-cont">
+            <ion-col class="no-pad" size="12">
+              <ion-text class="lato about-content">
+                Lorem ipsum dolor site amet, sonsectetuer adipis elit, diam nonummy nibh euismod tincidunt ut laoreet
+                dolore magna aliquam
+                erat volutpat. Ut wisi enim ad minim veinam, quis nostrud exerci tatiion ulsad Agasd lamcorpe. Lorem
+                ipusm
+                dolor sit amet, consectetuer adipis elit. diam nonummy nibh eusmod tincidunt ut laoreet dolore magn.
+              </ion-text>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad gal-title">
+            <ion-col class="no-pad" size="12">
+              <ion-label class="text-primary title">
+                Photo gallery
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad">
+            <ion-col class="no-pad" size="12">
+              <ion-slides pager="true" [options]="galleryOpts">
+                <ion-slide>
+                  <div class="img-container">
+                    <img src="../../assets/images/slider-pic.png" alt="">
+                  </div>
+                </ion-slide>
+                <ion-slide>
+                  <div class="img-container">
+                    <img src="../../assets/images/slider-pic.png" alt="">
+                  </div>
+                </ion-slide>
+                <ion-slide>
+                  <div class="img-container">
+                    <img src="../../assets/images/slider-pic.png" alt="">
+                  </div>
+                </ion-slide>
+              </ion-slides>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad">
+            <ion-col class="no-pad" size="12">
+              <ion-label class="text-primary title">
+                Client Feedback
+              </ion-label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="no-pad">
+            <ion-col class="no-pad feedbackContainer" size="12">
+              <ion-slides pager="true" [options]="feedbackOpts">
+                <ion-slide>
+                  <ion-card>
+                    <ion-card-content>
+                      <ion-row class="no-pad">
+                        <ion-col size="8" class="no-pad">
+                          <div class="feedUser">
+                            <ion-avatar>
+                              <img src="../../assets/images/wt.jpg" alt="">
+                            </ion-avatar>
+                            <ion-label class="text-primary name">
+                              John Doe
+                            </ion-label>
+                          </div>
+                        </ion-col>
+                        <ion-col size="4" class="no-pad">
+                          <div class="feedRating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row class="no-pad">
+                        <ion-col size="12" class="no-pad">
+                          <p class="lato feedContent">
+                            Lorem ipsum dolor site amet, sonsectetuer adipis elit, diam nonummy nibh euismod tincidunt
+                            ut laoreet
+                            dolore magna aliquam
+                            erat volutpat.
+                          </p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+                <ion-slide>
+                  <ion-card>
+                    <ion-card-content>
+                      <ion-row class="no-pad">
+                        <ion-col size="8" class="no-pad">
+                          <div class="feedUser">
+                            <ion-avatar>
+                              <img src="../../assets/images/wt.jpg" alt="">
+                            </ion-avatar>
+                            <ion-label class="text-primary name">
+                              John Doe
+                            </ion-label>
+                          </div>
+                        </ion-col>
+                        <ion-col size="4" class="no-pad">
+                          <div class="feedRating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row class="no-pad">
+                        <ion-col size="12" class="no-pad">
+                          <p class="lato feedContent">
+                            Lorem ipsum dolor site amet, sonsectetuer adipis elit, diam nonummy nibh euismod tincidunt
+                            ut laoreet
+                            dolore magna aliquam
+                            erat volutpat.
+                          </p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+                <ion-slide>
+                  <ion-card>
+                    <ion-card-content>
+                      <ion-row class="no-pad">
+                        <ion-col size="8" class="no-pad">
+                          <div class="feedUser">
+                            <ion-avatar>
+                              <img src="../../assets/images/wt.jpg" alt="">
+                            </ion-avatar>
+                            <ion-label class="text-primary name">
+                              John Doe
+                            </ion-label>
+                          </div>
+                        </ion-col>
+                        <ion-col size="4" class="no-pad">
+                          <div class="feedRating">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row class="no-pad">
+                        <ion-col size="12" class="no-pad">
+                          <p class="lato feedContent">
+                            Lorem ipsum dolor site amet, sonsectetuer adipis elit, diam nonummy nibh euismod tincidunt
+                            ut laoreet
+                            dolore magna aliquam
+                            erat volutpat.
+                          </p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-card-content>
+                  </ion-card>
+                </ion-slide>
+              </ion-slides>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <ion-grid>
     <ion-row align-items-center>
       <ion-col size="1"></ion-col>
       <ion-col size="10">
@@ -18,8 +351,6 @@
         </div>
         <div class="img-outer" *ngIf="selectedTrainer?.pictureURL == 'string'">
           <img src="../../assets/images/user-profile.png" alt="{{selectedTrainer?.firstName}}" class="profilePice dummy">
-          <!-- <div class="profilePic" [ngStyle]="{'background-image': 'url('../../assets/images/user-profile.png')'}">
-          </div> -->
         </div>
         <div class="username">
           <ion-text>
@@ -39,7 +370,6 @@
       <ion-col size="1"></ion-col>
     </ion-row>
   </ion-grid>
-  <!-- skills -->
   <ion-card *ngIf="selectedTrainer?.skill.length > 0">
     <ion-card-header>
       <ion-text>Skills</ion-text>
@@ -96,7 +426,6 @@
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <!--end of skills -->
   <ion-list>
     <ion-item>
       <ion-label>Joined on</ion-label>
@@ -133,7 +462,6 @@
       <ion-label>{{selectedTrainer.address[0].zip}}</ion-label>
     </ion-item>
   </ion-list>
-
   <ion-grid>
     <ion-row>
       <ion-col size="3">
@@ -162,6 +490,7 @@
   </ion-grid>
   <div text-center align-items-center>
     <ion-button color="primary" (click)="onBookClient()">Book Client</ion-button>
-  </div>
+  </div> -->
+
 </ion-content>
 <app-footer></app-footer>
