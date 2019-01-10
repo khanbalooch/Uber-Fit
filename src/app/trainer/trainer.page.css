@@ -15,7 +15,6 @@
     background-position: center center !important;
     background-size: cover !important;
     border-radius: 50%;
-    float: right;
 }
 
 .pic-container {
@@ -188,15 +187,14 @@ ion-slides {
 }
 
 .feedUser ion-avatar, .feedUser ion-label {
-    display: inline-block;
-    vertical-align: middle;
     width: 50%;
-    margin-left: -2px;
+    float: left;
 }
 
 .feedUser ion-label {
     font-size: 12px;
     text-transform: capitalize;
+    margin: 6px 0;
 }
 
 .feedContent {
@@ -206,9 +204,11 @@ ion-slides {
 ion-slide ion-card {
     padding: 10px;
 }
+
 .feedbackContainer ion-card {
     margin: 0 0 34px 0;
 }
+
 .img-container {
     margin: 0 0 34px 0;
 }
@@ -216,6 +216,7 @@ ion-slide ion-card {
 ion-slide .feedContent {
     text-align: left;
 }
+
 .feedbackContainer ion-card-content {
     padding: 0px;
 }
@@ -224,15 +225,35 @@ ion-slide .feedContent {
     width: 50px;
     height: 50px;
 }
+
 .btn-container {
     margin: 0 0 26px 0;
 }
-.service-list-c,.cert-list-c,.about-cont {
+
+.service-list-c, .cert-list-c, .about-cont {
     margin: 0 0 14px 0;
 }
+
 .gal-title {
     margin: 0 0 12px 0;
 }
+
+.time, .value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.value {
+    color: #4F5153;
+}
+
+.time {
+    color: #888888;
+}
+.price-c {
+    margin: 18px 0 0 0;
+}
+
 /* .gender {
     font-size: 22px;
 }
