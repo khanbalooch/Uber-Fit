@@ -30,7 +30,8 @@ export class HomePage implements OnInit {
 
 
   ngOnInit() {
-    this.getGeolocation();
+    //this.getGeolocation();
+    this.getAllTrainers();
   }
 
   async getGeolocation() {

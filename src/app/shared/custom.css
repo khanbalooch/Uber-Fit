@@ -81,10 +81,16 @@ ion-footer.mainFooter ion-icon {
 .txt_w {
     color: #fff;
 }
+
+.no-pad {
+    padding: 0;
+}
+
 .no-v-pad {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 
 .input-c {
     display: block;
