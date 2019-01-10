@@ -1,6 +1,36 @@
 ion-item.uberLink,ion-item.uberChk {
     font-size: 11px;
 }
+ion-toolbar {
+    --ion-color-base: #FF7D1A !important;
+}
+.login-logo{
+    margin: 40px auto 15px;
+}
+
+ion-footer{
+    position: absolute;
+    bottom:10px;
+}
+.native-input{
+    ::-webkit-input-placeholder { 
+        color: #fff !important;
+        opacity:1 !important;
+    }
+    ::-moz-placeholder {
+        color: #fff !important;
+        opacity:1 !important;
+    }
+    :-ms-input-placeholder { 
+        color: #fff !important;
+        opacity:1 !important;
+    }
+    :-moz-placeholder { 
+        color: #fff !important;
+        opacity:1 !important;
+    }
+}
+
 
 // ion-toolbar {
 //     --ion-color-base :#ec6708 !important;

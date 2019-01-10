@@ -96,7 +96,7 @@ ion-input {
 }
 .icon {
     position: absolute;
-    top: 9px;
+    top: 7px;
     left: 12px;
     color: #fff;
 }
@@ -175,6 +175,7 @@ ion-label.error {
     height: 15px;
     position: absolute;
     bottom: -4px;
+    color: #c53232 !important;
 }
 .s-icons > img {
     cursor: pointer;
@@ -186,4 +187,20 @@ ion-label.error {
 }
 .s-icons > img:first-child {
     margin-left: 0;
+}
+
+.native-input{
+    padding-left:20px;
+}
+
+ion-input{
+    --placeholder-color: #fff;
+    --placeholder-opacity: 1;
+}
+ion-toolbar:after{
+    display:none;
+
+}
+.header-md:after{
+    display:none !important;
 }

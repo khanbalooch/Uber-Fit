@@ -1,8 +1,5 @@
 <ion-header>
   <ion-toolbar color="medium">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
-    </ion-buttons>
     <ion-title text-center>Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -41,7 +38,7 @@
                   type="text" placeholder="Name" padding></ion-input>
               </ion-item>
               <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
-                username is required.
+                Username is required.
               </ion-label>
               <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
                 Invalid username.
@@ -75,7 +72,7 @@
               <ion-col size="6" class="no-v-pad">
                 <ion-item class="uberLink">
                   <a (click)='onForgotPass()' class="fp-text pointer">
-                    <ion-label class="check-item" color="light">Forgot Password</ion-label>
+                    <ion-label class="check-item" color="light">Forgot Password?</ion-label>
                   </a>
                 </ion-item>
               </ion-col>
