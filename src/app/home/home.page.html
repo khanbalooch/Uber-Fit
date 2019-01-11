@@ -1,150 +1,136 @@
 <ion-header mode="ios">
-  <ion-toolbar color="medium">
-    <ion-title>
-      <ion-grid>
-        <ion-row>
-          <ion-col size="2">
-            <div class="sideMenu">
-              <ion-buttons slot="start">
-                <ion-menu-button></ion-menu-button>
-              </ion-buttons>
-            </div>
-          </ion-col>
-          <ion-col size="7">
-            <ion-label *ngIf="!isShowSearchBar">Search for trainers</ion-label>
-            <ion-searchbar color="medium" mode="md" animated showCancelButton placeholder="Search trainer here..."
-              (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
-          </ion-col>
-          <ion-col size="3">
-            <div class="icon-rt">
-              <ion-icon class="s-icon pointer" slot="end" name="search" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
-              <ion-icon mode="ios" class="s-icon pointer" slot="end" name="funnel" slot="end" (click)="onFilterBtnClick()"></ion-icon>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-title>
-  </ion-toolbar>
-  <ion-grid class="notiBg">
-    <ion-row>
-      <ion-col size="2">
-        <div class="notiBlock">
-          <ion-icon mode="ios" name="chatbubbles"></ion-icon>
-          <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-        </div>
-      </ion-col>
-      <ion-col size="2">
-        <div class="notiBlock">
-          <ion-icon name="call"></ion-icon>
-          <ion-badge mode="md" color="white" slot="top">66</ion-badge>
-        </div>
-      </ion-col>
-      <ion-col class="8">
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-toolbar color="medium">
+        <ion-title>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="header_left_icons" size="3">
+                        <div class="sideMenu">
+                            <ion-buttons slot="start">
+                                <ion-menu-button></ion-menu-button>
+                            </ion-buttons>
+                        </div>
+                        <div class="notiBlock">
+                            <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+                            <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+                        </div>
+                    </ion-col>
+                    <ion-col class="header_main_title" size="6">
+                        <ion-label *ngIf="!isShowSearchBar">Available Trainers</ion-label>
+                        <ion-searchbar color="medium" mode="md" animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
+                    </ion-col>
+                    <ion-col class="header_right_icons" size="3">
+                        <div class="icon-rt">
+                            <ion-icon mode="ios" class="s-icon pointer" slot="end" name="options" slot="end" (click)="onFilterBtnClick()"></ion-icon>
+                            <ion-icon class="s-icon pointer" slot="end" name="search" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-title>
+    </ion-toolbar>
+
 </ion-header>
 
 
-<ion-content class="contentBg">
-  <ion-grid class="listing">
-    <ion-row>
-      <ion-col size="12">
-        <!--not found-->
-        <ion-card *ngIf="trainers?.length == 0">
-          <ion-card-header>
-            <ion-card-content>No Trainer Found!</ion-card-content>
-          </ion-card-header>
-        </ion-card>
-        <!--end of not found-->
-        <!--got error-->
-        <ion-card *ngIf="error">
-          <ion-card-header>
-            <ion-card-content>{{error}}</ion-card-content>
-          </ion-card-header>
-        </ion-card>
-        <!--end err statement-->
-        <ion-list *ngIf="trainers?.length > 0">
-          <!-- trainer-->
-          <ion-card *ngFor="let trainer of trainers">
-            <ion-card-content (click)="selectedTrainer(trainer)">
-              <ion-item class="top-c">
-                <div class="lt">
-                  <ion-avatar *ngIf="isValidPic(trainer?.pictureURL)">
-                    <img src="{{trainer?.pictureURL}}" alt="{{trainer?.firstName}}">
-                  </ion-avatar>
-                  <ion-avatar *ngIf="!isValidPic(trainer?.pictureURL)">
-                    <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
-                  </ion-avatar>
-                  <ion-label>
-                    <ion-text class="username">
-                      {{trainer?.firstName}}
-                    </ion-text>
-                    <ion-text class="age">
-                      {{trainer?.age}} years old
-                    </ion-text>
-                  </ion-label>
-                </div>
-                <div class="rt">
-                  <ion-label>
-                    <ion-text class="price">
-                      <span class="value">$55</span> <span class="time">/hr</span>
-                    </ion-text>
-                  </ion-label>
-                </div>
-              </ion-item>
-              <ion-item class="btm-c">
-                <ion-text class="col col-lt">
-                  <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
-                  <ion-label class="lato-sm">
-                    <span *ngIf="trainer?.ratingScore == 'null'">0.0</span>
-                    <span *ngIf="trainer?.ratingScore != 'null'">{{trainer?.ratingScore}}</span>
-                  </ion-label>
-                </ion-text>
-                <ion-text class="col dist col-ct">
-                  <ion-icon mode="ios" name="paper-plane"></ion-icon>
-                  <ion-label class="lato-sm"> 0.09 mile away</ion-label>
-                </ion-text>
-                <ion-text class="col col-rt">
-                  <ion-label class="lato-sm">Yoga trainer</ion-label>
-                </ion-text>
-              </ion-item>
-            </ion-card-content>
-          </ion-card>
-          <!--end trainer-->
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content class="contentBg home_page_cards">
+    <ion-grid class="listing">
+        <ion-row>
+            <ion-col size="12">
+                <!--not found-->
+                <ion-card *ngIf="trainers?.length == 0">
+                    <ion-card-header>
+                        <ion-card-content>No Trainer Found!</ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+                <!--end of not found-->
+                <!--got error-->
+                <ion-card *ngIf="error">
+                    <ion-card-header>
+                        <ion-card-content>{{error}}</ion-card-content>
+                    </ion-card-header>
+                </ion-card>
+                <!--end err statement-->
+                <ion-list *ngIf="trainers?.length > 0">
+                    <!-- trainer-->
+                    <ion-card *ngFor="let trainer of trainers">
+                        <ion-card-content (click)="selectedTrainer(trainer)">
+                            <ion-item class="top-c">
+                                <div class="lt">
+                                    <ion-avatar *ngIf="isValidPic(trainer?.pictureURL)">
+                                        <img src="{{trainer?.pictureURL}}" alt="{{trainer?.firstName}}">
+                                    </ion-avatar>
+                                    <ion-avatar *ngIf="!isValidPic(trainer?.pictureURL)">
+                                        <img src="../../assets/images/user-profile.png" alt="{{trainer?.firstName}}">
+                                    </ion-avatar>
+                                    <ion-label>
+                                        <ion-text class="username">
+                                            {{trainer?.firstName}}
+                                        </ion-text>
+                                        <ion-text class="age">
+                                            {{trainer?.age}} years old
+                                        </ion-text>
+                                    </ion-label>
+                                </div>
+                                <div class="rt home_card_price">
+                                    <ion-label>
+                                        <ion-text class="price">
+                                            <span class="value">$55</span> <span class="time">/hr</span>
+                                        </ion-text>
+                                    </ion-label>
+                                </div>
+                            </ion-item>
+                            <ion-item class="btm-c homepage_card_rating_line">
+                                <ion-text class="col col-lt">
+                                    <ion-icon class="rating" name="star"></ion-icon><span>&nbsp;</span>
+                                    <ion-label class="lato-sm">
+                                        <span *ngIf="trainer?.ratingScore == 'null'">0.0</span>
+                                        <span *ngIf="trainer?.ratingScore != 'null'">{{trainer?.ratingScore}}</span>
+                                    </ion-label>
+                                </ion-text>
+                                <ion-text class="col dist col-ct">
+                                    <ion-icon mode="ios" name="paper-plane"></ion-icon>
+                                    <ion-label class="lato-sm"> 0.09 mile away</ion-label>
+                                </ion-text>
+                                <ion-text class="col col-rt">
+                                    <ion-label class="lato-sm">Yoga trainer</ion-label>
+                                </ion-text>
+                            </ion-item>
+                        </ion-card-content>
+                    </ion-card>
+                    <!--end trainer-->
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-footer class="mainFooter">
-  <ion-grid class="banner">
-    <ion-row>
-      <ion-col size="12">
-        <img class="banner" src="../../assets/images/banner-img.JPG" alt="banner">
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-  <ion-toolbar color="medium">
-    <ion-grid no-padding no-margin>
-      <ion-row>
-        <ion-col text-center>
-          <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
-            <ion-icon  src="../../assets/icon/Search_icon_navigation.svg"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col text-center>
-          <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
-            <ion-icon mode="ios" class="txt_w " name="navigate"></ion-icon>
-          </ion-button>
-        </ion-col>
-        <ion-col text-center>
-          <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
-            <ion-icon mode="ios" class="txt_w" name="contact"></ion-icon>
-          </ion-button>
-        </ion-col>
-      </ion-row>
+    <ion-grid class="banner">
+        <ion-row>
+            <ion-col size="12">
+                <img class="banner" src="../../assets/images/banner-img.JPG" alt="banner">
+            </ion-col>
+        </ion-row>
     </ion-grid>
-  </ion-toolbar>
+    <ion-toolbar color="medium">
+        <ion-grid no-padding no-margin>
+            <ion-row>
+                <ion-col text-center>
+                    <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
+                        <ion-icon src="../../assets/icon/Search_icon_navigation.svg"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
+                        <ion-icon mode="ios" class="txt_w " name="navigate"></ion-icon>
+                    </ion-button>
+                </ion-col>
+                <ion-col text-center>
+                    <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
+                        <ion-icon mode="ios" class="txt_w" name="contact"></ion-icon>
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
 </ion-footer>
