@@ -1,160 +1,65 @@
 <app-header></app-header>
 <ion-header>
-  <ion-toolbar color="medium">
+  <ion-toolbar color="medium" style="height:48px">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title>Book Client</ion-title>
+    <ion-title class="headertext">Choose Booking date</ion-title>
+    <ion-icon class="s-icon pointer" slot="end" name="search" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar" id="search"></ion-icon>
   </ion-toolbar>
 </ion-header>
-<ion-content>
-  <ion-grid>
-    <!-- align-items-center -->
-    <ion-row>
-      <ion-col size="1"></ion-col>
-      <ion-col size="10">
-        <div class="img-outer" *ngIf="selectedTrainer?.pictureURL != 'string'">
-          <div class="profilePic" [ngStyle]="{'background-image': 'url(' + selectedTrainer?.pictureURL + ')'}">
+<ion-grid class="notiBg">
+  <ion-row>
+    <ion-col size="2">
+      <div class="notiBlock">
+        <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+        <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+      </div>
+    </ion-col>
+    <ion-col size="2">
+      <div class="notiBlock">
+        <ion-icon name="call"></ion-icon>
+        <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+       
+      </div>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+      <div class="calendar">
+        <div class="calendar-navs">
+          <div class="month-nav">
+            <button (click)="prevMonth()">&lt;</button>
+            <span class="p4">{{ currentDate.format('MMMM') }}</span>
+            <button (click)="nextMonth()">&gt;</button>
+          </div>
+          <div class="year-nav">
+            <button (click)="prevYear()">&lt;</button>
+            <span>{{ currentDate.format('YYYY') }}</span>
+            <button (click)="nextYear()">&gt;</button>
           </div>
         </div>
-
-        <div class="img-outer" *ngIf="selectedTrainer?.pictureURL == 'string'">
-          <img src="../../assets/images/user-profile.png" alt="{{selectedTrainer?.firstName}}" class="profilePice dummy">
-          <!-- <div class="profilePic" [ngStyle]="{'background-image': 'url('../../assets/images/user-profile.png')'}">
-            </div> -->
-        </div>
-        <div class="username">
-          <ion-text>
-            <strong color="primary" text-centered>{{selectedTrainer?.firstName}} {{selectedTrainer?.lastName}} </strong>
-          </ion-text>
-        </div>
-        <div class="rating">
-          <ion-icon name="star" color="primary"></ion-icon>
-          <ion-icon name="star" color="primary"></ion-icon>
-          <ion-icon name="star" color="primary"></ion-icon>
-          <ion-icon name="star" color="primary"></ion-icon>(10)
-        </div>
-        <ion-text class="title">
-          <ion-label>{{selectedTrainer?.type}} </ion-label> <span color="primary">( {{selectedTrainer?.subType}} )</span>
-        </ion-text>
-      </ion-col>
-      <ion-col size="1"></ion-col>
-    </ion-row>
-  </ion-grid>
-  <!-- skills -->
-  <ion-card *ngIf="selectedTrainer?.skill.length > 0">
-    <ion-card-header>
-      <ion-text>Skills</ion-text>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-label>
-            Name
-          </ion-label>
-          <ion-label>
-            {{selectedTrainer?.skill[0].name}}
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Type
-          </ion-label>
-          <ion-label>
-            {{selectedTrainer?.skill[0].type}}
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Sub Type
-          </ion-label>
-          <ion-label>
-            {{selectedTrainer?.skill[0].subType}}
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-          <ion-label>
-            Level
-          </ion-label>
-          <ion-label>
-            {{selectedTrainer?.skill[0].level}}
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>
-            Certification
-          </ion-label>
-          <ion-label>
-            {{selectedTrainer?.skill[0].Certificate}}
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label>Detail</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label> {{selectedTrainer?.skill[0].detail}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
-  <!--end of skills -->
-  <ion-list>
-    <ion-item>
-      <ion-label>Joined on</ion-label>
-      <ion-label>{{ selectedTrainer?.startDate | date:'dd-M-yyyy' }}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-label>{{ selectedTrainer?.email}}</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        {{ selectedTrainer?.age}} years old
-        <ion-icon class="gender" name="man" *ngIf="selectedTrainer?.gender == 'M'" color="primary"></ion-icon>
-        <ion-icon class="gender" name="woman" *ngIf="selectedTrainer?.gender == 'F'" color="primary"></ion-icon>
-      </ion-label>
-    </ion-item>
-    <ion-item *ngIf="selectedTrainer.address.length > 0">
-      <ion-label>Address</ion-label>
-    </ion-item>
-    <ion-item *ngIf="selectedTrainer.address.length > 0">
-      <ion-label>City</ion-label>
-      <ion-label>{{selectedTrainer.address[0].city}}</ion-label>
-    </ion-item>
-    <ion-item *ngIf="selectedTrainer.address.length > 0">
-      <ion-label>State</ion-label>
-      <ion-label>{{selectedTrainer.address[0].state}}</ion-label>
-    </ion-item>
-    <ion-item *ngIf="selectedTrainer.address.length > 0">
-      <ion-label>Street</ion-label>
-      <ion-label>{{selectedTrainer.address[0].street}}</ion-label>
-    </ion-item>
-    <ion-item *ngIf="selectedTrainer.address.length > 0">
-      <ion-label>Zip Code</ion-label>
-      <ion-label>{{selectedTrainer.address[0].zip}}</ion-label>
-    </ion-item>
-  </ion-list>
-
-
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <strong>
-          {{selectedTrainer.name}} is on their way, go ahead and warm up
-        </strong>
-        <div id="success">
-          <div class="check_mark">
-            <div class="sa-icon sa-success animate" [ngClass]="{'hide': isSuccess }">
-              <span class="sa-line sa-tip animateSuccessTip"></span>
-              <span class="sa-line sa-long animateSuccessLong"></span>
-              <div class="sa-placeholder"></div>
-              <div class="sa-fix"></div>
+        <div class="month-grid">
+          <div class="day-names">
+            <div *ngFor="let name of dayNames" class="day-name p9">
+              {{ name }}
+            </div>
+          </div>
+          <div class="weeks">
+            <div *ngFor="let week of weeks" class="week">
+              <ng-container *ngFor="let day of week">
+                <div class="week-date disabled" *ngIf="!isSelectedMonth(day.mDate)">
+                  <span class="date-text">{{ day.mDate.date() }}</span>
+                </div>
+                <div class="week-date enabled"
+                     *ngIf="isSelectedMonth(day.mDate)"
+                     (click)="selectDate(day)"
+                     [ngClass]="{ today: day.today, selected: day.selected }">
+                  <span class="date-text">{{ day.mDate.date() }}</span>
+                </div>
+              </ng-container>
             </div>
           </div>
         </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+      </div>
+
 <app-footer></app-footer>
