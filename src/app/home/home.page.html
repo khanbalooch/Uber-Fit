@@ -112,22 +112,23 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-toolbar color="medium">
+    <ion-toolbar class="tab_navigation" color="medium">
         <ion-grid no-padding no-margin>
             <ion-row>
                 <ion-col text-center>
                     <ion-button class="clear" (click)="onDirectionPage()" size="small" fill="clear">
-                        <ion-icon src="../../assets/icon/Search_icon_navigation.svg"></ion-icon>
+                        <!-- <ion-icon src="../../assets/icon/Search_icon_navigation.svg"></ion-icon> -->
+                        <ion-icon class="txt_w" name="search"></ion-icon>
                     </ion-button>
                 </ion-col>
                 <ion-col text-center>
                     <ion-button class="clear" size="small" (click)="onGlobalPage()" fill="clear">
-                        <ion-icon mode="ios" class="txt_w " name="navigate"></ion-icon>
+                        <ion-icon name="navigate"></ion-icon>
                     </ion-button>
                 </ion-col>
                 <ion-col text-center>
                     <ion-button (click)="onSettingsPage() " class="clear" size="small" fill="clear">
-                        <ion-icon mode="ios" class="txt_w" name="contact"></ion-icon>
+                        <ion-icon name="settings"></ion-icon>
                     </ion-button>
                 </ion-col>
             </ion-row>

@@ -39,12 +39,17 @@
                                 </ion-label>
                                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='email' type="text" placeholder="Email" padding></ion-input>
                             </ion-item>
-                            <ion-label class="error center" color="medium" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required && !signupForm.valid">
-                                Email is required.
-                            </ion-label>
-                            <ion-label class="error center" color="medium" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email && !signupForm.valid">
-                                Invalid email address.
-                            </ion-label>
+                            <div class="error center" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required && !signupForm.valid">
+                                <ion-label  color="danger">
+                                    Email is required.
+                                </ion-label>
+                            </div>
+                            <div class="error center" *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email && !signupForm.valid">
+                                <ion-label  color="danger">
+                                    Invalid email address.
+                                </ion-label>
+                            </div>
+                            
                         </ion-col>
                     </ion-row>
                     <ion-row class="no-v-pad">
@@ -56,9 +61,11 @@
                                 </ion-label>
                                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='password' type="password" placeholder="Password" padding></ion-input>
                             </ion-item>
-                            <ion-label class="error center" color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !signupForm.valid">
-                                Password is required.
-                            </ion-label>
+                            <div class="error center" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !signupForm.valid">
+                                <ion-label color="danger">
+                                    Password is required.
+                                </ion-label>
+                            </div>
                         </ion-col>
                     </ion-row>
                     <ion-row class="no-v-pad">
@@ -69,12 +76,16 @@
                                 </ion-label>
                                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='cPassword' type="password" placeholder="Confirm Password" padding></ion-input>
                             </ion-item>
-                            <ion-label class="error center" color="medium" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.required && !signupForm.valid">
-                                Confirm Your Password
-                            </ion-label>
-                            <ion-label class="error center" color="medium" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.compare && !signupForm.valid">
-                                Password Does Not Match
-                            </ion-label>
+                            <div class="error center" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.required && !signupForm.valid">
+                                <ion-label color="danger">
+                                    Confirm Your Password
+                                </ion-label>
+                            </div>
+                            <div class="error center" *ngIf="(cPassword.dirty || cPassword.touched) && cPassword.invalid && cPassword.errors.compare && !signupForm.valid">
+                                <ion-label  color="danger">
+                                    Password Does Not Match
+                                </ion-label>
+                            </div>
                         </ion-col>
                     </ion-row>
 
@@ -95,9 +106,11 @@
                                     <ion-radio mode="ios" formControlName='type' color="medium" slot="start" value="TRAINER"></ion-radio>
                                 </ion-item>
                             </ion-radio-group>
-                            <ion-label color="medium" *ngIf="(type.dirty || type.touched) && type.invalid && type.errors.required">
-                                Join you as ?
-                            </ion-label>
+                            <div class="error center" *ngIf="(type.dirty || type.touched) && type.invalid && type.errors.required">
+                                <ion-label color="danger">
+                                    Join you as ?
+                                </ion-label>
+                            </div>
                         </ion-col>
                     </ion-row>
                     <ion-row class="no-v-pad">
