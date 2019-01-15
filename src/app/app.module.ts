@@ -16,10 +16,13 @@ import { AuthenticationService } from './shared/services/authentication.service'
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { FilterPage } from './pages/filter/filter.page';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
+  declarations: [AppComponent, FilterPage],
+  entryComponents: [
+    FilterPage,
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

@@ -2,17 +2,20 @@ ion-button {
     display: block;
     left: 50%;
 }
+ion-tab-button:hover{
+    color: #e14632 !important;
+}
 ion-footer ion-icon {
-    color: #fff !important;
+    color: #d2d2d2;
+    font-size: 20px;
 }
 
 ion-tab-button.tab-selected {
-    background: #3880ff;
-    color: #fff;
+    background: #fff;
+    color: #e14632;
 }
 ion-tab-button {
-    height:50%;
-    border: 1px solid #ccc;
+    border: none;
 }
 
 ion-badge {

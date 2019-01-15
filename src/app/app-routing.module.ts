@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 
 const routes: Routes = [
-  //{ path: '', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuardService] },
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule', canActivate: [AuthGuardService] },
   { path: '', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuardService] },
   { path: 'login', loadChildren: './public/login/login.module#LoginPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuardService] },
