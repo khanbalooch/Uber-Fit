@@ -1,60 +1,129 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingController } from '@ionic/angular';
 
-import { Trainer } from '../shared/trainer.model';
+import * as moment from 'moment';
+import * as _ from 'lodash';
+import { SchedulerService } from '../shared/services/scheduler.service';
 import { trainerService } from '../shared/trainer.service';
+
+export interface CalendarDate {
+  mDate: moment.Moment;
+  selected?: boolean;
+  today?: boolean;
+}
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss', 'tab1.page.css']
 })
-export class Tab1Page implements OnInit {
-  trainers: any;
-  error: any;
-  
-  show: boolean = false;
-  constructor(private trainerService: trainerService, private router: Router, public loadingController: LoadingController) { }
+export class Tab1Page implements OnInit, OnChanges {
+  currentDate = moment();
+  dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+  weeks: CalendarDate[][] = [];
+  sortedDates: CalendarDate[] = [];
+
+  @Input() selectedDates: CalendarDate[] = [];
+  @Output() onSelectDate = new EventEmitter<CalendarDate>();
+
+
+  constructor(private scheduler: SchedulerService) { }
   ngOnInit() {
-    this.getAllTrainers();
+    this.generateCalendar();
+    this.scheduler.setSelectedDays(this.currentDate['_d']);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.selectedDates &&
+      changes.selectedDates.currentValue &&
+      changes.selectedDates.currentValue.length > 1) {
+      // sort on date changes for better performance when range checking
+      this.sortedDates = _.sortBy(changes.selectedDates.currentValue, (m: CalendarDate) => m.mDate.valueOf());
+      this.generateCalendar();
+    }
   }
 
-  selectedTrainer(trainer) {
-    this.trainerService.setSelectedTrainer(trainer);
-    this.router.navigateByUrl('/trainer');
+  // date checkers
+  isToday(date: moment.Moment): boolean {
+    return moment().isSame(moment(date), 'day');
   }
 
-  //getAllTrainers
-  async getAllTrainers() {
-    const loading = await this.loadingController.create({
-      message: 'Finding Trainers in your Area',
-      spinner: 'bubbles',
-      cssClass: 'tLoader'
-    });
-    await loading.present();
-    await this.trainerService.getAllTrainers()
-      .subscribe(res => {
-        console.log(res);
-        this.trainers = res;
-        loading.dismiss();
-      }, err => {
-        this.error = err;
-        console.log(err);
+  isSelected(date: moment.Moment): boolean {
+    return _.findIndex(this.selectedDates, (selectedDate) => {
+      return moment(date).isSame(selectedDate.mDate, 'day');
+    }) > -1;
+  }
 
-        loading.dismiss();
+  isSelectedMonth(date: moment.Moment): boolean {
+    return moment(date).isSame(this.currentDate, 'month');
+  }
+
+  selectDate(date: CalendarDate): void {
+    date.today = !date.today;
+    this.scheduler.setSelectedDays(date.mDate['_d']);
+    this.onSelectDate.emit(date);
+  }
+
+  // actions from calendar
+
+  prevMonth(): void {
+    this.currentDate = moment(this.currentDate).subtract(1, 'months');
+    this.generateCalendar();
+  }
+
+  nextMonth(): void {
+    this.currentDate = moment(this.currentDate).add(1, 'months');
+    this.generateCalendar();
+  }
+
+  firstMonth(): void {
+    this.currentDate = moment(this.currentDate).startOf('year');
+    this.generateCalendar();
+  }
+
+  lastMonth(): void {
+    this.currentDate = moment(this.currentDate).endOf('year');
+    this.generateCalendar();
+  }
+
+  prevYear(): void {
+    this.currentDate = moment(this.currentDate).subtract(1, 'year');
+    this.generateCalendar();
+  }
+
+  nextYear(): void {
+    this.currentDate = moment(this.currentDate).add(1, 'year');
+    this.generateCalendar();
+  }
+
+  // generate the calendar grid
+
+  generateCalendar(): void {
+    const dates = this.fillDates(this.currentDate);
+    const weeks: CalendarDate[][] = [];
+    while (dates.length > 0) {
+      weeks.push(dates.splice(0, 7));
+    }
+    this.weeks = weeks;
+  }
+
+  fillDates(currentMoment: moment.Moment): CalendarDate[] {
+    const firstOfMonth = moment(currentMoment).startOf('month').day();
+    const firstDayOfGrid = moment(currentMoment).startOf('month').subtract(firstOfMonth, 'days');
+    const start = firstDayOfGrid.date();
+    return _.range(start, start + 42)
+      .map((date: number): CalendarDate => {
+        const d = moment(firstDayOfGrid).date(date);
+        return {
+          today: this.isToday(d),
+          selected: this.isSelected(d),
+          mDate: d,
+        };
       });
-  
-  
   }
 
-  isValidPic(url:any){
-    return (/\.(gif|jpg|jpeg|tiff|png)$/i).test(url);
+  /* calender ended */
+  onNextBtn() {
+
   }
-
-
-
-
-
-
 
 }

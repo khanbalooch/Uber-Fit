@@ -3,12 +3,12 @@ ion-button {
     left: 50%;
 }
 ion-footer ion-icon {
-    color: #fff !important;
+    color: #d2d2d2 !important;
 }
 
 ion-tab-button.tab-selected {
     background: #3880ff;
-    color: #fff;
+    color: #e14632;
 }
 ion-tab-button {
     height:50%;

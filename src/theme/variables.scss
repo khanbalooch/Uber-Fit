@@ -23,6 +23,8 @@
 
 :root {
 
+  
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-cprimary: #3fa2f7;
@@ -98,8 +100,11 @@
 
     
     ion-toolbar {
-      --ion-color-base :#FF7D1A !important;
+      --ion-color-base :#E14632 !important;
     
+    }
+    ion-toolbar.tab_navigation{
+      --ion-color-base : #fff !important;
     }
     ion-title {
       font-family: 'Roboto', sans-serif;
@@ -107,6 +112,9 @@
       font-size: 20px;
       font-weight: 400;
       text-align: center;
+    }
+    ion-content {
+      --background: #f5f5f5;
     }
     ion-item.uberInput {
       --background : transparent !important; 
@@ -134,11 +142,11 @@
     }
   
     ion-button.uberPrimary {
-         --ion-color-base :#f26d00 !important;
-         --ion-color-base: -moz-linear-gradient(left, #f26d00 0%, #ff7d1a 100%) !important;
-         --ion-color-base: -webkit-linear-gradient(left, #f26d00 0%,#ff7d1a 100%) !important;
-         --ion-color-base: linear-gradient(to right, #f26d00 0%,#ff7d1a 100%) !important;
-         --background:#ec6708 !important;
+        //  --ion-color-base :#e14632 !important;
+         --ion-color-base: -moz-linear-gradient(left, #d8301A 0%, #df3a25 100%) !important;
+         --ion-color-base: -webkit-linear-gradient(left, #d8301A 0%,#df3a25 100%) !important;
+         --ion-color-base: linear-gradient(to right, #d8301A 0%,#df3a25 100%) !important;
+         --background:#e14632 !important;
         /*fonts*/
          font-family: 'Roboto', sans-serif;
          font-size: 15px;

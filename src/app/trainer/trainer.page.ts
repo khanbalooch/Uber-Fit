@@ -33,7 +33,7 @@ export class TrainerPage implements OnInit {
   }
 
   onBookClient() {
-    this.router.navigateByUrl('book-client');
+    this.router.navigateByUrl('/tabs/tab1');
   }  
 
  

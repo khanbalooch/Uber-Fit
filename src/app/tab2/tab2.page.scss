@@ -1,3 +1,102 @@
+$primaryTxt: #505153;
+ion-label.subtitle {
+    font-size: 14px;
+    color: $primaryTxt;
+}
+ion-item.details {
+    --background: #f5f5f5 !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
+    --border-radius: 6px;
+    --border-color: #a8a8a8;
+} 
+ion-select {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 12px;
+}
+ion-button.primary,
+ion-button.secondary {
+    width: 168px;
+    height: 42px;
+}
+ion-button.primary {
+    --background: #54bf01;
+    --background-activated: #3a8401;
+    --background-focused: #3a8401;
+    --color: #fff;
+    font-size: 14px;
+    text-transform: none;
+}
+
+ion-button.secondary {
+    --background: #ffffff;
+    --background-activated: #e6e6e6;
+    --background-focused: #e6e6e6;
+    --color: #888888;
+    --border-color: #dbdbdb;
+    font-size: 14px;
+    text-transform: none;
+}
+ion-item.time {
+    --background: #fff !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
+    --border-radius: 6px;
+    --border-color: #dbdbdb;
+    font-size: 14px;
+}
+ion-item.time ion-datetime {
+    --placeholder-color:  #646464;
+    color: #646464;
+    font-size: 13px;
+}
+.arrow-c ion-icon {
+    color: #888888;
+    padding: 12px 0;
+    font-size: 16px;
+}
+ion-item.select-sm {
+    --background: #fff;
+    --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
+    --border-radius: 6px;
+    --padding-start: 0 !important;
+    --inner-padding-start: 0 !important;
+    --inner-padding-end: 6px !important;
+    --border-color: #dbdbdb;
+    width: 56px;
+    float: right;
+}
+ion-item.select-sm ion-select {
+    padding: 4px;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+}
+ion-item.select-icon {
+    position: relative;
+    --background: #fff;
+    --border-width: 1px 1px 1px 1px !important;
+    --inner-border-width: 0 0 0 0 !important;
+    --border-radius: 6px;
+    --border-color: #dbdbdb;
+    --color: #888888;
+}
+ion-item.select-icon  ion-icon {
+    width: 16px;
+    height: 16px;
+    color: #888888;
+    font-size: 16px;
+    position: absolute;
+    left: 8px;
+}
+ion-item.select-icon ion-select {
+
+}
 // ion-toolbar {
 //     --ion-color-base :#f66c0a !important;
 //   }

@@ -37,12 +37,16 @@
                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='username'
                   type="text" placeholder="Name" padding></ion-input>
               </ion-item>
-              <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
-                Username is required.
-              </ion-label>
-              <ion-label class="error center" color="medium" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
-                Invalid username.
-              </ion-label>
+              <div class="error center" *ngIf="(username.dirty || username.touched) && username.invalid && username.errors.required && !loginForm.valid">
+                <ion-label color="danger">
+                  Username is required.
+                </ion-label>
+              </div>
+              <div class="error center" *ngIf="(username.dirty || username.touched) && username.invalid  && username.errors.email  && loginForm.invalid">
+                <ion-label color="danger">
+                  Invalid username.
+                </ion-label>
+              </div>
             </ion-col>
           </ion-row>
 
@@ -55,9 +59,12 @@
                 <ion-input shape="round" fill="outline" color="primary" class="input-El" formControlName='password'
                   type="password" placeholder="Password" padding></ion-input>
               </ion-item>
-              <ion-label class="error center" color="medium" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !loginForm.valid">
-                Password is required.
-              </ion-label>
+              <div class="error center" *ngIf="(password.dirty || password.touched) && password.invalid && password.errors.required && !loginForm.valid">
+                <ion-label color="danger">
+                  Password is required.
+                </ion-label>
+              </div>
+              
             </ion-col>
           </ion-row>
 
