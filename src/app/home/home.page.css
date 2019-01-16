@@ -212,11 +212,6 @@ ion-card {
     font-size: 14px;
 }
 
-ion-menu-button {
-    width: 30px;
-    height: 30px;
-}
-
 
 /* .md-header ion-toolbar ion-buttons, ion-toolbar ion-title, ion-toolbar ion-item {
     display: inline-block;

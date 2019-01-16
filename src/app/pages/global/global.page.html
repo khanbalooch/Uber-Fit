@@ -1,10 +1,36 @@
-<app-header></app-header>
-<ion-header>
+<ion-header mode="ios">
   <ion-toolbar  color="medium">
-    <ion-buttons slot="start">
+      <ion-title>
+          <ion-grid>
+              <ion-row>
+                  <ion-col class="header_left_icons" size="3">
+                      <div class="sideMenu">
+                          <ion-buttons slot="start">
+                              <ion-menu-button></ion-menu-button>
+                          </ion-buttons>
+                      </div>
+                      <div class="notiBlock">
+                          <ion-icon mode="ios" name="chatbubbles"></ion-icon>
+                          <ion-badge mode="md" color="white" slot="top">66</ion-badge>
+                      </div>
+                  </ion-col>
+                  <ion-col class="header_main_title" size="6">
+                      <ion-label *ngIf="!isShowSearchBar">Map</ion-label>
+                      <ion-searchbar color="medium" mode="md" animated showCancelButton placeholder="Search trainer here..." (ionCancel)="onCancel($event)" *ngIf="isShowSearchBar"></ion-searchbar>
+                  </ion-col>
+                  <ion-col class="header_right_icons" size="3">
+                      <div class="icon-rt">
+                          <ion-icon mode="ios" class="s-icon pointer" slot="end" name="options" slot="end" (click)="onFilterBtnClick()"></ion-icon>
+                          <ion-icon class="s-icon pointer" slot="end" name="search" (click)="onShowSearchbar()" *ngIf="!isShowSearchBar"></ion-icon>
+                      </div>
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-title>
+    <!-- <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title>global</ion-title>
+    <ion-title>Map</ion-title>-->
   </ion-toolbar>
 </ion-header>
 
@@ -15,12 +41,8 @@
     <agm-marker [title]="you" [label]="Y" [latitude]="location.lat" [longitude]="location.lng + 0.2"></agm-marker>
     <agm-marker [title]="you" [label]="Y" [latitude]="location.lat - 0.2" [longitude]="location.lng"></agm-marker>
     <agm-marker [title]="you" [label]="Y" [latitude]="location.lat" [longitude]="location.lng - 0.2"></agm-marker>
-    <agm-circle [latitude]="location.lat + 0.2" [longitude]="location.lng" 
-      [radius]="35000"
-      [fillColor]="'red'"
-      [circleDraggable]="true"
-      [editable]="true">
-  </agm-circle>
+    <agm-circle [latitude]="location.lat + 0.2" [longitude]="location.lng" [radius]="35000" [fillColor]="'red'"
+      [circleDraggable]="true" [editable]="true">
+    </agm-circle>
   </agm-map>
 </ion-content>
-<app-footer></app-footer>
