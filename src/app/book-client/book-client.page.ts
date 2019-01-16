@@ -116,4 +116,8 @@ export class BookClientPage implements OnInit, OnChanges {
               };
             });
   }
+
+
+
+  
 }

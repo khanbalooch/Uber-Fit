@@ -41,7 +41,7 @@ export class AppComponent {
       this.authService.authenticationState.subscribe(state => {
         console.log('auth changed:' + state);
         if (state) {                                //mean user is logged in
-          this.router.navigate(['/tabs']);
+          this.router.navigate(['/home']);
         } else {                                    // user is nt logged in
           this.router.navigate(['splash']);
         }

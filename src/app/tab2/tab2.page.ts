@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 
-import { Trainer } from '../shared/trainer.model';
 import { trainerService } from '../shared/trainer.service';
 
 @Component({
@@ -11,42 +10,27 @@ import { trainerService } from '../shared/trainer.service';
   styleUrls: ['tab2.page.scss', 'tab2.page.css']
 })
 export class Tab2Page implements OnInit {
-  trainers: any;
-  error: any;
-  constructor(private trainerService: trainerService, private router: Router, public loadingController: LoadingController) { }
+
+
+  dayMenuOptions: any = {
+    header: 'Days',
+    subHeader: 'Select Day to Configure'
+  };
+  sessionMenuOptions: any = {
+    header: 'Sessions'
+  };
+  locationMenuOptions: any = {
+    header: 'Locations'
+  };
+  slotMenuOptions: any = {
+    header:  'Slots'
+  };
+  slots = ['9-10 AM', '10-11 AM', '11-12 AM', '12-01 PM', '01-02 PM' ];
+  locations = ['Papa Gym', 'Your House', 'Your Choice'];
+  sessions = [ 'session 1', 'session 2' ];
+  days = ['Monday, 14 Jan 2019', 'Teuseday, 15 Jan 2019', 'Wednesday, 16 Jan 2019', 'Thursday, 17 Jan 2019' ];
+  constructor() { }
   ngOnInit() {
-    this.getAllTrainers();
-  }
-
-  selectedTrainer(trainer) {
-    this.trainerService.setSelectedTrainer(trainer);
-    this.router.navigateByUrl('/trainer');
-  }
-
-
-  //getAllTrainers
-  async getAllTrainers() {
-    const loading = await this.loadingController.create({
-      message: 'Finding Trainers in your Area',
-      spinner: 'bubbles',
-      cssClass: 'tLoader'
-    });
-    await loading.present();
-    await this.trainerService.getAllTrainers()
-      .subscribe(res => {
-        console.log(res);
-        this.trainers = res;
-        loading.dismiss();
-      }, err => {
-        this.error = err;
-        console.log(err);
-
-        loading.dismiss();
-      });
-  }
-
-  isValidPic(url:any){
-    return (/\.(gif|jpg|jpeg|tiff|png)$/i).test(url);
   }
 
 }

@@ -8,8 +8,18 @@ import { AuthenticationService } from '../shared/services/authentication.service
 })
 export class TabsPage {
 
-  constructor(private authService: AuthenticationService){}
-  isClicked(tab) {
+  title: string;
+  constructor(private authService: AuthenticationService) {
+    this.title = 'Choose Booking Date';
+  }
+  tab1Clicked() {
+    this.title = 'Choose Booking Date';
+  }
+  tab2Clicked() {
+    this.title = 'Set Details';
+  }
+  tab3Clicked() {
+    this.title = 'Send';
   }
 
 

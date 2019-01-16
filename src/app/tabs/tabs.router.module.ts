@@ -6,7 +6,7 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tabs',
+    redirectTo: 'tabs/tab1',
     pathMatch: 'full'
   },
   {
@@ -14,45 +14,42 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'home',
+        path: 'tab1',
         children: [
           {
             path: '',
-            //loadChildren: '../tab1/tab1.module#Tab1PageModule'
-            loadChildren: '../home/home.module#HomePageModule'
+            loadChildren: '../tab1/tab1.module#Tab1PageModule'
           }
         ]
       },
       {
-        path: 'global',
+        path: 'tab2',
         children: [
           {
             path: '',
-            //loadChildren: '../tab2/tab2.module#Tab2PageModule'
-            loadChildren: '../pages/global/global.module#GlobalPageModule'
+            loadChildren: '../tab2/tab2.module#Tab2PageModule'
           }
         ]
       },
       {
-        path: 'settings',
+        path: 'tab3',
         children: [
           {
             path: '',
-            //loadChildren: '../tab3/tab3.module#Tab3PageModule'
-            loadChildren: '../pages/settings/settings.module#SettingsPageModule'
+            loadChildren: '../tab3/tab3.module#Tab3PageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/tabs/tab1',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
 ];

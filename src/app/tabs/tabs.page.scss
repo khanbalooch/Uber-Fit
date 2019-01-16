@@ -1,3 +1,20 @@
+$badgeActive: #f25f4d;
+$badgeActiveTxt: #fff;
+
+// ion-tab-button ion-badge {
+
+// }
+// ion-tab-button.tab-selected ion-badge {
+
+// }
+
+ion-badge {
+    --background: $badgeActive;
+    --color: $badgeActiveTxt;
+    width: 22px;
+    height: 22px;
+    margin-left: 6px;
+}
 // ion-toolbar {
 //     --ion-color-base :#f66c0a !important;
 //   }
